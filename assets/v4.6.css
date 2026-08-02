@@ -203,7 +203,7 @@ html[data-theme="light"] .product-page .brand-copy {
 .admin-demo > *,
 .ad-workspace,
 .ad-workspace > header,
-.ad-workspace > main,
+.ad-workspace-main,
 .ad-service,
 .ad-metrics,
 .ad-panel { min-width: 0; max-width: 100%; box-sizing: border-box; }
@@ -222,7 +222,7 @@ html[data-theme="light"] .product-page .brand-copy {
 .ad-workspace header div:first-child span { color: #628086; font: 700 1cqw/1 "Cascadia Code", Consolas, monospace; letter-spacing: .11em; }
 .ad-workspace header div:first-child strong { margin-top: .6cqw; color: #f0f7f5; font-size: 1.95cqw; }
 .ad-project { padding: 1.05cqw 1.4cqw; border: 1px solid rgba(255,255,255,.09); border-radius: .9cqw; color: #b7c6c6; font-size: 1.18cqw; }
-.ad-workspace main { display: grid; width: 100%; gap: 1.8cqw; padding: 2.4cqw 2.7cqw; }
+.ad-workspace-main { display: grid; width: 100%; gap: 1.8cqw; padding: 2.4cqw 2.7cqw; }
 .ad-service {
   display: flex;
   align-items: center;
@@ -523,7 +523,7 @@ html[data-theme="dark"] .admin-console-large { box-shadow: 0 38px 100px rgba(0,0
   .ad-sidebar nav span { text-align: center; font-size: 0; }
   .ad-sidebar nav span::first-letter { font-size: 3cqw; }
   .ad-status span { display: none; }
-  .ad-workspace main { padding: 2cqw; }
+  .ad-workspace-main { padding: 2cqw; }
   .ad-metrics > span:last-child { display: none; }
   .ad-metrics { grid-template-columns: 1fr 1fr; }
   .ad-file-row.child:nth-of-type(3) { display: none; }

@@ -66,20 +66,20 @@
               <nav><span>⌂ 概览</span><span>◫ 项目设置</span><span class="active">↑ 管理文件</span><span>▣ 玩家端程序</span><span>◇ 玩家实例</span><span>⚙ 服务设置</span></nav>
               <div class="ad-status"><i></i><span>已连接</span></div>
             </aside>
-            <section class="ad-workspace">
+            <div class="ad-workspace">
               <header><div><span>MANAGEMENT CONSOLE</span><strong>管理文件</strong></div><div class="ad-project">梦屿整合包</div></header>
-              <main>
+              <div class="ad-workspace-main">
                 <div class="ad-service"><div><i></i><span><strong>下载服务正在运行</strong><small>0.0.0.0:8080</small></span></div><button>■ 停止</button></div>
                 <div class="ad-metrics"><span><small>托管文件</small><strong>146</strong></span><span><small>总大小</small><strong>2.84 GB</strong></span><span><small>强制同步</small><strong>3</strong></span></div>
-                <section class="ad-panel">
+                <div class="ad-panel">
                   <div class="ad-panel-head"><span><strong>整合包文件</strong><small>选择目录后上传、导入或移除</small></span><button>＋ 添加文件</button></div>
                   <div class="ad-file-row folder"><i>⌄</i><span><strong>mods</strong><small>98 个文件</small></span><b>目录</b></div>
                   <div class="ad-file-row child"><i></i><span><strong>dreamingfish-core.jar</strong><small>31.8 MB · 强制同步</small></span><b>文件</b></div>
                   <div class="ad-file-row child"><i></i><span><strong>performance-helper.jar</strong><small>4.6 MB · 普通托管</small></span><b>文件</b></div>
                   <div class="ad-file-row folder"><i>›</i><span><strong>config</strong><small>42 个文件</small></span><b>目录</b></div>
-                </section>
-              </main>
-            </section>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -229,12 +229,12 @@
             <nav><span>⌂ 概览</span><span>◫ 项目设置</span><span class="active">↑ 管理文件</span><span>▣ 玩家端程序</span><span>◇ 玩家实例</span><span>⚙ 服务设置</span></nav>
             <div class="acl-connected"><i></i><span>已连接 · DreamingFish Admin 0.1.16</span></div>
           </aside>
-          <section class="acl-workspace">
+          <div class="acl-workspace">
             <header class="acl-topbar"><div><span>MANAGEMENT CONSOLE</span><strong>管理文件</strong></div><div><button>☀ 白天模式</button><label>当前项目 <b>梦屿整合包</b><i class="acl-chevron" aria-hidden="true"></i></label><button class="acl-refresh" type="button" aria-label="刷新"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 5.5A5.5 5.5 0 1 0 13.1 10"/><path d="M13 2.5v3.2H9.8"/></svg></button></div></header>
-            <main class="acl-content">
+            <div class="acl-content">
               <div class="acl-service"><div><i></i><span><strong>HTTP 文件服务正在运行</strong><small>http://0.0.0.0:8080</small></span></div><div><button>■ 停止</button><button class="primary">▶ 启动下载服务</button></div></div>
               <div class="acl-metrics"><article><span>托管文件</span><strong>146</strong></article><article><span>总大小</span><strong>2.84 GB</strong></article><article><span>强制同步</span><strong>3</strong></article><article><span>当前发布</span><strong>1.3</strong></article></div>
-              <section class="acl-panel">
+              <div class="acl-panel">
                 <div class="acl-panel-head"><div><strong>整合包文件</strong><span>146 个文件 · 选择目标文件夹后添加</span></div><div><button>↻ 刷新</button><button class="primary">＋ 添加文件</button></div></div>
                 <p><b>这里展示管理服务器“要管理的文件目录”中的真实内容。</b> 文件夹勾选会递归选择其下全部文件，修改后扫描并发布才会影响玩家。</p>
                 <div class="acl-toolbar"><label>☑ 全选当前列表</label><span>未选择文件</span><button>清空选择</button><button disabled>移除所选</button></div>
@@ -245,10 +245,10 @@
                   <div class="acl-tree-row child"><span>□</span><span class="badge-file">文件</span><span><i class="acl-tree-arrow-spacer" aria-hidden="true"></i><div><strong>performance-helper.jar</strong><small>普通托管</small></div></span><span>4.6 MB</span><span>5 分钟前</span></div>
                   <div class="acl-tree-row folder"><span>□</span><span class="badge-folder">目录</span><span><i class="acl-tree-arrow" aria-hidden="true"></i><div><strong>config</strong><small>42 个文件</small></div></span><span>18.4 MB</span><span>今天</span></div>
                 </div>
-              </section>
-              <section class="acl-warning-panel"><div><span>谨慎启用</span><strong>管理强制同步目录</strong><p>目录内文件不能被玩家豁免，玩家额外文件会先归档再移出实例。</p></div><button>保存目录设置</button></section>
-            </main>
-          </section>
+              </div>
+              <div class="acl-warning-panel"><div><span>谨慎启用</span><strong>管理强制同步目录</strong><p>目录内文件不能被玩家豁免，玩家额外文件会先归档再移出实例。</p></div><button>保存目录设置</button></div>
+            </div>
+          </div>
         </div>
 
         <div class="admin-web-features reveal">
