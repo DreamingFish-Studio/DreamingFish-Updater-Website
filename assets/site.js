@@ -87,6 +87,10 @@
       }
     });
   });
+  productStage?.addEventListener("pointerdown", (event) => {
+    const card = event.target.closest?.("[data-product-card]");
+    if (card) setProductPriority(card.dataset.productCard);
+  }, true);
   setProductPriority(productStage?.classList.contains("priority-admin") ? "admin" : "player");
 
   const reveal = document.querySelectorAll(".reveal");

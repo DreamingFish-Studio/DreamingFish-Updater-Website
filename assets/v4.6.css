@@ -50,6 +50,9 @@
 }
 .dual-product-stage.priority-player .hero-admin-product,
 .dual-product-stage.priority-admin .hero-player-product { z-index: 1; }
+.dual-product-stage.priority-admin .hero-admin-product { transform: translateY(-104px); }
+.dual-product-stage.priority-admin .hero-admin-product:hover { transform: translateY(-108px); }
+.dual-product-stage.priority-admin .hero-player-product { transform: translateY(0); }
 .dual-product-stage.priority-player .hero-player-product:hover,
 .dual-product-stage.priority-admin .hero-admin-product:hover { border-color: rgba(78, 232, 223, .78); }
 .hero-product-label {
