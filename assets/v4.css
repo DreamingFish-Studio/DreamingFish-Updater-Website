@@ -35,6 +35,15 @@ html[data-theme="light"] .docs-sidebar,
 html[data-theme="light"] .docs-toc { background: transparent; }
 html[data-theme="light"] .docs-article hr { border-color: var(--line); }
 
+/* Keep the overview workflow cards readable on the light documentation canvas. */
+html[data-theme="light"] .docs-body .mini-flow div {
+  border-color: var(--line);
+  background: var(--surface);
+}
+html[data-theme="light"] .docs-body .mini-flow strong { color: var(--text); }
+html[data-theme="light"] .docs-body .mini-flow span { color: var(--muted); }
+html[data-theme="light"] .docs-body .mini-flow div:not(:last-child)::after { color: var(--muted-2); }
+
 /* =========================================================
    V4.1 documentation layout hotfix
    Keep inline code inside list text instead of treating it as
@@ -140,3 +149,1876 @@ html[data-theme="light"] .docs-article hr { border-color: var(--line); }
 @media(max-width:1120px){.brand-experience-grid{grid-template-columns:1fr;gap:58px}.news-experience-heading{grid-template-columns:1fr;gap:28px}.news-product-grid{grid-template-columns:1fr}.capability-grid-six{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:840px){.brand-experience,.news-experience{padding:96px 0}.brand-studio-preview{min-height:330px}.brand-preview-copy strong{font-size:52px}.brand-preview-status{width:48%}.news-art{height:260px}.capability-grid-six{grid-template-columns:1fr}}
 @media(max-width:560px){.brand-experience-copy h2,.news-experience-heading h2{font-size:39px}.brand-studio-head{align-items:flex-start;flex-direction:column}.brand-studio-preview{min-height:300px;padding:20px}.brand-preview-nav span{display:none}.brand-preview-copy{left:22px;top:86px}.brand-preview-copy small{font-size:18px}.brand-preview-copy strong{font-size:47px}.brand-preview-status{left:22px;right:22px;bottom:20px;width:auto}.brand-studio-specs{grid-template-columns:1fr}.brand-studio-specs>div{border-right:0}.news-featured-card{padding:15px}.news-art{height:210px}.news-featured-card h3{font-size:29px}.news-product-list article{padding:23px}.capability-grid-six article{min-height:220px}}
+
+/* Light documentation theme: use neutral, high-contrast accents instead of pale cyan. */
+html[data-theme="light"] body.docs-body {
+  --cyan: #3e4746;
+  --cyan-soft: #596260;
+}
+html[data-theme="light"] .docs-body .docs-nav a.active {
+  color: var(--text);
+  background: var(--surface-2);
+  box-shadow: inset 3px 0 0 var(--text);
+}
+html[data-theme="light"] .docs-body .docs-nav a:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+html[data-theme="light"] .docs-body .docs-article a:not(.button):not(.pager-link) {
+  color: var(--text-soft);
+  text-decoration-color: var(--line-strong);
+}
+html[data-theme="light"] .docs-body .badge:not(.neutral) {
+  color: var(--text-soft);
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+html[data-theme="light"] .docs-body .callout {
+  border-color: var(--line-strong);
+  background: var(--surface);
+}
+html[data-theme="light"] .docs-body .callout-icon {
+  color: var(--text-soft);
+  background: var(--surface-2);
+}
+html[data-theme="light"] .docs-body .feature-list li::before {
+  color: var(--text-soft);
+}
+html[data-theme="light"] .docs-body .step-card::before {
+  color: var(--text-soft);
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+html[data-theme="light"] .docs-body .docs-toc a:hover,
+html[data-theme="light"] .docs-body .docs-toc a.active {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .docs-body .docs-search-button:hover,
+html[data-theme="light"] .docs-body .pager-link:hover {
+  border-color: var(--line-strong);
+}
+html[data-theme="light"] .docs-body .search-result:hover,
+html[data-theme="light"] .docs-body .search-result.selected {
+  background: var(--surface-2);
+}
+
+/* Terminal mockup used by the docs (first-run tutorial) */
+.docs-body .terminal {
+  margin: 26px 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.085);
+  border-radius: 15px;
+  background: #071014;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+}
+.docs-body .terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: #0c1418;
+}
+.docs-body .terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.docs-body .terminal-title {
+  margin-left: 8px;
+  color: #7f9498;
+  font: 600 11px/1 "Cascadia Code", Consolas, monospace;
+  letter-spacing: 0.02em;
+}
+.docs-body .terminal pre {
+  margin: 0;
+  padding: 19px;
+  overflow: auto;
+  color: #cde8e5;
+  font: 12px/1.82 "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  white-space: pre;
+}
+html[data-theme="light"] .docs-body .terminal {
+  border-color: #2b2b29;
+  background: #171715;
+}
+html[data-theme="light"] .docs-body .terminal-bar {
+  border-color: rgba(255, 255, 255, 0.09);
+  background: #1d1d1b;
+}
+html[data-theme="light"] .docs-body .terminal-title {
+  color: #92928a;
+}
+html[data-theme="light"] .docs-body .terminal pre {
+  color: #e0eee9;
+}
+@media (max-width: 840px) {
+  .docs-body .terminal pre {
+    padding: 15px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+/* Numbered steps inside a docs callout should flow as inline text */
+.docs-body .callout ol {
+  margin: 6px 0 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+.docs-body .callout li {
+  margin: 5px 0 0;
+  font-size: 15px;
+  line-height: 1.72;
+}
+.docs-body .callout li strong {
+  display: inline;
+  font-size: inherit;
+}
+
+/* Browser mockup for the admin web UI (dark console look) */
+.ui-mock {
+  margin: 26px 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: #0b1013;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.ui-mock-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0d1317;
+}
+.ui-mock-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.ui-mock-url {
+  max-width: 62%;
+  margin-left: 10px;
+  padding: 5px 14px;
+  overflow: hidden;
+  border: 1px solid #26343b;
+  border-radius: 999px;
+  background: #11191e;
+  color: #8b9ba0;
+  font: 600 11px/1 "Cascadia Code", Consolas, monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mock-auth {
+  display: grid;
+  place-items: center;
+  padding: 34px 18px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(53, 216, 208, 0.1), transparent 34%),
+    radial-gradient(circle at 82% 88%, rgba(166, 123, 232, 0.1), transparent 34%),
+    #090d10;
+}
+.mock-auth-card {
+  width: min(430px, 100%);
+  padding: 26px;
+  border: 1px solid #354850;
+  border-radius: 12px;
+  background: #11191e;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+}
+.mock-auth-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.mock-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.mock-brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #35d8d0, #a67be8);
+  color: #071013;
+  font-size: 15px;
+  font-weight: 900;
+}
+.mock-brand-name {
+  color: #eef5f3;
+  font-size: 15px;
+  font-weight: 700;
+}
+.mock-brand-en {
+  color: #8b9ba0;
+  font-size: 10px;
+}
+.mock-brand-en strong {
+  color: #eef5f3;
+}
+.mock-theme {
+  color: #63747a;
+  font-size: 13px;
+}
+.mock-kicker {
+  margin-top: 26px;
+  color: #35d8d0;
+  font: 800 10px/1 "Cascadia Code", Consolas, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.mock-title {
+  margin: 7px 0 5px;
+  color: #eef5f3;
+  font-size: 21px;
+  font-weight: 750;
+}
+.mock-sub {
+  margin: 0;
+  color: #8b9ba0;
+  font-size: 12px;
+}
+.mock-form {
+  display: grid;
+  gap: 15px;
+  margin-top: 24px;
+}
+.mock-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+.mock-field > span {
+  color: #8b9ba0;
+  font-size: 10px;
+  font-weight: 650;
+}
+.mock-field input {
+  min-width: 0;
+  min-height: 38px;
+  padding: 7px 10px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #0c1317;
+  color: #eef5f3;
+  font-size: 14px;
+  font-family: inherit;
+}
+.mock-field small,
+.mock-help {
+  color: #63747a;
+  font-size: 10px;
+  line-height: 1.55;
+}
+.mock-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8b9ba0;
+  font-size: 10px;
+  font-weight: 650;
+}
+.mock-check input {
+  width: 16px;
+  height: 16px;
+  accent-color: #35d8d0;
+}
+.mock-submit {
+  min-height: 42px;
+  margin-top: 4px;
+  border: 1px solid rgba(53, 216, 208, 0.58);
+  border-radius: 6px;
+  background: #1d8e89;
+  color: #f7ffff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+.mock-submit:hover {
+  background: #24a29c;
+}
+html[data-theme="light"] .docs-body .ui-mock {
+  border-color: #2b2b29;
+}
+@media (max-width: 560px) {
+  .mock-auth {
+    padding: 22px 12px;
+  }
+  .mock-auth-card {
+    padding: 20px;
+  }
+}
+
+/* Admin console mockup (post-login dashboard) */
+.mock-app {
+  position: relative;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  min-height: 640px;
+  background: #0d1317;
+}
+.mock-sidebar {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 20px 12px 16px;
+  background: #0d1317;
+  border-right: 1px solid #26343b;
+}
+.mock-sb-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 54px;
+  padding: 0 8px 18px;
+  border-bottom: 1px solid #26343b;
+}
+.mock-sb-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border: 1px solid rgba(53, 216, 208, 0.52);
+  border-radius: 8px;
+  background: #13262a;
+  color: #35d8d0;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: inset 0 0 0 1px rgba(166, 123, 232, 0.16);
+}
+.mock-sb-name {
+  overflow: hidden;
+  color: #eef5f3;
+  font-size: 14px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mock-sb-en {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.mock-sb-en span {
+  color: #35d8d0;
+}
+.mock-sb-en strong {
+  color: #a67be8;
+}
+.mock-nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 0;
+}
+.mock-nav-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  color: #8b9ba0;
+  font-size: 12px;
+}
+.mock-nav-item span {
+  color: #63747a;
+  font-size: 15px;
+  text-align: center;
+}
+.mock-nav-item.active {
+  background: rgba(53, 216, 208, 0.09);
+  color: #eef5f3;
+  box-shadow: inset 2px 0 0 #35d8d0;
+}
+.mock-nav-item.active span {
+  color: #35d8d0;
+}
+.mock-nav-item.disabled {
+  opacity: 0.38;
+}
+.mock-account {
+  padding: 12px 8px 12px;
+  border-top: 1px solid #26343b;
+}
+.mock-account-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  color: #63747a;
+  font-size: 10px;
+}
+.mock-account-line strong {
+  color: #eef5f3;
+}
+.mock-account-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+.mock-account-btn {
+  flex: 1;
+  min-height: 30px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #162127;
+  color: #8b9ba0;
+  font-size: 10px;
+  font-weight: 650;
+}
+.mock-account-btn.accent {
+  border-color: rgba(53, 216, 208, 0.34);
+}
+.mock-sb-footer {
+  padding: 12px 8px 0;
+  border-top: 1px solid #26343b;
+}
+.mock-conn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #8b9ba0;
+  font-size: 11px;
+}
+.mock-conn-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #52d38b;
+  box-shadow: 0 0 8px rgba(82, 211, 139, 0.38);
+}
+.mock-version {
+  margin-top: 6px;
+  color: #63747a;
+  font-size: 10px;
+}
+.mock-main {
+  position: relative;
+  display: grid;
+  grid-template-rows: 78px minmax(0, 1fr);
+  min-width: 0;
+  background: #090d10;
+}
+.mock-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 24px;
+  background: rgba(13, 19, 23, 0.96);
+  border-bottom: 1px solid #26343b;
+}
+.mock-kicker {
+  color: #63747a;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+.mock-page-title {
+  margin: 4px 0 0;
+  color: #eef5f3;
+  font-size: 19px;
+  font-weight: 750;
+}
+.mock-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.mock-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #11191e;
+  color: #8b9ba0;
+  font-size: 15px;
+}
+.mock-picker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #8b9ba0;
+  font-size: 11px;
+}
+.mock-select {
+  width: 200px;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #0c1317;
+  color: #eef5f3;
+  font-size: 12px;
+}
+.mock-content {
+  overflow: auto;
+  padding: 22px 24px 36px;
+}
+.mock-view {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+.mock-service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 66px;
+  padding: 12px 16px;
+  border: 1px solid #26343b;
+  border-radius: 8px;
+  background: #11191e;
+}
+.mock-service-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.mock-service-dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  border-radius: 50%;
+  background: #63747a;
+}
+.mock-service-name {
+  color: #eef5f3;
+  font-size: 14px;
+  font-weight: 700;
+}
+.mock-service-addr {
+  margin-top: 4px;
+  color: #8b9ba0;
+  font: 12px "Cascadia Code", Consolas, monospace;
+}
+.mock-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mock-btn {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.mock-btn.secondary {
+  border-color: #26343b;
+  background: #162127;
+  color: #8b9ba0;
+}
+.mock-btn.primary {
+  border-color: rgba(53, 216, 208, 0.58);
+  background: #1d8e89;
+  color: #f7ffff;
+}
+.mock-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+.mock-metric {
+  display: flex;
+  min-width: 0;
+  min-height: 74px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 15px;
+  border: 1px solid #26343b;
+  border-radius: 7px;
+  background: #0f171b;
+}
+.mock-metric span {
+  color: #8b9ba0;
+  font-size: 10px;
+}
+.mock-metric strong {
+  overflow: hidden;
+  color: #eef5f3;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mock-panel {
+  margin-top: 12px;
+  border: 1px solid #26343b;
+  border-radius: 8px;
+  background: #11191e;
+}
+.mock-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 66px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #26343b;
+}
+.mock-panel-title {
+  margin: 0;
+  color: #eef5f3;
+  font-size: 14px;
+  font-weight: 750;
+}
+.mock-panel-sub {
+  display: block;
+  margin-top: 4px;
+  color: #8b9ba0;
+  font-size: 10px;
+}
+.mock-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.mock-table th {
+  height: 34px;
+  padding: 8px 13px;
+  background: #0f171b;
+  color: #63747a;
+  font-size: 9px;
+  font-weight: 800;
+  text-align: left;
+}
+.mock-table td {
+  height: 44px;
+  padding: 8px 13px;
+  border-bottom: 1px solid rgba(38, 52, 59, 0.72);
+  color: #cdd7d6;
+  font-size: 11px;
+  text-align: left;
+}
+.mock-empty {
+  display: grid;
+  place-items: center;
+  min-height: 92px;
+  color: #63747a;
+  font-size: 11px;
+}
+@media (max-width: 840px) {
+  .mock-app {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+  .mock-topbar {
+    padding: 0 16px;
+  }
+  .mock-content {
+    padding: 18px 16px 28px;
+  }
+}
+@media (max-width: 720px) {
+  .mock-app {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mock-sidebar {
+    display: none;
+  }
+  .mock-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mock-service {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .mock-buttons {
+    width: 100%;
+  }
+  .mock-buttons .mock-btn {
+    flex: 1;
+  }
+}
+
+/* Admin console mockup: modal, forms, file list and badges */
+.mock-modal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(4, 8, 10, 0.72);
+}
+.mock-modal {
+  width: min(540px, 100%);
+  padding: 20px;
+  border: 1px solid #354850;
+  border-radius: 10px;
+  background: #11191e;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+.mock-modal-kicker {
+  color: #35d8d0;
+  font: 800 9px/1 "Cascadia Code", Consolas, monospace;
+  letter-spacing: 0.14em;
+}
+.mock-modal-title {
+  margin: 6px 0 0;
+  color: #eef5f3;
+  font-size: 17px;
+  font-weight: 750;
+}
+.mock-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+.mock-field.span-2 {
+  grid-column: span 2;
+}
+.mock-path-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+.mock-path-btn {
+  min-width: 58px;
+  min-height: 38px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #162127;
+  color: #8b9ba0;
+  font-size: 11px;
+  font-weight: 700;
+}
+.mock-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.mock-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 7px;
+  border-radius: 5px;
+  background: rgba(53, 216, 208, 0.09);
+  color: #35d8d0;
+  font-size: 9px;
+  font-weight: 800;
+}
+.mock-badge.modified {
+  background: rgba(232, 184, 103, 0.1);
+  color: #e8b867;
+}
+.mock-badge.removed {
+  background: rgba(237, 116, 125, 0.1);
+  color: #ed747d;
+}
+.mock-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+.mock-summary > div {
+  min-height: 62px;
+  padding: 10px 13px;
+  border: 1px solid #26343b;
+  border-radius: 7px;
+  background: #0f171b;
+}
+.mock-summary span {
+  display: block;
+  color: #8b9ba0;
+  font-size: 10px;
+}
+.mock-summary strong {
+  display: block;
+  margin-top: 5px;
+  color: #eef5f3;
+  font-size: 15px;
+}
+.mock-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(38, 52, 59, 0.72);
+}
+.mock-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8b9ba0;
+  font-size: 11px;
+}
+.mock-toolbar-check {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.mock-toolbar-check input {
+  width: 15px;
+  height: 15px;
+  accent-color: #35d8d0;
+}
+.mock-search {
+  min-width: 170px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #0c1317;
+  color: #eef5f3;
+  font-size: 11px;
+}
+.mock-status-cell {
+  color: #cdd7d6;
+  font-size: 11px;
+}
+.mock-mono {
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 10px;
+}
+.mock-service-dot.running {
+  background: #52d38b;
+  box-shadow: 0 0 11px rgba(82, 211, 139, 0.46);
+}
+.mock-panel-note {
+  margin: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #26343b;
+  background: rgba(12, 20, 24, 0.65);
+  color: #8b9ba0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.mock-panel-note strong {
+  color: #eef5f3;
+  font-weight: 700;
+}
+.mock-textarea {
+  width: 100%;
+  min-height: 86px;
+  padding: 8px 10px;
+  border: 1px solid #26343b;
+  border-radius: 6px;
+  background: #0c1317;
+  color: #eef5f3;
+  font-size: 12px;
+  font-family: inherit;
+  resize: vertical;
+}
+.mock-note-line {
+  margin: 12px 0 0;
+  padding: 9px 11px;
+  border-left: 2px solid #e8b867;
+  background: rgba(232, 184, 103, 0.055);
+  color: #b8aa90;
+  font-size: 11px;
+  line-height: 1.6;
+}
+@media (max-width: 720px) {
+  .mock-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mock-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .mock-field.span-2 {
+    grid-column: span 1;
+  }
+}
+
+/* Compact the admin console mocks so one screen fits inside the frame */
+.mock-app {
+  min-height: 500px;
+}
+.mock-sidebar {
+  padding: 14px 10px 12px;
+}
+.mock-sb-brand {
+  min-height: 44px;
+  padding: 0 8px 12px;
+}
+.mock-nav {
+  gap: 2px;
+  padding: 12px 0;
+}
+.mock-nav-item {
+  min-height: 32px;
+  font-size: 11px;
+}
+.mock-account,
+.mock-sb-footer {
+  display: none;
+}
+.mock-main {
+  grid-template-rows: 56px minmax(0, 1fr);
+}
+.mock-topbar {
+  padding: 0 18px;
+}
+.mock-page-title {
+  font-size: 16px;
+}
+.mock-kicker {
+  font-size: 8px;
+}
+.mock-content {
+  padding: 16px 18px 22px;
+}
+.mock-service {
+  min-height: 56px;
+  padding: 10px 14px;
+}
+.mock-service-name {
+  font-size: 13px;
+}
+.mock-service-addr {
+  margin-top: 2px;
+  font-size: 11px;
+}
+.mock-metrics {
+  gap: 8px;
+  margin: 10px 0;
+}
+.mock-metric {
+  min-height: 58px;
+  gap: 4px;
+  padding: 9px 12px;
+}
+.mock-metric strong {
+  font-size: 15px;
+}
+.mock-panel {
+  margin-top: 10px;
+}
+.mock-panel-header {
+  min-height: 54px;
+  padding: 9px 14px;
+}
+.mock-panel-title {
+  font-size: 13px;
+}
+.mock-panel-note {
+  padding: 9px 14px;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.mock-summary {
+  gap: 8px;
+  margin: 10px 0;
+}
+.mock-summary > div {
+  min-height: 50px;
+  padding: 8px 12px;
+}
+.mock-summary strong {
+  margin-top: 3px;
+  font-size: 13px;
+}
+.mock-toolbar {
+  padding: 8px 14px;
+}
+.mock-table th {
+  height: 30px;
+  padding: 6px 11px;
+  font-size: 8px;
+}
+.mock-table td {
+  height: 34px;
+  padding: 6px 11px;
+  font-size: 10px;
+}
+.mock-form-grid {
+  gap: 10px;
+  margin-top: 12px;
+}
+.mock-field input {
+  min-height: 32px;
+  font-size: 12px;
+}
+.mock-field small,
+.mock-help {
+  font-size: 9px;
+}
+.mock-textarea {
+  min-height: 58px;
+  font-size: 11px;
+}
+.mock-btn {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 11px;
+}
+.mock-search {
+  min-height: 30px;
+  font-size: 10px;
+}
+.mock-path-btn {
+  min-height: 32px;
+  font-size: 10px;
+}
+.mock-modal {
+  padding: 16px;
+}
+.mock-modal-title {
+  font-size: 15px;
+}
+.mock-note-line {
+  margin: 10px 0 0;
+  font-size: 10px;
+}
+
+/* Docs rails: resizable, smaller by default (desktop only) */
+.docs-rail-handle {
+  display: none;
+  position: relative;
+  cursor: col-resize;
+}
+.docs-rail-handle::after {
+  content: "";
+  position: absolute;
+  inset: 0 4px;
+  border-radius: 4px;
+  background: var(--line);
+  opacity: 0.55;
+}
+.docs-rail-handle:hover::after,
+.docs-rail-handle:active::after {
+  background: var(--cyan);
+  opacity: 0.8;
+}
+@media (min-width: 1181px) {
+  .docs-layout {
+    /* Keep the center document wide enough for code and interface previews. */
+    grid-template-columns: var(--rail-left, 200px) 12px minmax(0, 1fr) 12px var(--rail-right, 160px);
+    column-gap: 0;
+  }
+  .docs-rail-handle {
+    display: block;
+    align-self: stretch;
+    min-height: 100%;
+    z-index: 3;
+    touch-action: none;
+  }
+  .docs-sidebar {
+    /* The rail already owns the left edge; do not add a viewport-sized inset. */
+    min-width: 0;
+    overflow-x: hidden;
+    padding: 30px 18px 48px;
+  }
+  .docs-toc {
+    padding: 40px 18px 40px 12px;
+  }
+  .docs-main {
+    width: 100%;
+    min-width: 0;
+    padding: 50px 44px 90px;
+  }
+}
+
+/* Keep embedded management UI previews isolated from documentation typography. */
+.docs-body .docs-article .ui-mock .mock-sub {
+  margin: 0;
+  color: #8b9ba0;
+  font-size: 12px;
+  line-height: normal;
+}
+.docs-body .docs-article .ui-mock .mock-panel-note {
+  margin: 0;
+  color: #8b9ba0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.docs-body .docs-article .ui-mock .mock-brand-en strong,
+.docs-body .docs-article .ui-mock .mock-account-line strong,
+.docs-body .docs-article .ui-mock .mock-panel-note strong {
+  color: #eef5f3;
+}
+.docs-body .docs-article .ui-mock .mock-note-line code {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: #8b9ba0;
+  background: transparent;
+  font: 10px/1.5 "Cascadia Code", Consolas, monospace;
+}
+
+/* Tutorial previews focus on the page being explained; hide the decorative app rail. */
+.docs-body .docs-article .ui-mock .mock-app {
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
+}
+.docs-body .docs-article .ui-mock .mock-sidebar {
+  display: none;
+}
+.docs-body .docs-article .ui-mock .mock-main {
+  width: 100%;
+  min-width: 0;
+}
+
+/* More breathing room inside the admin console mocks */
+.mock-app {
+  min-height: 560px;
+}
+.mock-nav-item {
+  min-height: 36px;
+}
+.mock-main {
+  grid-template-rows: 60px minmax(0, 1fr);
+}
+.mock-content {
+  padding: 20px 22px 28px;
+}
+.mock-service {
+  min-height: 60px;
+  padding: 11px 16px;
+}
+.mock-metric {
+  min-height: 64px;
+  padding: 10px 14px;
+}
+.mock-panel {
+  margin-top: 14px;
+}
+.mock-panel-header {
+  min-height: 58px;
+  padding: 10px 16px;
+}
+.mock-panel-note {
+  padding: 10px 16px;
+}
+.mock-summary > div {
+  min-height: 56px;
+  padding: 9px 13px;
+}
+.mock-toolbar {
+  padding: 9px 16px;
+}
+.mock-table th {
+  height: 32px;
+  padding: 7px 12px;
+}
+.mock-table td {
+  height: 38px;
+  padding: 7px 12px;
+  font-size: 11px;
+}
+.mock-form-grid {
+  gap: 12px;
+  margin-top: 14px;
+}
+.mock-field input {
+  min-height: 34px;
+}
+.mock-modal {
+  padding: 18px;
+}
+.mock-modal-actions {
+  margin-top: 18px;
+}
+
+/* Wider reading column and calmer hierarchy inside tutorial previews. */
+@media (min-width: 1181px) {
+  .docs-main {
+    padding: 50px 28px 90px;
+  }
+  .docs-article {
+    max-width: 1000px;
+  }
+}
+
+.docs-body .docs-article .ui-mock .mock-topbar {
+  min-height: 72px;
+  padding: 14px 24px;
+  gap: 24px;
+}
+.docs-body .docs-article .ui-mock .mock-topbar .mock-kicker {
+  margin: 0;
+  line-height: 1;
+}
+.docs-body .docs-article .ui-mock .mock-topbar .mock-page-title {
+  margin: 5px 0 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+.docs-body .docs-article .ui-mock .mock-topbar-actions {
+  min-width: 0;
+}
+.docs-body .docs-article .ui-mock .mock-content {
+  padding: 24px 26px 34px;
+}
+.docs-body .docs-article .ui-mock .mock-service {
+  min-height: 68px;
+  padding: 14px 18px;
+}
+.docs-body .docs-article .ui-mock .mock-metrics,
+.docs-body .docs-article .ui-mock .mock-summary {
+  gap: 12px;
+  margin: 16px 0;
+}
+.docs-body .docs-article .ui-mock .mock-metric,
+.docs-body .docs-article .ui-mock .mock-summary > div {
+  min-height: 76px;
+  padding: 12px 15px;
+}
+.docs-body .docs-article .ui-mock .mock-metric strong,
+.docs-body .docs-article .ui-mock .mock-summary strong {
+  color: #eef5f3;
+  line-height: 1.3;
+}
+.docs-body .docs-article .ui-mock .mock-panel {
+  margin-top: 18px;
+}
+.docs-body .docs-article .ui-mock .mock-panel-header {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 72px;
+  gap: 24px;
+  padding: 14px 18px;
+}
+.docs-body .docs-article .ui-mock .mock-panel-header > * {
+  min-width: 0;
+}
+.docs-body .docs-article .ui-mock .mock-panel-header .mock-buttons {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.docs-body .docs-article .ui-mock .mock-panel-note {
+  padding: 12px 18px;
+  line-height: 1.7;
+}
+.docs-body .docs-article .ui-mock .mock-toolbar {
+  padding: 11px 18px;
+}
+.docs-body .docs-article .ui-mock .mock-table th {
+  height: 34px;
+  padding: 8px 14px;
+}
+.docs-body .docs-article .ui-mock .mock-table td {
+  height: 40px;
+  padding: 8px 14px;
+}
+
+@media (max-width: 720px) {
+  .docs-body .docs-article .ui-mock .mock-topbar {
+    min-height: 104px;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .docs-body .docs-article .ui-mock .mock-topbar-actions {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .docs-body .docs-article .ui-mock .mock-picker {
+    gap: 6px;
+  }
+  .docs-body .docs-article .ui-mock .mock-select {
+    width: 130px;
+  }
+  .docs-body .docs-article .ui-mock .mock-content {
+    padding: 18px 16px 28px;
+  }
+  .docs-body .docs-article .ui-mock .mock-panel-header {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .docs-body .docs-article .ui-mock .mock-panel-header .mock-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .docs-body .docs-article .ui-mock .mock-panel-note {
+    padding: 10px 14px;
+  }
+  .docs-body .docs-article .ui-mock .mock-toolbar {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Give dense tutorial previews a real frame instead of letting controls touch
+   the panel edge or letting the project modal clip its action row. */
+.docs-body .docs-article .ui-mock .mock-content {
+  padding-inline: 34px;
+}
+.docs-body .docs-article .ui-mock .mock-panel > .mock-form-grid {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0;
+  padding: 10px 18px 18px;
+}
+@media (min-width: 721px) {
+  .docs-body .docs-article .ui-mock:has(.mock-modal-overlay) .mock-app {
+    min-height: 640px;
+  }
+}
+@media (max-width: 720px) {
+  .docs-body .docs-article .ui-mock .mock-content {
+    padding-inline: 16px;
+  }
+  .docs-body .docs-article .ui-mock .mock-panel > .mock-form-grid {
+    padding: 8px 14px 14px;
+  }
+}
+
+/* Warning-yellow term highlight for doc prose; bright gold on dark (matches
+   the admin mock's caution color), deeper gold on light for readability. */
+.docs-body .warn-yellow {
+  color: #a16c06;
+}
+html[data-theme="dark"] .docs-body .warn-yellow {
+  color: #e8b867;
+}
+
+/* Step 3 directory illustration and width-aware summary cards. */
+.docs-file-tree {
+  margin: 22px 0 28px;
+  padding: 18px 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+}
+.docs-file-tree-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  color: var(--muted-2);
+  font-size: 11px;
+}
+.docs-file-tree-head strong {
+  color: var(--text);
+  font-size: 14px;
+}
+.docs-file-tree-head > span::before {
+  content: "这是一个示例 · ";
+}
+.docs-file-tree-row {
+  display: grid;
+  grid-template-columns: 18px 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 8px;
+  border-top: 1px solid var(--line);
+  color: var(--text-soft);
+  font-size: 12px;
+}
+.docs-file-tree-row.nested {
+  padding-left: 34px;
+  color: var(--muted);
+}
+.docs-file-tree-row strong {
+  color: var(--text);
+  font-weight: 700;
+}
+.docs-file-tree .tree-branch {
+  color: var(--muted-2);
+  font: 700 13px/1 "Cascadia Code", Consolas, monospace;
+  text-align: center;
+}
+.docs-file-tree .tree-icon.folder {
+  color: #a16c06;
+  font-size: 10px;
+}
+.docs-file-tree .tree-icon.file {
+  color: var(--muted-2);
+  font-size: 13px;
+  text-align: center;
+}
+.docs-file-tree .tree-note,
+.docs-file-tree em {
+  color: var(--muted-2);
+  font-size: 10px;
+  font-style: normal;
+  white-space: nowrap;
+}
+.docs-file-tree em {
+  color: #a16c06;
+}
+html[data-theme="dark"] .docs-file-tree .tree-icon.folder,
+html[data-theme="dark"] .docs-file-tree em {
+  color: #e8b867;
+}
+
+.docs-body .docs-article .ui-mock .mock-content {
+  container-type: inline-size;
+}
+.docs-body .docs-article .ui-mock .mock-summary > div {
+  min-width: 0;
+  overflow: hidden;
+}
+.docs-body .docs-article .ui-mock .mock-summary > div > * {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@container (max-width: 720px) {
+  .docs-body .docs-article .ui-mock .mock-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@container (max-width: 380px) {
+  .docs-body .docs-article .ui-mock .mock-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Management UI illustration for the two force-sync granularities. */
+.docs-body .sync-rule-preview {
+  margin: 30px 0 28px;
+  overflow: hidden;
+  border: 1px solid #2b4147;
+  border-radius: 18px;
+  color: #ecf4f0;
+  background: #0b1519;
+  box-shadow: 0 18px 44px rgba(10, 20, 22, .14);
+}
+.docs-body .sync-rule-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #23343a;
+}
+.docs-body .sync-rule-kicker {
+  display: block;
+  color: #719498;
+  font: 700 10px/1.2 "Cascadia Code", Consolas, monospace;
+  letter-spacing: .13em;
+}
+.docs-body .sync-rule-preview-head h3 {
+  margin: 7px 0 0;
+  color: #f2f5ee;
+  font-size: 19px;
+  line-height: 1.25;
+}
+.docs-body .sync-rule-project {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border: 1px solid #2b4147;
+  border-radius: 8px;
+  color: #b9c8c4;
+  font-size: 12px;
+}
+.docs-body .sync-rule-preview-note {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 13px 22px;
+  border-bottom: 1px solid #23343a;
+  background: rgba(36, 62, 64, .28);
+  color: #9aada9;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.docs-body .sync-rule-preview-note strong {
+  flex: 0 0 auto;
+  color: #4de6dc;
+  font-size: 12px;
+}
+.docs-body .sync-rule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 16px 18px 18px;
+}
+.docs-body .sync-rule-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #263b41;
+  border-radius: 12px;
+  background: #111f24;
+}
+.docs-body .sync-rule-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.docs-body .sync-rule-card-head > div {
+  min-width: 0;
+}
+.docs-body .sync-rule-label {
+  display: block;
+  color: #839b9a;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.docs-body .sync-rule-card-head strong {
+  display: block;
+  min-width: 0;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+  color: #f1f5ed;
+  font: 700 14px/1.45 "Cascadia Code", Consolas, monospace;
+}
+.docs-body .sync-rule-state {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border: 1px solid rgba(77, 230, 220, .36);
+  border-radius: 999px;
+  color: #4de6dc;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.docs-body .sync-rule-path {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  margin-top: 14px;
+  padding: 10px 11px;
+  border: 1px solid #2a4248;
+  border-radius: 8px;
+  background: #0b171b;
+}
+.docs-body .sync-rule-folder {
+  flex: 0 0 auto;
+  color: #e8b867;
+  font-size: 10px;
+}
+.docs-body .sync-rule-path code {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-wrap: anywhere;
+  color: #e7efeb;
+  border: 0;
+  background: transparent;
+  font: 700 12px/1.45 "Cascadia Code", Consolas, monospace;
+}
+.docs-body .sync-rule-toggle {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 18px;
+  margin-left: auto;
+  border-radius: 999px;
+  background: #218b86;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+}
+.docs-body .sync-rule-toggle i {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #dffcf6;
+}
+.docs-body .sync-rule-card p {
+  margin: 12px 0 0;
+  color: #9aada9;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.docs-body .sync-rule-hint {
+  display: block;
+  margin-top: 12px;
+  color: #d4a653;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.docs-body .sync-rule-preview-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  padding: 12px 22px 15px;
+  border-top: 1px solid #23343a;
+  color: #728a89;
+  font-size: 11px;
+}
+.docs-body .sync-rule-preview-foot span::before {
+  content: "✓";
+  margin-right: 6px;
+  color: #4de6dc;
+}
+@media (max-width: 720px) {
+  .docs-body .sync-rule-preview-head,
+  .docs-body .sync-rule-preview-note {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .docs-body .sync-rule-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .docs-body .sync-rule-preview-head,
+  .docs-body .sync-rule-preview-note {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .docs-body .sync-rule-grid {
+    padding: 12px;
+  }
+  .docs-body .sync-rule-preview-foot {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Match the real admin controls used for directory/file force-sync settings. */
+.docs-body .sync-rule-preview {
+  padding: 0;
+  border: 1px solid rgba(232, 184, 103, .56);
+  border-left: 4px solid #e8b867;
+  border-radius: 14px;
+  background: #0b1519;
+}
+.docs-body .sync-rule-panel + .sync-rule-panel {
+  border-top: 1px solid #2b3b40;
+}
+.docs-body .sync-rule-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid #2b3b40;
+  background: rgba(232, 184, 103, .05);
+}
+.docs-body .sync-rule-panel-head h3 {
+  margin: 0;
+  color: #e8b867;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.docs-body .sync-rule-panel-head p {
+  margin: 5px 0 0;
+  color: #879c9e;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.docs-body .sync-rule-panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+.docs-body .sync-rule-button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid #2b4147;
+  border-radius: 8px;
+  color: #94a9a8;
+  background: #101f25;
+  font: 700 12px/1 "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
+  white-space: nowrap;
+}
+.docs-body .sync-rule-button.primary {
+  border-color: #e8b867;
+  color: #172023;
+  background: #e8b867;
+}
+.docs-body .sync-rule-search {
+  box-sizing: border-box;
+  width: min(300px, 100%);
+  min-width: 150px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #2b4147;
+  border-radius: 8px;
+  outline: 0;
+  color: #e7efeb;
+  background: #081217;
+  font: 12px/1 "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
+}
+.docs-body .sync-rule-search::placeholder {
+  color: #718689;
+}
+.docs-body .sync-rule-panel-note {
+  margin: 0;
+  padding: 15px 20px;
+  border-bottom: 1px solid #2b3b40;
+  color: #84999a;
+  background: #0d1a1f;
+  font-size: 12px;
+  line-height: 1.75;
+}
+.docs-body .sync-rule-panel-note strong {
+  color: #e8b867;
+}
+.docs-body .sync-rule-select-all {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #2b3b40;
+  color: #91a5a5;
+  font-size: 12px;
+}
+.docs-body .sync-rule-select-all input,
+.docs-body .sync-rule-checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0 4px 0 0;
+  accent-color: #e8b867;
+}
+.docs-body .sync-rule-select-all strong {
+  color: #e9f0eb;
+  font-size: 13px;
+}
+.docs-body .sync-rule-table {
+  overflow: hidden;
+}
+.docs-body .sync-rule-table-head,
+.docs-body .sync-rule-table-row {
+  display: grid;
+  align-items: center;
+  min-width: 0;
+}
+.docs-body .sync-rule-dir-grid,
+.docs-body .sync-rule-file-grid {
+  grid-template-columns: 52px minmax(165px, 1.15fr) minmax(165px, 1.35fr) 62px;
+}
+.docs-body .sync-rule-table-head {
+  min-height: 43px;
+  padding: 0 20px;
+  color: #71898b;
+  font-size: 11px;
+  font-weight: 700;
+  background: #0b171b;
+}
+.docs-body .sync-rule-table-row {
+  min-height: 58px;
+  padding: 0 20px;
+  border-top: 1px solid #26363b;
+  color: #90a5a4;
+  font-size: 11px;
+  background: #102126;
+}
+.docs-body .sync-rule-table-row > * {
+  min-width: 0;
+}
+.docs-body .sync-rule-table-row > strong {
+  color: #d9e4de;
+  font-size: 11px;
+  line-height: 1.45;
+}
+.docs-body .sync-rule-checkbox {
+  display: flex;
+  align-items: center;
+}
+.docs-body .sync-rule-entry {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+}
+.docs-body .sync-rule-entry strong {
+  color: #e8efea;
+  font: 700 13px/1.4 "Cascadia Code", Consolas, monospace;
+}
+.docs-body .sync-rule-entry em {
+  color: #71898b;
+  font-size: 11px;
+  font-style: normal;
+  white-space: nowrap;
+}
+.docs-body .sync-rule-chevron {
+  flex: 0 0 12px;
+  color: #8ba2a1;
+  font: 700 18px/1 Arial, sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+.docs-body .sync-rule-folder-mark {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 14px;
+  border: 2px solid #e8b867;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.docs-body .sync-rule-folder-mark::before {
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  width: 9px;
+  height: 5px;
+  border: 2px solid #e8b867;
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+  content: "";
+}
+.docs-body .sync-rule-panel-foot {
+  margin: 0;
+  padding: 13px 20px 15px;
+  border-top: 1px solid #2b3b40;
+  color: #b49b72;
+  background: rgba(232, 184, 103, .07);
+  font-size: 11px;
+  line-height: 1.65;
+}
+@media (max-width: 760px) {
+  .docs-body .sync-rule-panel-head {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .docs-body .sync-rule-panel-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .docs-body .sync-rule-search {
+    flex: 1 1 190px;
+  }
+}
+@media (max-width: 560px) {
+  .docs-body .sync-rule-panel-head,
+  .docs-body .sync-rule-panel-note,
+  .docs-body .sync-rule-select-all,
+  .docs-body .sync-rule-panel-foot {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .docs-body .sync-rule-dir-grid,
+  .docs-body .sync-rule-file-grid {
+    grid-template-columns: 38px minmax(0, 1.2fr) minmax(0, 1fr) 52px;
+  }
+  .docs-body .sync-rule-table-head,
+  .docs-body .sync-rule-table-row {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .docs-body .sync-rule-table-head {
+    font-size: 10px;
+  }
+  .docs-body .sync-rule-table-row > strong,
+  .docs-body .sync-rule-entry em {
+    font-size: 10px;
+  }
+  .docs-body .sync-rule-entry strong {
+    font-size: 12px;
+  }
+}

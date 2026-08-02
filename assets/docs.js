@@ -1,13 +1,10 @@
-﻿(() => {
+(() => {
   const pages = [
     { title: "概览", description: "理解管理端、玩家端与完整工作链路。", href: "./index.html", keywords: "概览 服主 玩家 工作流程 自托管 不替代启动器" },
-    { title: "完整部署教程", description: "从管理端安装到玩家首次启动，覆盖 Web 与交互终端。", href: "./quickstart.html", keywords: "部署 安装 Web 终端 SSH 项目 玩家程序 首次发布 玩家实例 PCL javaagent 8080 18080" },
-    { title: "管理端功能", description: "管理端能力、数据边界、端口与 Web/终端关系。", href: "./admin.html", keywords: "管理端 项目 源文件 扫描 发布 回滚 备份 恢复 多项目 data" },
-    { title: "扫描、发布与版本", description: "扫描预览、移除处理、不可变发布、版本与回滚。", href: "./publish.html", keywords: "扫描 发布 移除 删除 放弃管理 版本 回滚 玩家端程序" },
-    { title: "玩家端功能与接入", description: "启动前检查、界面、日志、本地管理与启动器接入。", href: "./player.html", keywords: "玩家端 PCL HMCL 启动器 javaagent 更新记录 日志 新闻 模组启停 本地文件" },
-    { title: "同步策略与本地管理", description: "默认同步、强制同步、玩家豁免与模组启停。", href: "./sync.html", keywords: "默认同步 强制同步 强制目录 强制文件 玩家本地豁免 模组启停 放弃管理 归档" },
-    { title: "安全、离线与事务恢复", description: "Ed25519 签名、SHA-256 传输校验、路径安全、原子安装与离线边界。", href: "./offline.html", keywords: "安全 Ed25519 SHA-256 哈希 签名 防重放 传输 Range 原子事务 备份 恢复 路径安全 离线启动 归档" },
-    { title: "常见问题", description: "端口、完整包、玩家程序、VPS 与自选模组问题。", href: "./faq.html", keywords: "FAQ 8080 18080 完整包 VPS SSH 自选模组 标准目录 Web 常驻" },
+    { title: "下载与首次配置", description: "下载解压管理端，完成第一次运行引导与首次设置。", href: "./quickstart.html", keywords: "下载 解压 安装 管理端 首次运行 引导 data 8080 18080 SSH" },
+    { title: "创建第一个项目", description: "创建整合包项目、生成首次部署包并完成启动器接入。", href: "./create-project.html", keywords: "创建项目 项目 ID 公共地址 Web 配置 命令行 终端 首次部署包 PCL HMCL Prism Java Agent javaagent JVM arguments.jvm 版本 JSON 版本隔离 game_directory gameDir" },
+    { title: "日常维护", description: "日常更新、历史回滚、服务管理、备份恢复与升级管理端。", href: "./maintenance.html", keywords: "维护 更新 回滚 备份 恢复 升级 服务 健康检查 常驻 多项目" },
+    { title: "常见问题", description: "端口、完整包、玩家程序、启动器接入、VPS 与自选模组问题。", href: "./faq.html", keywords: "FAQ 8080 18080 完整包 VPS SSH 自选模组 标准目录 Web 常驻 PCL HMCL javaagent game_directory arguments.jvm 版本隔离" },
     { title: "版本与更新日志", description: "当前组件版本与近期主要改进。", href: "./changelog.html", keywords: "更新日志 版本 玩家端 管理端 Agent" }
   ];
 
@@ -134,4 +131,64 @@
     }, { rootMargin: "-92px 0px -70% 0px", threshold: [0, 1] });
     sections.forEach((section) => observer.observe(section));
   }
+})();
+
+(() => {
+  const layout = document.querySelector(".docs-layout");
+  const leftHandle = document.querySelector('[data-rail="left"]');
+  const rightHandle = document.querySelector('[data-rail="right"]');
+  if (!layout || !leftHandle || !rightHandle) return;
+
+  const leftKey = "dfs-rail-left";
+  const rightKey = "dfs-rail-right";
+
+  const load = (key, fallback) => {
+    try {
+      const v = parseFloat(localStorage.getItem(key));
+      return Number.isFinite(v) ? v : fallback;
+    } catch (_) {
+      return fallback;
+    }
+  };
+  const save = (key, value) => {
+    try {
+      localStorage.setItem(key, String(value));
+    } catch (_) {}
+  };
+
+  const apply = () => {
+    if (window.innerWidth <= 1180) return;
+    layout.style.setProperty("--rail-left", load(leftKey, 200) + "px");
+    layout.style.setProperty("--rail-right", load(rightKey, 160) + "px");
+  };
+
+  const startDrag = (property, key, min, max, invert) => (event) => {
+    if (event.button !== undefined && event.button !== 0) return;
+    event.preventDefault();
+    const startX = event.clientX;
+    const startValue = load(key, property === "--rail-left" ? 200 : 160);
+    const move = (e) => {
+      const delta = (e.clientX - startX) * (invert ? -1 : 1);
+      const value = Math.min(max, Math.max(min, startValue + delta));
+      layout.style.setProperty(property, value + "px");
+      save(key, value);
+    };
+    const up = () => {
+      document.removeEventListener("pointermove", move);
+      document.removeEventListener("pointerup", up);
+      document.removeEventListener("pointercancel", up);
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+    };
+    document.addEventListener("pointermove", move);
+    document.addEventListener("pointerup", up);
+    document.addEventListener("pointercancel", up);
+    document.body.style.cursor = "col-resize";
+    document.body.style.userSelect = "none";
+  };
+
+  leftHandle.addEventListener("pointerdown", startDrag("--rail-left", leftKey, 150, 330, false));
+  rightHandle.addEventListener("pointerdown", startDrag("--rail-right", rightKey, 120, 280, true));
+  apply();
+  window.addEventListener("resize", apply);
 })();

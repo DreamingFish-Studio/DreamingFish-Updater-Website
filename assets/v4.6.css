@@ -149,6 +149,108 @@ html[data-theme="light"] .product-page .brand-copy {
 .signal-capsule strong { font-size: 14px; font-weight: 700; }
 .signal-capsule-arrow { color: var(--muted); font-size: 19px; line-height: 1; }
 
+/* Keep the hero handoff compact on small screens and give the documentation link a clear place beside it. */
+.signal-capsule-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.signal-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 5px;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color .2s ease, border-color .2s ease;
+}
+.signal-doc-link:hover { color: var(--cyan); border-color: var(--cyan); }
+.signal-doc-link span { font-size: 16px; line-height: 1; }
+
+/* Product-page navigation uses a real menu before the links become narrow enough to wrap character by character. */
+@media (max-width: 1280px) {
+  .product-page .site-header .navbar {
+    min-height: 68px;
+    gap: 12px;
+  }
+  .product-page .site-header .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .product-page .site-header .brand-copy {
+    min-width: 0;
+  }
+  .product-page .site-header .brand-wordmark {
+    white-space: nowrap;
+    font-size: 15px;
+  }
+  .product-page .site-header .nav-links {
+    position: fixed;
+    left: 17px;
+    right: 17px;
+    top: 74px;
+    z-index: 80;
+    display: none !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+  }
+  .product-page .site-header .nav-links.open {
+    display: flex !important;
+  }
+  .product-page .site-header .nav-links a {
+    display: block;
+    padding: 12px 14px;
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+  .product-page .site-header .nav-actions {
+    flex: 0 0 auto;
+    gap: 7px;
+  }
+  .product-page .site-header .nav-actions .button.secondary {
+    display: none;
+  }
+  .product-page .site-header .mobile-toggle {
+    display: grid;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-page .brand-copy {
+    display: grid;
+  }
+  .product-page .brand-copy .brand-wordmark {
+    display: block;
+  }
+  .product-page .brand-copy > span:not(.brand-wordmark) {
+    display: none;
+  }
+  .product-page .site-header .nav-actions > .button.primary {
+    display: none;
+  }
+  .signal-section { padding: 30px 0 86px; }
+  .signal-capsule-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .signal-capsule {
+    min-height: 48px;
+    padding-inline: 14px;
+  }
+  .signal-capsule strong { font-size: 13px; }
+}
+
 /* Compact management Web mock used in the hero. */
 .admin-demo {
   position: relative;

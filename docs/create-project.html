@@ -1,0 +1,332 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="完成首次设置后，创建你的第一个整合包项目，并认识终端主菜单。"><meta name="color-scheme" content="light dark"><title>创建第一个项目 · DreamingFish Updater 文档</title><script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script><link rel="icon" href="../assets/logo.svg"><link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="../assets/v4.css?v=11"></head><body class="docs-body">
+<header class="site-header docs-header"><div class="container navbar"><div style="display:flex;align-items:center;gap:10px"><button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button><a class="brand" href="../index.html"><img src="../assets/logo.svg" alt=""><span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span></a></div><button class="docs-search-button" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><span>搜索文档</span><kbd>Ctrl K</kbd></button><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式"><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg></button><a class="button ghost" href="../index.html">返回官网</a><a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg> GitHub</a></div></div></header>
+<div class="docs-layout"><aside class="docs-sidebar" data-docs-sidebar><div class="docs-group"><div class="docs-group-title">开始</div><nav class="docs-nav"><a class="" href="./index.html">概览</a><a class="" href="./quickstart.html">下载与首次配置</a><a class="active" href="./create-project.html">创建第一个项目</a></nav></div><div class="docs-group"><div class="docs-group-title">服主指南</div><nav class="docs-nav"><a class="" href="./maintenance.html">日常维护</a></nav></div><div class="docs-group"><div class="docs-group-title">参考</div><nav class="docs-nav"><a class="" href="./faq.html">常见问题</a><a class="" href="./changelog.html">版本与更新日志</a></nav></div></aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div><main class="docs-main"><article class="docs-article"><div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>创建第一个项目</span></div><h1>创建第一个项目</h1><p class="docs-lead">上一页完成了首次设置，让我们继续配置吧！下面我们先走一遍 <strong>Web 配置模式</strong>——这是推荐的方式；习惯用终端的朋友，也可以<a href="#cli-mode">直接跳到文末的交互式命令行版本</a>。</p>
+<h2 id="web-mode">Web 配置模式<a class="anchor-link" href="#web-mode">#</a></h2>
+<p>这是推荐的方式。按 <code>Y</code> 后管理端会自动启动 Web 管理界面。下面就是按 Y 后终端显示的内容：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">按 Y 后 · Web 管理界面启动</span></div>
+<pre>Web 管理界面已启动，监听：127.0.0.1:18080
+
+如果管理端运行在当前电脑：
+  请直接在浏览器打开：http://127.0.0.1:18080/
+
+如果管理端运行在远程服务器且保持安全的 127.0.0.1 监听：
+  1. 在您自己的电脑上打开终端，运行以下 SSH 隧道命令：
+     ssh -N -L 18080:127.0.0.1:18080 用户名@您的服务器地址
+  2. 保持 SSH 窗口运行，再在自己电脑的浏览器打开：
+     http://127.0.0.1:18080/
+同机 Caddy/Nginx 可代理 127.0.0.1 到公网 443，这是推荐部署方式。
+
+按 Ctrl+C 停止服务并返回主菜单。</pre></div>
+<div class="callout"><span class="callout-icon">i</span><div><strong>怎么打开 Web 管理页面？</strong><p>管理端就在当前电脑：直接在浏览器打开 <code>http://127.0.0.1:18080/</code>。管理端在远程服务器：先在自己电脑上运行 <code>ssh -N -L 18080:127.0.0.1:18080 用户名@您的服务器地址</code>，保持这个终端窗口运行，再打开 <code>http://127.0.0.1:18080/</code>。不要把 <code>18080</code> 直接暴露到公网——就算不小心暴露了，没有注册的管理账户和会话令牌也连不上管理功能，远程登录还强制要求 HTTPS；但依然不建议暴露，正确做法是 SSH 隧道加 HTTPS 反向代理。</p></div></div>
+<h3 id="web-first-step">打开浏览器后的第一步：创建管理员账户<a class="anchor-link" href="#web-first-step">#</a></h3>
+<p>首次打开 Web 管理界面时，会先看到下面的页面：</p>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-auth"><div class="mock-auth-card"><div class="mock-auth-top"><div class="mock-brand"><div class="mock-brand-mark">DF</div><div><div class="mock-brand-name">梦鱼更新管理</div><div class="mock-brand-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><span class="mock-theme">☀</span></div><div class="mock-kicker">FIRST TIME SETUP</div><div class="mock-title">创建管理员账户</div><p class="mock-sub">此账户用于从公网访问管理界面。</p><div class="mock-form"><label class="mock-field"><span>用户名</span><input autocomplete="off"><small>3–32 位，只能使用字母、数字、点、下划线或连字符。</small></label><label class="mock-field"><span>密码</span><input type="password"><small>至少 10 位，建议使用 14 位以上且不与其他网站重复的密码。</small></label><label class="mock-field"><span>确认密码</span><input type="password"></label><label class="mock-check"><input type="checkbox" checked><span>允许在管理服务本机访问时免登录</span></label><small class="mock-help">仅回环地址的请求可免登录；公网访问始终需要账户密码。</small><button class="mock-submit" type="button">创建账户并进入</button></div></div></div></div>
+<div class="callout"><span class="callout-icon">i</span><div><strong>注册完就省事了</strong><p>注册完成后，你可以选择在本机或 SSH 访问时免登录：只要勾选了“允许在管理服务本机访问时免登录”，通过 <code>127.0.0.1</code> 访问管理页面就不用每次输入密码；公网访问始终需要账户密码。</p></div></div>
+<h3 id="web-step-2">第 2 步 · 创建项目<a class="anchor-link" href="#web-step-2">#</a></h3>
+<p>登录后，点击概览页的“＋ 新建项目”，让我们来创建第一个项目吧！弹出的表单里只有四个必填项：<strong>项目 ID</strong>、<strong>项目显示名称</strong>（会以标题字样显示在玩家端的更新器里）、<strong>要管理的文件目录</strong>和<strong>玩家端更新器访问地址</strong>，其余可以先留空。「<span class="warn-yellow">强制同步一级目录</span>」先不要填写，两种管理模式的区别，下面马上就会讲。</p>
+<p>这里有三个容易出错的地方，先提醒你：</p>
+<ul>
+<li><strong>项目 ID</strong>：创建后不要随意改。</li>
+<li><strong>要管理的文件目录</strong>：这是你要管理的文件目录，不要和管理端 <code>data</code> 混在一起。</li>
+<li><strong>玩家端更新器访问地址</strong>：必须是玩家电脑能访问的公网地址（例如公网端口映射到内部 8080），不能填 <code>127.0.0.1</code> 或内网地址。</li>
+</ul>
+<p>创建项目后，这个项目的信息你还可以在「项目设置」里继续修改，比如给玩家端更新器填写副标题（额外设置，不填也可以）。</p>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-app"><aside class="mock-sidebar"><div class="mock-sb-brand"><div class="mock-sb-mark">DF</div><div><div class="mock-sb-name">梦鱼更新管理</div><div class="mock-sb-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><div class="mock-nav"><div class="mock-nav-item active"><span>⌂</span>概览</div><div class="mock-nav-item"><span>◫</span>项目设置</div><div class="mock-nav-item"><span>↑</span>管理文件</div><div class="mock-nav-item"><span>▣</span>玩家端程序</div><div class="mock-nav-item"><span>◇</span>玩家实例</div><div class="mock-nav-item"><span>⚙</span>服务设置</div></div><div class="mock-account"><div class="mock-account-line"><span>当前登录</span><strong>管理员</strong></div><div class="mock-account-buttons"><button class="mock-account-btn accent" type="button">账户安全</button><button class="mock-account-btn" type="button">登出</button></div></div><div class="mock-sb-footer"><div class="mock-conn"><span class="mock-conn-dot"></span><span>已连接</span></div><div class="mock-version">DreamingFish Admin v0.1.18</div></div></aside><div class="mock-main"><header class="mock-topbar"><div><div class="mock-kicker">MANAGEMENT CONSOLE</div><div class="mock-page-title">运行概览</div></div><div class="mock-topbar-actions"><span class="mock-icon-btn">☀</span><label class="mock-picker"><span>当前项目</span><select class="mock-select"><option>尚未创建项目</option></select></label><span class="mock-icon-btn">↻</span></div></header><div class="mock-content"><div class="mock-view"></div><div class="mock-modal-overlay"><div class="mock-modal"><div class="mock-modal-kicker">NEW PROJECT</div><div class="mock-modal-title">创建整合包项目</div><div class="mock-form-grid"><label class="mock-field"><span>项目 ID（必填）</span><input value="dreamhaven"><small>用于接口、目录和玩家端绑定，创建后不应随意更改。</small></label><label class="mock-field"><span>项目显示名称（必填）</span><input value="梦屿"><small>会显示在管理端和玩家端更新器中。</small></label><label class="mock-field span-2"><span>要管理的文件目录（必填）</span><div class="mock-path-row"><input value="/srv/minecraft/modpack-source"><button class="mock-path-btn" type="button">浏览</button></div><small>选择服务器上存放 mods、config 等待管理文件的目录；必须与管理端 data 目录分开。</small></label><label class="mock-field span-2"><span>玩家端更新器访问地址（必填）</span><input value="http://您的公网IP:端口"><small>玩家电脑上的更新器实际访问地址；不要填写 0.0.0.0、127.0.0.1 或内网地址。</small></label><label class="mock-field span-2"><span style="color:#e8b867">强制同步一级目录（可选，谨慎启用）</span><input placeholder="mods, config"><small>首次创建可以留空，之后可在“管理文件”中设置。</small></label><label class="mock-field span-2"><span>Minecraft 服务器地址（可选）</span><input placeholder="play.example.com:25565"></label></div><div class="mock-modal-actions"><button class="mock-btn secondary" type="button">取消</button><button class="mock-btn primary" type="button">创建项目</button></div></div></div></div></div></div>
+</div>
+
+<h3 id="web-step-3">第 3 步 · 上传文件<a class="anchor-link" href="#web-step-3">#</a></h3>
+<p>项目建好后进入“管理文件”。我们建议：你可以直接在服务器标准目录里放好文件后点“↻ 刷新”，后续调整单个文件模组再在网页端直接点击“＋ 添加文件”。</p>
+<div class="docs-file-tree" role="img" aria-label="服务器标准目录文件树示例"><div class="docs-file-tree-head"><strong>服务器标准目录</strong><span>更新器管理范围</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>modpack-source/</strong><span class="tree-note">标准目录</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>mods/</strong><span class="tree-note">98 个文件</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>dreamingfish-core.jar</span><em>强制同步</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>performance-helper.jar</span><em>普通托管</em></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>config/</strong><span class="tree-note">42 个文件</span></div></div></div>
+<p>这里看到的文件<strong>不会立刻影响玩家</strong>，只有扫描并发布新版本后才会生效。</p>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-app"><aside class="mock-sidebar"><div class="mock-sb-brand"><div class="mock-sb-mark">DF</div><div><div class="mock-sb-name">梦鱼更新管理</div><div class="mock-sb-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><div class="mock-nav"><div class="mock-nav-item"><span>⌂</span>概览</div><div class="mock-nav-item"><span>◫</span>项目设置</div><div class="mock-nav-item active"><span>↑</span>管理文件</div><div class="mock-nav-item"><span>▣</span>玩家端程序</div><div class="mock-nav-item"><span>◇</span>玩家实例</div><div class="mock-nav-item"><span>⚙</span>服务设置</div></div><div class="mock-account"><div class="mock-account-line"><span>当前登录</span><strong>管理员</strong></div><div class="mock-account-buttons"><button class="mock-account-btn accent" type="button">账户安全</button><button class="mock-account-btn" type="button">登出</button></div></div><div class="mock-sb-footer"><div class="mock-conn"><span class="mock-conn-dot"></span><span>已连接</span></div><div class="mock-version">DreamingFish Admin v0.1.18</div></div></aside><div class="mock-main"><header class="mock-topbar"><div><div class="mock-kicker">MANAGEMENT CONSOLE</div><div class="mock-page-title">管理文件</div></div><div class="mock-topbar-actions"><span class="mock-icon-btn">☀</span><label class="mock-picker"><span>当前项目</span><select class="mock-select"><option>梦屿</option></select></label><span class="mock-icon-btn">↻</span></div></header><div class="mock-content"><div class="mock-view"><div class="mock-panel"><div class="mock-panel-header"><div><div class="mock-panel-title">整合包文件</div><span class="mock-panel-sub">4 个文件 · 1 个文件夹</span></div><div class="mock-buttons"><input class="mock-search" placeholder="搜索路径"><button class="mock-btn secondary" type="button">↻ 刷新</button><button class="mock-btn primary" type="button">＋ 添加文件</button></div></div><p class="mock-panel-note"><strong>这里展示管理服务器“要管理的文件目录”中的真实内容。</strong>添加或移除会直接修改该目录，但只有扫描并发布新版本后才会影响玩家。</p><div class="mock-summary"><div><span>托管文件</span><strong>4</strong></div><div><span>总大小</span><strong>128.4 MB</strong></div><div><span>强制同步</span><strong>0</strong></div><div><span>状态</span><strong>待扫描</strong></div></div><div class="mock-toolbar"><div class="mock-toolbar-left"><label class="mock-toolbar-check"><input type="checkbox"><span>全选当前列表</span></label><span>未选择文件</span></div><div class="mock-buttons"><button class="mock-btn secondary" type="button">清空选择</button><button class="mock-btn secondary" type="button" style="border-color:rgba(237,116,125,.55);color:#ed747d">移除所选</button></div></div><table class="mock-table"><thead><tr><th>选择</th><th>状态</th><th>文件或文件夹</th><th>大小</th><th>修改时间</th></tr></thead><tbody><tr><td><input type="checkbox" style="accent-color:#35d8d0"></td><td><span class="mock-badge">新增</span></td><td class="mock-status-cell">mods/</td><td>--</td><td class="mock-mono">2026-08-02 16:20</td></tr><tr><td><input type="checkbox" style="accent-color:#35d8d0"></td><td><span class="mock-badge">新增</span></td><td class="mock-status-cell">mods/mod-a.jar</td><td>12.4 MB</td><td class="mock-mono">2026-08-02 16:21</td></tr><tr><td><input type="checkbox" style="accent-color:#35d8d0"></td><td><span class="mock-badge">新增</span></td><td class="mock-status-cell">config/mod-a.toml</td><td>2.1 KB</td><td class="mock-mono">2026-08-02 16:21</td></tr><tr><td><input type="checkbox" style="accent-color:#35d8d0"></td><td><span class="mock-badge">新增</span></td><td class="mock-status-cell">config/mod-a/</td><td>--</td><td class="mock-mono">2026-08-02 16:22</td></tr></tbody></table></div></div></div></div></div></div>
+
+ <p>配置好后往下滑，接下来你会看到管理端里的这个界面。下面我们详细介绍两种同步模式：</p>
+  <div class="sync-rule-preview" aria-label="管理端强制同步设置示例">
+  <section class="sync-rule-panel">
+  <header class="sync-rule-panel-head"><div><h3>管理强制同步目录（谨慎启用）</h3><p>未设置强制同步目录</p></div><div class="sync-rule-panel-actions"><button class="sync-rule-button secondary" type="button">清空选择</button><button class="sync-rule-button primary" type="button">保存目录设置</button></div></header>
+  <p class="sync-rule-panel-note"><strong>适合 mods、config 等需要与服务器完全一致的整个一级目录。</strong>启用后，目录内文件不能被玩家豁免，玩家额外添加的文件也会被归档移出。这里只列出“要管理的文件目录”中实际存在的一级目录。</p>
+  <div class="sync-rule-select-all"><input type="checkbox" aria-label="全选现有一级目录"><strong>全选现有一级目录</strong><span>2 个现有一级目录</span></div>
+  <div class="sync-rule-table">
+  <div class="sync-rule-table-head sync-rule-dir-grid"><span>强制</span><span>一级目录</span><span>同步效果</span><span>文件数</span></div>
+  <div class="sync-rule-table-row sync-rule-dir-grid"><span class="sync-rule-checkbox"><input type="checkbox" aria-label="强制同步 config 目录"></span><span class="sync-rule-entry"><i class="sync-rule-chevron">›</i><i class="sync-rule-folder-mark" aria-hidden="true"></i><strong>config/</strong><em>9 个文件</em></span><strong>普通管理，不处理玩家额外文件</strong><strong>9</strong></div>
+  <div class="sync-rule-table-row sync-rule-dir-grid"><span class="sync-rule-checkbox"><input type="checkbox" aria-label="强制同步 mods 目录"></span><span class="sync-rule-entry"><i class="sync-rule-chevron">›</i><i class="sync-rule-folder-mark" aria-hidden="true"></i><strong>mods/</strong><em>62 个文件</em></span><strong>普通管理，不处理玩家额外文件</strong><strong>62</strong></div>
+  </div>
+  <p class="sync-rule-panel-foot">强制同步目录会持续包含以后新增到该目录的文件；修改后还需要重新扫描并发布新版本，才会对玩家生效。</p>
+  </section>
+  <section class="sync-rule-panel">
+  <header class="sync-rule-panel-head"><div><h3>单文件强制同步（谨慎启用）</h3><p>未单独强制任何文件</p></div><div class="sync-rule-panel-actions"><input class="sync-rule-search" type="search" placeholder="搜索文件" aria-label="搜索文件"><button class="sync-rule-button secondary" type="button">清空选择</button><button class="sync-rule-button primary" type="button">保存设置</button></div></header>
+  <p class="sync-rule-panel-note"><strong>普通托管文件本来就会随发布更新；这里的额外作用是禁止玩家豁免选中的文件。</strong>它不会清理同目录的其它文件。即使全选，也只会记录当前已有文件，以后新增的文件不会自动加入；需要整个目录保持一致时，请使用上方“管理强制同步目录”。</p>
+  <div class="sync-rule-select-all"><input type="checkbox" aria-label="全选当前列表"><strong>全选当前列表</strong><span>71 个文件，文件夹可整组选择</span></div>
+  <div class="sync-rule-table">
+  <div class="sync-rule-table-head sync-rule-file-grid"><span>强制</span><span>文件或文件夹</span><span>策略</span><span>大小</span></div>
+  <div class="sync-rule-table-row sync-rule-file-grid"><span class="sync-rule-checkbox"><input type="checkbox" aria-label="选择 config 目录下文件"></span><span class="sync-rule-entry"><i class="sync-rule-chevron">›</i><i class="sync-rule-folder-mark" aria-hidden="true"></i><strong>config/</strong><em>9 个文件</em></span><strong>9 个可选文件</strong><strong>34.4 KiB</strong></div>
+  <div class="sync-rule-table-row sync-rule-file-grid"><span class="sync-rule-checkbox"><input type="checkbox" aria-label="选择 mods 目录下文件"></span><span class="sync-rule-entry"><i class="sync-rule-chevron">›</i><i class="sync-rule-folder-mark" aria-hidden="true"></i><strong>mods/</strong><em>62 个文件</em></span><strong>62 个可选文件</strong><strong>155 MiB</strong></div>
+  </div>
+  <p class="sync-rule-panel-foot">单文件强制同步只影响选中的具体文件，主要用于禁止玩家豁免；不会归档同目录的额外文件，也不等于强制同步整个目录。</p>
+  </section>
+  </div>
+ <h3 id="web-step-3-modes">两种同步模式<a class="anchor-link" href="#web-step-3-modes">#</a></h3>
+<p>这就是第 2 步里我们让你先不要填写「强制同步一级目录」的原因——管理端有两种同步模式：</p>
+<div class="mode-compare"><div class="compare-card default"><span class="badge">默认同步</span><h3>只维护明确托管的内容</h3><p>发布清单中的文件缺失或损坏时恢复；不在清单中的玩家额外文件默认保留。玩家可以对普通托管内容设置本地豁免。</p><ul class="feature-list"><li>适合大多数整合包项目</li><li>保留玩家兼容配置与自选模组</li><li>文件管理边界清晰、温和</li></ul></div><div class="compare-card force" style="border-color:rgba(237,116,125,.55);background:rgba(237,116,125,.06)"><span class="badge neutral" style="border-color:rgba(237,116,125,.40);color:#ed747d;background:rgba(237,116,125,.09)">强制同步</span><h3>强制和远程服务器同步</h3><p>指定范围内的内容以服务器为准：文件会被强制覆盖，<strong>玩家会无法自己添加模组</strong>，多出来的文件会被移入归档。</p><ul class="feature-list"><li>适合核心模组和关键配置</li><li>可以按一级目录整体强制，或只强制单个文件</li><li>设置变化需要重新扫描并发布</li></ul></div></div>
+ <p>强制同步分为<strong>强制同步目录</strong>和<strong>强制同步文件</strong>两种：前者按一级目录整体递归强制，比如把 <code>mods</code> 设为强制目录；后者只指定单个文件，比如 <code>config/server-required.toml</code>。</p>
+<div class="callout"><span class="callout-icon">i</span><div><strong>强制同步单个文件和默认同步有什么区别？</strong><p>你可能会问这个问题：强制同步单个文件的作用，就是可以防止玩家豁免某个文件。比如核心模组，或者你的服务器可能有一些反作弊模组，你可以用强制同步来防止玩家禁用它。</p></div></div>
+<p>不过，大部分情况下其实都不需要设置强制同步：默认同步已经适合绝大多数整合包项目，等真正遇到需要锁定的内容（比如核心模组、反作弊）时，再按需开启也不迟。</p>
+
+<h3 id="web-step-4">第 4 步 · 扫描并发布<a class="anchor-link" href="#web-step-4">#</a></h3>
+<p>接着向下滑，点击“↻ 扫描整合包目录”，先看变更预览：新增、修改、移除的文件和预计下载量。重点检查<strong>移除后的处理</strong>：从玩家端删除，或放弃管理并保留玩家副本。不过，第一次发布应该都是「新增」，基本不会遇到移除；如果以后需要删除，管理端会逐个询问处理方式。</p>
+<p>确认无误后填写本次显示版本（如 <code>1.0.0</code>）、最低玩家端程序版本和更新记录，点击“发布整合包”。发布是不可变的：内容有误就修正目录再发新版本，不要修改旧版本。</p>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-app"><aside class="mock-sidebar"><div class="mock-sb-brand"><div class="mock-sb-mark">DF</div><div><div class="mock-sb-name">梦鱼更新管理</div><div class="mock-sb-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><div class="mock-nav"><div class="mock-nav-item"><span>⌂</span>概览</div><div class="mock-nav-item"><span>◫</span>项目设置</div><div class="mock-nav-item active"><span>↑</span>管理文件</div><div class="mock-nav-item"><span>▣</span>玩家端程序</div><div class="mock-nav-item"><span>◇</span>玩家实例</div><div class="mock-nav-item"><span>⚙</span>服务设置</div></div><div class="mock-account"><div class="mock-account-line"><span>当前登录</span><strong>管理员</strong></div><div class="mock-account-buttons"><button class="mock-account-btn accent" type="button">账户安全</button><button class="mock-account-btn" type="button">登出</button></div></div><div class="mock-sb-footer"><div class="mock-conn"><span class="mock-conn-dot"></span><span>已连接</span></div><div class="mock-version">DreamingFish Admin v0.1.18</div></div></aside><div class="mock-main"><header class="mock-topbar"><div><div class="mock-kicker">MANAGEMENT CONSOLE</div><div class="mock-page-title">管理文件</div></div><div class="mock-topbar-actions"><span class="mock-icon-btn">☀</span><label class="mock-picker"><span>当前项目</span><select class="mock-select"><option>梦屿</option></select></label><span class="mock-icon-btn">↻</span></div></header><div class="mock-content"><div class="mock-view"><div class="mock-panel"><div class="mock-panel-header"><div><div class="mock-panel-title">发布预览</div><span class="mock-panel-sub">刚刚扫描</span></div><div class="mock-buttons"><button class="mock-btn secondary" type="button">全部保留</button><button class="mock-btn secondary" type="button">全部删除</button><button class="mock-btn primary" type="button">↻ 扫描整合包目录</button></div></div><p class="mock-panel-note"><strong>每次调整文件或策略后都应重新扫描。</strong>重点检查“移除后的处理”：从玩家端删除会清理旧文件，放弃管理并保留则让玩家继续保有现有副本。</p><div class="mock-summary"><div><span>托管文件</span><strong>4</strong></div><div><span>变更</span><strong>3</strong></div><div><span>整合包大小</span><strong>128.4 MB</strong></div><div><span>预计下载</span><strong>12.4 MB</strong></div></div><table class="mock-table"><thead><tr><th>变更</th><th>文件</th><th>下载量</th><th>移除后的处理</th></tr></thead><tbody><tr><td><span class="mock-badge">新增</span></td><td class="mock-status-cell">mods/mod-a.jar</td><td class="mock-status-cell">12.4 MB</td><td class="mock-status-cell">--</td></tr><tr><td><span class="mock-badge">新增</span></td><td class="mock-status-cell">config/mod-a.toml</td><td class="mock-status-cell">2.1 KB</td><td class="mock-status-cell">--</td></tr><tr><td><span class="mock-badge modified">修改</span></td><td class="mock-status-cell">mods/mod-b.jar</td><td class="mock-status-cell">3.2 MB</td><td class="mock-status-cell">--</td></tr></tbody></table></div><div class="mock-panel"><div class="mock-panel-header"><div><div class="mock-panel-title">创建不可变发布</div><span class="mock-panel-sub">发布前必须先完成扫描</span></div><button class="mock-btn primary" type="button">发布整合包</button></div><p class="mock-panel-note"><strong>版本号用于玩家界面和发布历史，发布后不能复用。</strong>更新记录会直接展示给玩家。</p><div class="mock-form-grid"><label class="mock-field"><span>本次显示版本（必填）</span><input value="1.0.0"><small>建议使用清晰递增的版本，例如 1.0.1、2026.08.01。</small></label><label class="mock-field"><span>最低玩家端程序版本（必填）</span><input value="0.1.14"><small>低于此版本的玩家端会先更新程序。</small></label><label class="mock-field span-2"><span>更新记录</span><textarea class="mock-textarea" rows="3">首次发布：接入模组与基础配置。</textarea></label></div></div></div></div></div></div></div>
+
+<h3 id="web-step-5">第 5 步 · 制作玩家端（发布玩家端程序）<a class="anchor-link" href="#web-step-5">#</a></h3>
+<p>刚刚我们已经发布了整合包文件。接下来，你需要第一次发布玩家端程序：把整合包数据、玩家端个性化设置、公网地址，以及最重要的网络传输公钥，一起打包进玩家端（私钥会留在管理端，由服主自己保管）。</p>
+<p>玩家端程序和整合包版本是<strong>两条独立的发布线</strong>：以后只更新模组或配置时，重新发布整合包就好，不用再动玩家端程序；反过来，要发布玩家端程序时，也不用动整合包。</p>
+<p>打开“玩家端程序”页，跟着这几步走就行：</p>
+<ol>
+<li>选好<strong>平台</strong>，和玩家实际用的一致就好，比如 <code>windows-x64</code>。</li>
+<li>填一下<strong>最低 Bootstrap Agent 版本</strong>，目前是 <code>0.1.2</code>——Agent 一般不会更新，只有重新发了更高版本时才需要提高。</li>
+<li>选玩家端发行包<strong>解压后的根目录</strong>，管理端会自动在里面定位版本目录和 <code>DreamingFishUpdater.exe</code>；别选 ZIP 本身。</li>
+<li>点“发布玩家端”，剩下的交给管理端：自动读版本、定位 app-image、生成清单并签名。</li>
+</ol>
+<div class="docs-file-tree" role="img" aria-label="玩家端发行包解压后的目录结构示例"><div class="docs-file-tree-head"><strong>玩家端发行包（解压后）</strong><span>选解压后的根目录</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>dreamingfish-player-windows-x64/</strong><span class="tree-note">√ 选这个</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>DreamingFishUpdater/state/</strong><span class="tree-note">版本信息（自动读取）</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>DreamingFishUpdater/app/0.1.26/</strong><span class="tree-note">管理端自动定位</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>DreamingFishUpdater.exe</span><em>玩家端本体</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>player-sidecar.jar</span><em>更新逻辑</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>runtime/</strong><span class="tree-note">Java 运行时</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong>.dreamingfish-bootstrap/</strong><span class="tree-note">Agent 与绑定示例</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>README.txt</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>minecraft-jvm-argument.txt</span></div></div></div>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-app"><aside class="mock-sidebar"><div class="mock-sb-brand"><div class="mock-sb-mark">DF</div><div><div class="mock-sb-name">梦鱼更新管理</div><div class="mock-sb-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><div class="mock-nav"><div class="mock-nav-item"><span>⌂</span>概览</div><div class="mock-nav-item"><span>◫</span>项目设置</div><div class="mock-nav-item"><span>↑</span>管理文件</div><div class="mock-nav-item active"><span>▣</span>玩家端程序</div><div class="mock-nav-item"><span>◇</span>玩家实例</div><div class="mock-nav-item"><span>⚙</span>服务设置</div></div><div class="mock-account"><div class="mock-account-line"><span>当前登录</span><strong>管理员</strong></div><div class="mock-account-buttons"><button class="mock-account-btn accent" type="button">账户安全</button><button class="mock-account-btn" type="button">登出</button></div></div><div class="mock-sb-footer"><div class="mock-conn"><span class="mock-conn-dot"></span><span>已连接</span></div><div class="mock-version">DreamingFish Admin v0.1.18</div></div></aside><div class="mock-main"><header class="mock-topbar"><div><div class="mock-kicker">MANAGEMENT CONSOLE</div><div class="mock-page-title">玩家端程序</div></div><div class="mock-topbar-actions"><span class="mock-icon-btn">☀</span><label class="mock-picker"><span>当前项目</span><select class="mock-select"><option>梦屿</option></select></label><span class="mock-icon-btn">↻</span></div></header><div class="mock-content"><div class="mock-view"><div class="mock-panel"><div class="mock-panel-header"><div><div class="mock-panel-title">发布玩家端程序</div><span class="mock-panel-sub">自动读取版本并定位 app-image</span></div><button class="mock-btn primary" type="button">发布玩家端</button></div><p class="mock-panel-note"><strong>发布过程会自动读取程序版本、定位 app-image、生成清单并签名。</strong>应选择发行包解压后的最外层目录，不要选 ZIP 或 app、runtime 等子目录。</p><div class="mock-form-grid"><label class="mock-field"><span>平台（必填）</span><input value="windows-x64"><small>必须与玩家实际使用的平台一致。</small></label><label class="mock-field"><span>最低 Bootstrap Agent 版本（必填）</span><input value="0.1.2"><small>只有重新分发了更高版本 Agent 时才提高。</small></label><label class="mock-field span-2"><span>玩家端发行包解压根目录（必填）</span><div class="mock-path-row"><input value="/srv/minecraft/updater/player-0.1.20"><button class="mock-path-btn" type="button">浏览</button></div><small>这是管理服务器上的路径，不是玩家电脑上的路径。</small></label></div></div><div class="mock-panel"><div class="mock-panel-header"><div><div class="mock-panel-title">玩家端程序历史</div><span class="mock-panel-sub">1 个版本</span></div></div><table class="mock-table"><thead><tr><th>版本</th><th>平台</th><th>发布时间</th><th>清单哈希</th></tr></thead><tbody><tr><td class="mock-status-cell">0.1.20</td><td class="mock-status-cell">windows-x64</td><td class="mock-status-cell">2026-08-01 21:26</td><td class="mock-mono">a3f9…e21c</td></tr></tbody></table></div></div></div></div></div></div>
+<p><strong>发布完玩家端程序，就可以生成部署包了。</strong>部署包会包含更新器程序、Bootstrap Agent 和项目绑定；玩家第一次启动时就会验证签名基线，然后从你的公网地址拉取清单和整合包文件。</p>
+<p>生成首次部署包的界面是这样的：</p>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-app"><aside class="mock-sidebar"><div class="mock-sb-brand"><div class="mock-sb-mark">DF</div><div><div class="mock-sb-name">梦鱼更新管理</div><div class="mock-sb-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><div class="mock-nav"><div class="mock-nav-item"><span>⌂</span>概览</div><div class="mock-nav-item"><span>◫</span>项目设置</div><div class="mock-nav-item"><span>↑</span>管理文件</div><div class="mock-nav-item"><span>▣</span>玩家端程序</div><div class="mock-nav-item active"><span>◇</span>玩家实例</div><div class="mock-nav-item"><span>⚙</span>服务设置</div></div><div class="mock-account"><div class="mock-account-line"><span>当前登录</span><strong>管理员</strong></div><div class="mock-account-buttons"><button class="mock-account-btn accent" type="button">账户安全</button><button class="mock-account-btn" type="button">登出</button></div></div><div class="mock-sb-footer"><div class="mock-conn"><span class="mock-conn-dot"></span><span>已连接</span></div><div class="mock-version">DreamingFish Admin v0.1.18</div></div></aside><div class="mock-main"><header class="mock-topbar"><div><div class="mock-kicker">MANAGEMENT CONSOLE</div><div class="mock-page-title">玩家实例</div></div><div class="mock-topbar-actions"><span class="mock-icon-btn">☀</span><label class="mock-picker"><span>当前项目</span><select class="mock-select"><option>梦屿</option></select></label><span class="mock-icon-btn">↻</span></div></header><div class="mock-content"><div class="mock-view"><div class="mock-panel"><div class="mock-panel-header"><div><div class="mock-panel-title">生成首次部署包 <span class="mock-badge">推荐</span></div><span class="mock-panel-sub">适用于远程 Linux 管理端和绝大多数整合包发布流程</span></div><button class="mock-btn primary" type="button">生成部署包</button></div><p class="mock-panel-note"><strong>部署包是轻量接入模板，不包含 Minecraft、Forge、mods 或 config。</strong>玩家首次在线启动时会根据已发布清单补齐缺失托管文件；服主只需维护一份可正常启动的基础 Forge 实例。</p><div class="mock-form-grid"><label class="mock-field span-2"><span>输出父目录（必填）</span><div class="mock-path-row"><input value="/srv/minecraft/updater/deploy"><button class="mock-path-btn" type="button">浏览</button></div><small>管理服务器上的父目录。系统会在其中新建带项目和版本名称的部署目录，不会写入玩家电脑。</small></label><label class="mock-field"><span>平台（必填）</span><input value="windows-x64"><small>应与前面发布的玩家端程序平台一致；Windows 整合包保持 windows-x64。</small></label><label class="mock-field"><span>原整合包对应版本（必填）</span><select class="mock-select"><option>1.0.0</option></select><small>已有完整整合包时选择它实际包含的历史版本；全新最小 Forge 实例通常选择当前最新发布。</small></label></div><div class="mock-note-line">生成后下载整个输出目录，把目录中的全部内容合并到 Minecraft 版本隔离实例根目录。不要把管理端 data、management-settings.json 或项目私钥发给玩家。</div></div></div></div></div></div></div>
+<p>如果你能直接访问玩家实例所在的目录（比如管理端和游戏实例在同一台电脑），「玩家实例」页下方还有<strong>直接制作完整玩家实例</strong>的高级方式：它会把更新器、Bootstrap Agent、项目绑定和签名基线直接写进 Minecraft 实例目录，不用再合并部署包；远程管理端做 Windows 整合包时，还是推荐用上面的部署包。</p>
+<p>部署包导出来，应该是这样的：</p>
+<div class="docs-file-tree" role="img" aria-label="首次部署包输出目录结构示例"><div class="docs-file-tree-head"><strong>首次部署包（输出目录）</strong><span>把里面的内容都拖进版本目录</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>输出目录/</strong><span class="tree-note">系统按项目与版本自动命名</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>.dreamingfish-bootstrap/</strong><span class="tree-note">Agent、绑定与基线</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>bootstrap-agent.jar</span><em>启动引导</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>project-binding.json</span><em>项目绑定</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>bundled-release/</strong><span class="tree-note">签名基线</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>DreamingFishUpdater/</strong><span class="tree-note">玩家端程序</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong>app/0.1.26/</strong><span class="tree-note">更新器程序</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong>state/</strong><span class="tree-note">版本信息</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>README.txt</span></div></div></div>
+<p>接下来，把输出目录里的<strong>所有内容</strong>拖进你的 Minecraft 版本目录就行——以这个目录举例：<code>D:\Desktop\mc\.minecraft\versions\Dreamingfish-Building</code>。注意拖的是里面的内容，不是输出目录本身；<code>.dreamingfish-bootstrap</code> 是隐藏文件夹，别漏掉。</p>
+<p>拖完之后，你的版本目录应该是这样的——<span style="color:#ed747d">红色</span>的都是部署包带来的文件，必须完整出现在玩家端里：</p>
+<div class="docs-file-tree" role="img" aria-label="合并部署包后的 Minecraft 版本目录结构示例"><div class="docs-file-tree-head"><strong>当前版本目录/</strong><span>版本隔离后的实际游戏目录</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>Dreamingfish-Building/</strong><span class="tree-note">最终 --gameDir 应指向这里</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">.dreamingfish-bootstrap/</strong><span class="tree-note" style="color:#ed747d">部署包内容</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span style="color:#ed747d">bootstrap-agent.jar</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span style="color:#ed747d">project-binding.json</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">bundled-release/</strong><span class="tree-note" style="color:#ed747d">签名基线</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">DreamingFishUpdater/</strong><span class="tree-note" style="color:#ed747d">部署包内容</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">app/0.1.26/</strong><span class="tree-note" style="color:#ed747d">更新器程序</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">state/</strong><span class="tree-note" style="color:#ed747d">版本信息</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>mods/</strong><span class="tree-note">首次启动会检查并补齐</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>config/</strong><span class="tree-note">首次启动会检查并补齐</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>saves/</strong><span class="tree-note">玩家世界存档</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>options.txt</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><strong>Dreamingfish-Building.json</strong><span class="tree-note">HMCL 接入时修改 arguments.jvm</span></div></div></div>
+<p>红色部分是部署包带来的，一个都不能少；<code>mods</code>、<code>config</code> 等托管内容会在玩家首次在线启动时被检查并补齐——已经配置好的内容不会被重复安装。</p>
+<h4>让启动器加载 Bootstrap Agent</h4>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>先确认版本隔离真正生效</strong><p>实际游戏目录必须是当前版本目录，例如 <code>.minecraft/versions/Dreamingfish-Building</code>。HMCL 的“当前版本独立设置”可能覆盖全局版本隔离；不要只看开关，测试启动后还要确认最终命令中的 <code>--gameDir</code> 指向当前版本目录。</p></div></div>
+<p><strong>使用 PCL 时，优先在该版本的 JVM 参数中填写下面这行：</strong></p>
+<div class="code-block"><div class="code-head"><span>PCL 推荐参数</span><button class="copy-button" type="button">复制</button></div><pre><code>-javaagent:"{verpath}.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p><code>{verpath}</code> 是 PCL 提供的版本目录占位符，启动时会自动变成当前版本的真实路径。它不能用于 HMCL 或其他启动器，也不要改成服主电脑上的绝对路径。</p>
+<p><strong>版本 JSON 的 <code>arguments.jvm</code> 是 PCL、HMCL 两者通用的接入方式。</strong>如果希望同一个整合包同时兼容 PCL 和 HMCL，可以使用下面的方法；不要把 <code>${game_directory}</code> 直接填进 HMCL 的“Java 虚拟机参数”输入框。</p>
+<p>打开 <code>.minecraft/versions/版本名称/版本名称.json</code>，找到 <code>"arguments"</code> 里面的 <code>"jvm"</code> 数组，并在数组开头追加下面这一项：</p>
+<div class="code-block"><div class="code-head"><span>PCL、HMCL 通用 · arguments.jvm 新增项</span><button class="copy-button" type="button">复制</button></div><pre><code>"-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p>例如，原文件是：</p>
+<div class="code-block"><div class="code-head"><span>修改前（示例）</span></div><pre><code>"arguments": {
+  "jvm": [
+    "-Djava.library.path=${natives_directory}"
+  ]
+}</code></pre></div>
+<p>添加后应变成：</p>
+<div class="code-block"><div class="code-head"><span>修改后（示例）</span><button class="copy-button" type="button">复制</button></div><pre><code>"arguments": {
+  "jvm": [
+    "-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar",
+    "-Djava.library.path=${natives_directory}"
+  ]
+}</code></pre></div>
+<p>示例中的原参数只是演示位置；你自己的 <code>jvm</code> 数组可能有更多内容，必须全部保留，只新增一行并注意英文逗号。保存后完全退出并重新打开启动器，让它重新读取版本 JSON；不要设置 Windows 全局 <code>JAVA_TOOL_OPTIONS</code>。</p>
+<p>PCL 用户优先使用前面的 <code>{verpath}</code> 参数即可；需要兼容 PCL 和 HMCL 时使用版本 JSON。同一个实例不要同时配置两种方式，否则 Agent 会被加载两次。</p>
+<div class="callout info"><span class="callout-icon">i</span><div><strong>分发前必须检查最终启动命令</strong><p>正确结果应包含已经展开的绝对 Agent 路径，而不是字面量 <code>${game_directory}</code> 或 <code>{verpath}</code>。如果启动器执行了“修复版本”、重新安装 Forge 或重建版本 JSON，请再次确认该条目没有被覆盖。</p></div></div>
+<p>分发时，你可以直接把整个版本目录发给玩家，也可以用启动器导出整合包再分享。导出整合包时要注意：整合包文件夹里要包含玩家端文件——就是刚拖进去的 <code>.dreamingfish-bootstrap</code>（隐藏文件夹，别漏）和 <code>DreamingFishUpdater</code>，缺了它们，玩家拿到手也不会有更新器。</p>
+
+<h3 id="web-step-6">第 6 步 · 启动下载服务<a class="anchor-link" href="#web-step-6">#</a></h3>
+<p>回到“概览”，点击“▶ 启动下载服务”，服务状态变为<strong>运行中</strong>。玩家更新器就是从这个服务下载清单和文件。</p>
+<p>验证方式：先在管理服务器上访问 <code>http://127.0.0.1:8080/healthz</code>，应返回 <code>{"status":"ok"}</code>；再从另一台电脑访问项目的公网地址，确认端口映射正确。服务运行期间管理端进程要保持运行（Linux 用 tmux 挂起的话，断开 SSH 也不会停）。</p>
+<div class="ui-mock"><div class="ui-mock-bar"><span class="ui-mock-dot" style="background:#ff5f57"></span><span class="ui-mock-dot" style="background:#febc2e"></span><span class="ui-mock-dot" style="background:#28c840"></span><span class="ui-mock-url">http://127.0.0.1:18080/</span></div><div class="mock-app"><aside class="mock-sidebar"><div class="mock-sb-brand"><div class="mock-sb-mark">DF</div><div><div class="mock-sb-name">梦鱼更新管理</div><div class="mock-sb-en"><span>Dreaming</span><strong>Fish</strong></div></div></div><div class="mock-nav"><div class="mock-nav-item active"><span>⌂</span>概览</div><div class="mock-nav-item"><span>◫</span>项目设置</div><div class="mock-nav-item"><span>↑</span>管理文件</div><div class="mock-nav-item"><span>▣</span>玩家端程序</div><div class="mock-nav-item"><span>◇</span>玩家实例</div><div class="mock-nav-item"><span>⚙</span>服务设置</div></div><div class="mock-account"><div class="mock-account-line"><span>当前登录</span><strong>管理员</strong></div><div class="mock-account-buttons"><button class="mock-account-btn accent" type="button">账户安全</button><button class="mock-account-btn" type="button">登出</button></div></div><div class="mock-sb-footer"><div class="mock-conn"><span class="mock-conn-dot"></span><span>已连接</span></div><div class="mock-version">DreamingFish Admin v0.1.18</div></div></aside><div class="mock-main"><header class="mock-topbar"><div><div class="mock-kicker">MANAGEMENT CONSOLE</div><div class="mock-page-title">运行概览</div></div><div class="mock-topbar-actions"><span class="mock-icon-btn">☀</span><label class="mock-picker"><span>当前项目</span><select class="mock-select"><option>梦屿</option></select></label><span class="mock-icon-btn">↻</span></div></header><div class="mock-content"><div class="mock-view"><div class="mock-service"><div class="mock-service-left"><span class="mock-service-dot running"></span><div><div class="mock-service-name">HTTP 文件服务运行中</div><div class="mock-service-addr">0.0.0.0:8080</div></div></div><div class="mock-buttons"><button class="mock-btn secondary" type="button">■ 停止</button><button class="mock-btn primary" type="button">▶ 启动下载服务</button></div></div><div class="mock-metrics"><div class="mock-metric"><span>项目</span><strong>1</strong></div><div class="mock-metric"><span>不可变发布</span><strong>1</strong></div><div class="mock-metric"><span>当前版本</span><strong>1.0.0</strong></div><div class="mock-metric"><span>下次序号</span><strong>2</strong></div></div><div class="mock-note-line">本地健康检查：<code>http://127.0.0.1:8080/healthz</code> → <code>{"status":"ok"}</code></div></div></div></div></div></div><p>到这里，整个流程就走完了——<strong>恭喜你！</strong>你的第一个整合包项目已经可以正式发布：玩家拿到客户端后，更新器会自己检查版本、补齐文件、验证签名，然后正常启动游戏。把客户端发给玩家，等着大家上线吧！</p>
+<p>日常的更新维护可以看<a href="./maintenance.html">「日常维护」</a>；习惯用终端操作的话，下面就是命令行模式的菜单入口。</p>
+
+<h2 id="cli-mode">命令行配置模式<a class="anchor-link" href="#cli-mode">#</a></h2>
+<p>对于不方便使用 Web 界面的服主，我们还提供了便捷的终端配置：终端与 Web 使用同一套数据，做的事完全一样，输入菜单编号即可操作，按 <code>0</code> 退出。</p>
+<h3 id="cli-first-step">第 1 步 · 进入命令行模式<a class="anchor-link" href="#cli-first-step">#</a></h3>
+<p>首次启动时，管理端会询问是否进入 Web 管理界面。输入 <code>N</code> 就会留在终端并进入主菜单。命令行模式不需要创建 Web 管理账户；它直接在管理服务器本机操作，但项目数据、签名密钥和发布结果与 Web 模式完全相同。</p>
+<p>在管理端目录运行 <code>dfs-admin</code>，看到欢迎横幅和主菜单：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">终端主菜单 · dfs-admin</span></div>
+<pre>DreamingFish 整合包更新管理端
+================================
+
+主菜单
+[1] 查看项目状态
+[2] 创建项目
+[3] 修改项目设置
+[4] 扫描并发布整合包
+[5] 查看发布历史
+[6] 发布玩家端程序
+[7] 制作玩家实例
+[8] 修改服务设置
+[9] 启动 HTTP 文件服务
+[10] 启动 Web 管理界面
+[11] 生成玩家端首次部署包
+[0] 退出
+请选择：</pre></div>
+<h3 id="cli-create">第 2 步 · 创建项目<a class="anchor-link" href="#cli-create">#</a></h3>
+<p>在主菜单选择 <code>[2] 创建项目</code>。和 Web 表单一样，真正必填的是四项：<strong>项目 ID</strong>、<strong>项目显示名称</strong>、<strong>整合包文件目录</strong>和<strong>玩家访问公共 HTTP 地址</strong>；副标题、服务器地址、颜色和封面都可以直接按回车使用默认值。</p>
+<p>第一次创建时，建议把“强制同步一级目录”和“强制同步文件”都留空。等文件放好并理解同步范围后，再通过 <code>[3] 修改项目设置</code>配置。</p>
+<p>这里有三个容易出错的地方，和 Web 模式完全相同：</p>
+<ul>
+<li><strong>项目 ID</strong>：用于目录、接口和玩家端绑定，创建后不要随意更改。</li>
+<li><strong>整合包文件目录</strong>：只放希望交给更新器管理的内容，例如 <code>mods</code>、<code>config</code>；不要复制完整 <code>.minecraft</code>，也不要与管理端 <code>data</code> 混在一起。</li>
+<li><strong>玩家访问公共 HTTP 地址</strong>：必须是玩家电脑真正能访问的公网地址，公网端口需要已经映射或转发到管理端下载服务；不能填写 <code>0.0.0.0</code>、<code>127.0.0.1</code>、<code>localhost</code> 或内网地址。</li>
+</ul>
+<p>如果还没有项目，首次引导也会询问是否用 Web 创建；输入 <code>N</code> 后会直接进入同一个命令行创建流程：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">创建整合包项目</span></div>
+<pre>还没有整合包项目。推荐在 Web 管理界面中完成首次创建，每个必填项都带有用途和示例。
+  按 Y 进入 Web 管理界面创建，按 N 使用命令行创建。
+是否现在启动 Web 管理界面并创建第一个项目？ [Y/n]：n
+
+创建整合包项目
+【必填】项目 ID：用于目录、接口和玩家端绑定；创建后不应随意更改。
+  格式：小写字母或数字开头，可包含点、下划线和连字符，例如 build-server。
+项目 ID（必填）：dreamhaven
+【必填】项目显示名称：显示在管理端和玩家更新器中，例如 梦鱼建筑服。
+项目显示名称（必填）：梦屿
+【必填】整合包文件目录：只放准备交给更新器管理的内容，例如 mods、config。
+  不需要复制完整 .minecraft；该目录必须与管理端 data 目录分开。
+整合包文件目录（必填）：D:\被管理的文件
+强制同步目录：玩家不能保留目录内的额外文件，更新器会归档或移除它们。
+  只在确实需要目录完全一致时启用；留空表示不启用。
+强制同步一级目录（逗号分隔，留空不启用，例如 mods）：
+强制同步文件：仅指定文件不能被玩家豁免，不影响同目录的其它文件。
+强制同步文件（逗号分隔，留空不启用，例如 mods/required.jar）：
+【必填】玩家访问公共 HTTP 地址：写入玩家部署包，必须能从玩家电脑访问。
+  示例：http://example.com:39988；不要填写 0.0.0.0、127.0.0.1 或 localhost。
+  它可以与服务器内部监听端口不同，但必须包含玩家实际使用的公网端口。
+玩家访问公共 HTTP 地址（必填）：http://您的公网IP:39988
+以下为玩家更新器的界面信息，直接按回车可使用默认值。
+副标题（界面说明文字） [Minecraft 整合包更新]：
+Minecraft 服务器地址（可留空；与更新地址可以不同）（可留空）：play.example.com:25565
+主强调色（#RRGGBB） [#2ee8df]：
+次强调色（#RRGGBB） [#b06cff]：
+电脑端封面图片路径（可留空）：
+项目已创建：梦屿 (dreamhaven)
+项目签名私钥已保存在管理数据目录，请通过加密备份保护它。
+建议下一步在 Web 管理界面添加整合包文件、扫描差异并创建首次发布。
+是否现在启动 Web 管理界面继续配置？ [Y/n]：n</pre></div>
+<h3 id="cli-files">第 3 步 · 放入要管理的文件<a class="anchor-link" href="#cli-files">#</a></h3>
+<p>终端没有浏览器上传按钮，因此请直接把 <code>mods</code>、<code>config</code> 等内容放进刚才填写的“整合包文件目录”。这个目录就是 Web 页面里看到的管理文件目录，两种模式读取的是同一批真实文件。</p>
+<div class="docs-file-tree" role="img" aria-label="终端模式整合包文件目录示例"><div class="docs-file-tree-head"><strong>整合包文件目录</strong><span>更新器管理范围</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>modpack-source/</strong><span class="tree-note">只放要管理的内容</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>mods/</strong><span class="tree-note">模组文件</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>dreamingfish-core.jar</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>performance-helper.jar</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>config/</strong><span class="tree-note">配置文件</span></div></div></div>
+<p>把文件放进去<strong>不会立刻影响玩家</strong>。只有完成下一步扫描并发布新版本后，玩家端才会收到变化。</p>
+<p>需要设置强制同步时，在主菜单选择 <code>[3] 修改项目设置</code>。直接按回车会保留当前值；输入 <code>-</code> 可以清空已有的强制同步设置：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">管理同步策略 · [3]</span></div>
+<pre>[3] 修改项目设置
+直接按回车保留当前值。
+玩家访问公共 HTTP 地址必须是玩家电脑可访问的公网域名或 IP，不是服务器监听地址。
+强制同步目录会清理玩家本地额外文件，修改前请确认影响范围。
+
+项目显示名称（必填） [梦屿]：
+整合包文件目录（必填） [D:\被管理的文件]：
+强制同步一级目录（逗号分隔，输入 - 清空） []：mods
+强制同步文件（逗号分隔，输入 - 清空） []：
+玩家访问公共 HTTP 地址（必填） [http://您的公网IP:39988]：</pre></div>
+<h4 id="cli-sync-modes">两种同步模式<a class="anchor-link" href="#cli-sync-modes">#</a></h4>
+<p>这就是创建项目时建议先留空强制同步设置的原因：终端和 Web 使用完全相同的同步规则。</p>
+<div class="mode-compare"><div class="compare-card default"><span class="badge">默认同步</span><h3>只维护明确托管的内容</h3><p>发布清单中的文件缺失或损坏时恢复；不在清单中的玩家额外文件默认保留。玩家可以对普通托管内容设置本地豁免。</p><ul class="feature-list"><li>适合大多数整合包项目</li><li>保留玩家兼容配置与自选模组</li><li>文件管理边界清晰、温和</li></ul></div><div class="compare-card force" style="border-color:rgba(237,116,125,.55);background:rgba(237,116,125,.06)"><span class="badge neutral" style="border-color:rgba(237,116,125,.40);color:#ed747d;background:rgba(237,116,125,.09)">强制同步</span><h3>强制和远程服务器同步</h3><p>指定范围内的内容以服务器为准：文件会被强制覆盖，<strong>玩家会无法自己添加模组</strong>，多出来的文件会被移入归档。</p><ul class="feature-list"><li>适合核心模组和关键配置</li><li>可以按一级目录整体强制，或只强制单个文件</li><li>设置变化需要重新扫描并发布</li></ul></div></div>
+<p><strong>强制同步一级目录</strong>会递归管理整个目录，例如 <code>mods</code>。目录中的文件不能被玩家豁免，玩家额外放入的文件也会被归档移出；以后新增到该目录的文件会自动属于这个规则。</p>
+<p><strong>强制同步文件</strong>只锁定指定文件，例如 <code>config/server-required.toml</code>。它的主要作用是禁止玩家豁免该文件，不会清理同目录的其他文件，以后新增文件也不会自动加入。</p>
+<div class="callout"><span class="callout-icon">i</span><div><strong>大多数项目不需要强制同步</strong><p>默认同步已经适合绝大多数整合包。只有核心模组、反作弊或必须保持一致的配置，才建议按需启用强制同步；规则修改后仍需重新扫描并发布才会生效。</p></div></div>
+<h3 id="cli-publish">第 4 步 · 扫描并发布<a class="anchor-link" href="#cli-publish">#</a></h3>
+<p>文件准备好后，在主菜单选择 <code>[4] 扫描并发布整合包</code>。终端会显示与 Web 相同的变更预览：托管文件数、总大小、变更数量、预计下载量、同步范围以及每个新增、修改或移除的文件。</p>
+<p>重点检查<strong>移除后的处理</strong>。普通托管文件可以选择“从玩家端删除”，或者“只放弃管理并保留玩家本地文件”；强制同步目录中的文件只能随发布从玩家端移除。第一次发布通常全部是“新增”，基本不会出现这一步。</p>
+<p>预览确认无误后，填写本次显示版本（例如 <code>1.0.0</code>）、最低玩家端程序版本和更新记录。发布内容是不可变的：如果发现错误，请修正整合包文件目录后再发布一个新版本，不要修改旧版本。</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">扫描并发布 · [4]</span></div>
+<pre>发布预览 9f2c1a3e-b4d2-4e7a-8c1f-1a2b3c4d5e6f
+托管文件：4，总大小：128.4 MB
+变更数量：3，预计下载：12.4 MB
+本次内容范围：mods/、config/
+强制同步目录：（未启用）
+强制同步文件：（未启用）
+变更明细：
+  新增   mods/mod-a.jar  (12.4 MB)
+  新增   config/mod-a.toml  (2.1 KB)
+  修改   mods/mod-b.jar  (3.2 MB)
+本次显示版本（例如 1.0.1）：1.0.0
+最低玩家端程序版本 [0.1.14]：
+更新记录（可留空；输入 @文件路径读取 UTF-8 文本）：首次发布：接入模组与基础配置。
+
+实际将保存的更新记录：
+首次发布：接入模组与基础配置。
+
+确认以上版本和更新记录无误并发布？ [y/N]：y
+发布完成：1.0.0 / r000001-20260802-161030-ab12cd34</pre></div>
+<h3 id="cli-player">第 5 步 · 制作玩家端（发布玩家端程序）<a class="anchor-link" href="#cli-player">#</a></h3>
+<p>整合包文件发布完成后，第一次还需要发布玩家端程序。这个过程会把整合包数据、玩家端个性化设置、公网地址和网络传输公钥一起准备好；签名私钥始终留在管理端数据目录，不会进入玩家部署包。</p>
+<p>玩家端程序和整合包版本是<strong>两条独立的发布线</strong>：以后只更新模组或配置时，重新发布整合包即可，不需要再次发布玩家端程序；只有更新器程序本身升级时，才需要重新执行 <code>[6]</code>。</p>
+<p>在主菜单选择 <code>[6] 发布玩家端程序</code>，依次完成下面四项：</p>
+<ol>
+<li>选择和玩家电脑一致的<strong>平台</strong>，Windows 通常保持 <code>windows-x64</code>。</li>
+<li>填写玩家端发行包<strong>解压后的根目录</strong>。管理端会自动定位版本目录和 <code>DreamingFishUpdater.exe</code>，不要填写 ZIP 文件、<code>app</code>、<code>runtime</code> 或具体版本子目录。</li>
+<li>填写<strong>最低启动引导器版本</strong>，当前通常保持 <code>0.1.2</code>；只有重新分发了更高版本 Bootstrap Agent 时才提高。</li>
+<li>核对后输入 <code>Y</code>，管理端会自动读取程序版本、定位 app-image、生成清单并签名。</li>
+</ol>
+<p>玩家端程序发布成功后，再选择 <code>[11] 生成玩家端首次部署包</code>。首次部署包不包含 Minecraft、Forge、<code>mods</code> 或 <code>config</code>，它是需要合并进版本隔离实例的轻量接入文件：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">发布玩家端程序与首次部署包 · [6] [11]</span></div>
+<pre>[6] 发布玩家端程序
+此处发布的是玩家端更新器程序，不是 mods/config 整合包内容。
+平台 [windows-x64]：
+玩家端发行包解压根目录：D:\待发布的完整游戏版本\player-windows-x64
+最低启动引导器版本 [0.1.2]：
+自动读取版本并发布这个玩家端程序？ [y/N]：y
+玩家端程序已发布：0.1.26 / windows-x64
+
+[11] 生成玩家端首次部署包
+此功能不需要完整 Minecraft 实例，输出内容用于合并到本地实例根目录。
+首次部署包输出父目录：D:\管理端\deploy
+平台 [windows-x64]：
+请选择这个下载包所对应的不可变发布版本（新版本在前）：
+[1] 1.0.0  r000001-20260802-161030-ab12cd34  *
+输入编号或发布 ID，回车使用 * 版本：
+按整合包基线 1.0.0 生成首次部署包？ [y/N]：y
+首次部署包已生成：D:\管理端\deploy\dreamhaven-player-deployment-1.0.0-0.1.26</pre></div>
+<p><strong>部署包会包含更新器程序、Bootstrap Agent、项目绑定和所选整合包发布的签名基线。</strong>玩家第一次在线启动时，会先验证基线，再从项目公网地址拉取最新清单并补齐缺失的托管文件。</p>
+<h4 id="cli-instance">高级方式 · 直接制作玩家实例<a class="anchor-link" href="#cli-instance">#</a></h4>
+<p>如果你能直接访问玩家实例所在的目录（比如管理端和游戏实例在同一台电脑），也可以选 <code>[7]</code> 制作玩家实例，直接把更新器、Bootstrap Agent、项目绑定和签名基线写进 Minecraft 实例目录，不用再合并部署包；远程管理端做 Windows 整合包时，还是推荐用上面的部署包：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">制作玩家实例 · [7]</span></div>
+<pre>[7] 制作玩家实例
+实例中必须已经解压玩家端发行包，并包含 .dreamingfish-bootstrap/bootstrap-agent.jar。
+Minecraft 版本隔离实例目录：D:\mc\.minecraft\versions\Dreamingfish-Building
+平台 [windows-x64]：
+实例内玩家端目录 [DreamingFishUpdater]：
+请选择这个下载包所对应的不可变发布版本（新版本在前）：
+[1] 1.0.0  r000001-20260802-161030-ab12cd34  *
+输入编号或发布 ID，回车使用 * 版本：
+确认写入项目绑定并核对首个玩家端程序？ [y/N]：y
+Prepared signed player program 0.1.26, bundled release 1.0.0 (r000001-20260802-161030-ab12cd34), and wrote project binding to D:\mc\.minecraft\versions\Dreamingfish-Building\.dreamingfish-bootstrap\project-binding.json</pre></div>
+<p>部署包导出来，应该是这样的：</p>
+<div class="docs-file-tree" role="img" aria-label="首次部署包输出目录结构示例"><div class="docs-file-tree-head"><strong>首次部署包（输出目录）</strong><span>把里面的内容都拖进版本目录</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>输出目录/</strong><span class="tree-note">系统按项目与版本自动命名</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>.dreamingfish-bootstrap/</strong><span class="tree-note">Agent、绑定与基线</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>bootstrap-agent.jar</span><em>启动引导</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>project-binding.json</span><em>项目绑定</em></div><div class="docs-file-tree-row nested"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>bundled-release/</strong><span class="tree-note">签名基线</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>DreamingFishUpdater/</strong><span class="tree-note">玩家端程序</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong>app/0.1.26/</strong><span class="tree-note">更新器程序</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong>state/</strong><span class="tree-note">版本信息</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>README.txt</span></div></div></div>
+<p>接下来，把输出目录里的<strong>所有内容</strong>拖进你的 Minecraft 版本目录就行——以这个目录举例：<code>D:\Desktop\mc\.minecraft\versions\Dreamingfish-Building</code>。注意拖的是里面的内容，不是输出目录本身；<code>.dreamingfish-bootstrap</code> 是隐藏文件夹，别漏掉。</p>
+<p>拖完之后，你的版本目录应该是这样的——<span style="color:#ed747d">红色</span>的都是部署包带来的文件，必须完整出现在玩家端里：</p>
+<div class="docs-file-tree" role="img" aria-label="合并部署包后的 Minecraft 版本目录结构示例"><div class="docs-file-tree-head"><strong>您的游戏目录/</strong><span>合并后的版本隔离实例目录</span></div><div class="docs-file-tree-row root"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>您的游戏目录/</strong><span class="tree-note">Minecraft 版本目录</span></div><div class="docs-file-tree-children"><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">.dreamingfish-bootstrap/</strong><span class="tree-note" style="color:#ed747d">部署包内容</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span style="color:#ed747d">bootstrap-agent.jar</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span style="color:#ed747d">project-binding.json</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">bundled-release/</strong><span class="tree-note" style="color:#ed747d">签名基线</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">DreamingFishUpdater/</strong><span class="tree-note" style="color:#ed747d">部署包内容</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">app/0.1.26/</strong><span class="tree-note" style="color:#ed747d">更新器程序</span></div><div class="docs-file-tree-row nested"><span class="tree-branch">·</span><span class="tree-icon folder">◆</span><strong style="color:#ed747d">state/</strong><span class="tree-note" style="color:#ed747d">版本信息</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>mods/</strong><span class="tree-note">首次启动会检查并补齐</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>config/</strong><span class="tree-note">首次启动会检查并补齐</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>saves/</strong><span class="tree-note">玩家世界存档</span></div><div class="docs-file-tree-row"><span class="tree-branch">·</span><span class="tree-icon file">—</span><span>options.txt</span></div><div class="docs-file-tree-row"><span class="tree-branch">⌄</span><span class="tree-icon folder">◆</span><strong>versions/</strong><span class="tree-note">Minecraft 本体</span></div></div></div>
+<p>红色部分是部署包带来的，一个都不能少；<code>mods</code>、<code>config</code> 等托管内容会在玩家首次在线启动时被检查并补齐——已经配置好的内容不会被重复安装。</p>
+<p>接下来，让启动器加载 Bootstrap Agent。<strong>使用 PCL 时，优先在该版本设置的「JVM 参数」（Java 虚拟机参数）中填写：</strong></p>
+<div class="code-block"><div class="code-head"><span>PCL 推荐参数</span><button class="copy-button" type="button">复制</button></div><pre><code>-javaagent:"{verpath}.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p><code>{verpath}</code> 是 PCL 专属占位符，启动时会自动替换成当前版本目录。HMCL 和其他启动器不能使用它。</p>
+<p><strong>版本 JSON 的 <code>arguments.jvm</code> 是 PCL、HMCL 两者通用的接入方式。</strong>需要让同一个整合包兼容两种启动器时，打开 <code>.minecraft/versions/版本名称/版本名称.json</code>，找到 <code>"arguments"</code> 中已有的 <code>"jvm"</code> 数组，在数组开头追加：</p>
+<div class="code-block"><div class="code-head"><span>PCL、HMCL 通用 · arguments.jvm 新增项</span><button class="copy-button" type="button">复制</button></div><pre><code>"-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p>例如原来是：</p>
+<div class="code-block"><div class="code-head"><span>修改前（示例）</span></div><pre><code>"arguments": {
+  "jvm": [
+    "-Djava.library.path=${natives_directory}"
+  ]
+}</code></pre></div>
+<p>添加后是：</p>
+<div class="code-block"><div class="code-head"><span>修改后（示例）</span><button class="copy-button" type="button">复制</button></div><pre><code>"arguments": {
+  "jvm": [
+    "-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar",
+    "-Djava.library.path=${natives_directory}"
+  ]
+}</code></pre></div>
+<p>你自己的原有 JVM 参数必须全部保留，只新增一行并注意英文逗号。保存后完全退出并重新打开启动器；不要把 <code>${game_directory}</code> 直接填进 HMCL 的 JVM 参数框。PCL 用户优先使用前面的 <code>{verpath}</code>；同一个实例不要再同时配置两种方式。</p>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>分发前检查一次实际启动命令</strong><p>确认 <code>--gameDir</code> 指向当前版本隔离目录，并且 <code>-javaagent</code> 后面已经是实际路径，而不是未替换的 <code>{verpath}</code> 或 <code>${game_directory}</code>。</p></div></div>
+<p>分发时，你可以直接把整个版本目录发给玩家，也可以用启动器导出整合包再分享。导出整合包时要注意：整合包文件夹里要包含玩家端文件——就是刚拖进去的 <code>.dreamingfish-bootstrap</code>（隐藏文件夹，别漏）和 <code>DreamingFishUpdater</code>，缺了它们，玩家拿到手也不会有更新器。</p>
+<h3 id="cli-serve">第 6 步 · 启动下载服务<a class="anchor-link" href="#cli-serve">#</a></h3>
+<p>最后在主菜单选择 <code>[9] 启动 HTTP 文件服务</code>。这与 Web 概览页的“启动下载服务”是同一项服务：玩家更新器会通过项目的公网地址从这里下载清单和文件。服务运行期间按 <code>Ctrl+C</code> 停止并返回主菜单：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">启动 HTTP 文件服务 · [9]</span></div>
+<pre>启动只读 HTTP 文件服务 http://0.0.0.0:8080/？ [Y/n]：y
+HTTP 文件服务已启动：http://0.0.0.0:8080/
+健康检查：http://0.0.0.0:8080/healthz
+按 Ctrl+C 停止服务并返回主菜单。</pre></div>
+<p>验证方式也和 Web 模式相同：先在管理服务器上访问 <code>http://127.0.0.1:8080/healthz</code>，应返回 <code>{"status":"ok"}</code>；再从另一台电脑访问项目中填写的公网地址，确认公网端口已经正确映射到下载服务端口。服务运行期间管理端进程必须保持运行，Linux 可以放在 tmux 会话中，断开 SSH 后服务仍会继续。</p>
+<p>如果管理了多个项目，操作前会先列出项目让你选择，直接回车使用带 * 的默认项目：</p>
+<div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">多项目选择</span></div>
+<pre>请选择项目：
+[1] 梦屿 (dreamhaven) *
+[2] 建筑服 (build-server)
+输入编号或项目 ID，回车使用 * 项目：</pre></div>
+<p>到这里，命令行模式已经完成了与 Web 模式相同的六个步骤：创建项目、准备文件、设置同步策略、扫描发布、制作玩家端和启动下载服务。两种操作方式共用同一套项目与发布数据，可以随时切换。日常维护——修改项目设置 <code>[3]</code>、查看发布历史 <code>[5]</code>、发布玩家端程序 <code>[6]</code>、制作玩家实例 <code>[7]</code>、修改服务设置 <code>[8]</code>——都在主菜单里；备份与恢复等终端专属功能，见<a href="./maintenance.html">「日常维护」</a>。</p>
+<nav class="doc-pager"><a class="pager-link" href="./quickstart.html"><span>上一页</span><strong>← 下载与首次配置</strong></a><a class="pager-link next" href="./maintenance.html"><span>下一页</span><strong>日常维护 →</strong></a></nav></article></main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div><aside class="docs-toc"><h4>本页内容</h4><a href="#web-mode" data-toc="web-mode" style="padding-left:10px">Web 配置模式</a><a href="#web-first-step" data-toc="web-first-step" style="padding-left:20px">创建管理员账户</a><a href="#web-step-2" data-toc="web-step-2" style="padding-left:20px">创建项目</a><a href="#web-step-3" data-toc="web-step-3" style="padding-left:20px">上传文件</a><a href="#web-step-3-modes" data-toc="web-step-3-modes" style="padding-left:20px">两种同步模式</a><a href="#web-step-4" data-toc="web-step-4" style="padding-left:20px">扫描并发布</a><a href="#web-step-5" data-toc="web-step-5" style="padding-left:20px">制作玩家端</a><a href="#web-step-6" data-toc="web-step-6" style="padding-left:20px">启动下载服务</a><a href="#cli-mode" data-toc="cli-mode" style="padding-left:10px">命令行配置模式</a><a href="#cli-first-step" data-toc="cli-first-step" style="padding-left:20px">进入命令行模式</a><a href="#cli-create" data-toc="cli-create" style="padding-left:20px">创建项目</a><a href="#cli-files" data-toc="cli-files" style="padding-left:20px">放入管理文件</a><a href="#cli-sync-modes" data-toc="cli-sync-modes" style="padding-left:30px">两种同步模式</a><a href="#cli-publish" data-toc="cli-publish" style="padding-left:20px">扫描并发布</a><a href="#cli-player" data-toc="cli-player" style="padding-left:20px">制作玩家端</a><a href="#cli-instance" data-toc="cli-instance" style="padding-left:30px">高级：直接制作实例</a><a href="#cli-serve" data-toc="cli-serve" style="padding-left:20px">启动下载服务</a></aside></div>
+<div class="search-modal" data-search-modal><div class="search-panel"><div class="search-input-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off"></div><div class="search-results" data-search-results></div><div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div></div></div><script src="../assets/site.js" charset="utf-8"></script><script src="../assets/docs.js?v=2" charset="utf-8"></script></body></html>
