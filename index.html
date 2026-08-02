@@ -1,0 +1,397 @@
+﻿<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="DreamingFish Updater 是面向 Minecraft 整合包服务器的自托管更新系统：差异下载、事务安装、玩家本地管理，以及可定制的服务器专属启动体验。">
+  <meta name="color-scheme" content="light dark">
+  <title>DreamingFish Updater · 自托管整合包更新系统</title>
+  <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
+  <link rel="icon" href="./assets/logo.svg">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/v4.css">
+  <link rel="stylesheet" href="./assets/app-demo.css">
+  <link rel="stylesheet" href="./assets/v4.4.css">
+  <link rel="stylesheet" href="./assets/v4.5.css">
+  <link rel="stylesheet" href="./assets/v4.6.css">
+</head>
+<body class="product-page">
+<div class="site-shell">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="./index.html" aria-label="DreamingFish Updater 首页">
+        <img src="./assets/logo.svg" alt="">
+        <span class="brand-copy"><strong class="brand-wordmark"><span class="brand-dreaming">Dreaming</span><span class="brand-fish">Fish</span> <span class="brand-updater">Updater</span></strong><span>梦鱼更新器</span></span>
+      </a>
+      <nav class="nav-links" data-nav-links>
+        <a class="active" href="#update">更新能力</a>
+        <a href="#player-management">玩家管理</a>
+        <a href="#admin-web">管理端 Web</a>
+        <a href="#sync">同步策略</a>
+        <a href="#security">安全与原子性</a>
+        <a href="#brand">自定义个性化</a>
+        <a href="./docs/index.html">文档</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button secondary desktop-only" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="button primary" href="./docs/quickstart.html">部署教程</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换主题">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.2 15.3A8.7 8.7 0 0 1 8.7 3.8 8.7 8.7 0 1 0 20.2 15.3Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="mobile-toggle" type="button" data-mobile-toggle aria-label="打开菜单"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="codex-hero">
+      <div class="container codex-hero-copy reveal">
+        <span class="codex-kicker">DreamingFish Updater</span>
+        <div class="hero-brand-title" aria-label="梦鱼更新器"><span>梦鱼</span><strong>更新器</strong></div>
+        <h1 class="hero-title-long">安全可靠，自主可控，易于部署的<br>客户端管理工具</h1>
+        <p>还在让玩家手动拖动模组更新客户端？玩家是来玩服务器的还是来玩资源管理器的？使用梦鱼客户端更新工具，玩家端自动安全下载变化内容，还可以自己手动管理哪些内容受服务器控制。</p>
+        <div class="codex-hero-actions">
+          <a class="button primary large" href="./docs/quickstart.html">开始部署</a>
+          <a class="button secondary large" href="./docs/index.html">阅读文档</a>
+        </div>
+      </div>
+
+      <div class="dual-product-stage reveal" aria-label="DreamingFish Updater 玩家端与管理端 Web 界面预览">
+        <div class="hero-admin-product">
+          <div class="admin-demo admin-demo-hero">
+            <aside class="ad-sidebar">
+              <div class="ad-brand"><i>DF</i><div><strong>梦鱼更新管理</strong><span>DreamingFish</span></div></div>
+              <nav><span>⌂ 概览</span><span>◫ 项目设置</span><span class="active">↑ 管理文件</span><span>▣ 玩家端程序</span><span>◇ 玩家实例</span><span>⚙ 服务设置</span></nav>
+              <div class="ad-status"><i></i><span>已连接</span></div>
+            </aside>
+            <section class="ad-workspace">
+              <header><div><span>MANAGEMENT CONSOLE</span><strong>管理文件</strong></div><div class="ad-project">梦屿整合包</div></header>
+              <main>
+                <div class="ad-service"><div><i></i><span><strong>下载服务正在运行</strong><small>0.0.0.0:8080</small></span></div><button>■ 停止</button></div>
+                <div class="ad-metrics"><span><small>托管文件</small><strong>146</strong></span><span><small>总大小</small><strong>2.84 GB</strong></span><span><small>强制同步</small><strong>3</strong></span></div>
+                <section class="ad-panel">
+                  <div class="ad-panel-head"><span><strong>整合包文件</strong><small>选择目录后上传、导入或移除</small></span><button>＋ 添加文件</button></div>
+                  <div class="ad-file-row folder"><i>⌄</i><span><strong>mods</strong><small>98 个文件</small></span><b>目录</b></div>
+                  <div class="ad-file-row child"><i></i><span><strong>dreamingfish-core.jar</strong><small>31.8 MB · 强制同步</small></span><b>文件</b></div>
+                  <div class="ad-file-row child"><i></i><span><strong>performance-helper.jar</strong><small>4.6 MB · 普通托管</small></span><b>文件</b></div>
+                  <div class="ad-file-row folder"><i>›</i><span><strong>config</strong><small>42 个文件</small></span><b>目录</b></div>
+                </section>
+              </main>
+            </section>
+          </div>
+        </div>
+
+        <div class="hero-player-product">
+          <div class="df-app-demo">
+            <div class="df-scene df-scene-far"></div>
+            <div class="df-scene df-scene-mid"></div>
+            <div class="df-scene df-scene-near"></div>
+            <div class="df-water"></div>
+            <div class="df-app-vignette"></div>
+
+            <div class="df-titlebar">
+              <div class="df-title-brand"><strong>梦鱼服</strong><span>Dreaming</span><b>Fish</b></div>
+              <div class="df-title-nav"><span class="active">主页</span><span>新闻</span><span>守望梦屿</span><span>关于</span></div>
+              <div class="df-window-actions"><span>—</span><span>□</span><span>×</span></div>
+            </div>
+
+            <div class="df-launch-toast"><i>✓</i><strong>Minecraft 已开始启动</strong><span>· 14 秒后自动关闭</span></div>
+            <div class="df-welcome"><span>欢迎来到</span><strong>梦屿</strong><p>灾变之后，仍然有人在这里守望</p></div>
+            <div class="df-news-card"><div class="df-meta">最新新闻&nbsp;&nbsp;·&nbsp;&nbsp;2026.07.30</div><h3>初识梦屿：灯还亮着</h3><p>一座让普通人安心生活的梦屿，一片仍在等待的外缘带，以及一名选择最后离开的线路维护员。</p><a>查看全文 ›</a></div>
+            <div class="df-release-card">
+              <div class="df-release-note"><span>版本 1.3</span><strong>遥远的地平线不再被服务端管理，玩家可以自行删除</strong><small>本次无需修改本地文件</small></div>
+              <div class="df-progress-block"><div class="df-progress-head"><strong>已是最新版本</strong><b>100%</b></div><span>Minecraft 正在继续启动</span><div class="df-progress-track"><i></i></div><div class="df-progress-links"><strong>本地文件已验证</strong><span>更新记录 ›</span><span>运行记录 ›</span><span>本地文件 ›</span></div><div class="df-player-mods">检测到 1 个玩家自选模组，已保留并继续启动 ›</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-section" id="update">
+      <div class="container signal-capsule-wrap reveal">
+        <a class="signal-capsule" href="#security" aria-label="向下查看更多能力">
+          <span class="signal-capsule-dot" aria-hidden="true"></span>
+          <strong>向下滑动，看看它还能做什么</strong>
+          <span class="signal-capsule-arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="update-core-section">
+      <div class="container update-core-grid">
+        <div class="update-core-copy reveal">
+          <span class="codex-kicker">The update engine</span>
+          <h2>爱咋删爱咋加，启动就完了</h2>
+          <p>服主爱删就删、爱加就加，玩家端只同步服务器需要管理的内容，玩家自己添加的模组始终不受影响；所有文件、目录和模组都能由玩家手动管理，自己决定哪些内容继续受服务器控制。</p>
+          <a class="text-link" href="./docs/publish.html">了解扫描、发布与回滚 <span>↗</span></a>
+        </div>
+        <div class="update-engine-visual reveal" aria-label="更新流程示意">
+          <div class="engine-topline"><span>RELEASE PIPELINE</span><strong>目标版本 1.3</strong></div>
+          <div class="engine-flow">
+            <article><i>01</i><div><span>标准整合包目录</span><strong>服主维护想要发布的内容</strong></div></article>
+            <b>→</b>
+            <article><i>02</i><div><span>扫描与确认</span><strong>先预览新增、修改和移除</strong></div></article>
+            <b>→</b>
+            <article class="active"><i>03</i><div><span>可信发布</span><strong>形成不可变的完整目标状态</strong></div></article>
+          </div>
+          <div class="engine-client">
+            <div class="engine-client-head"><span>玩家启动前</span><strong>只处理本机差异</strong></div>
+            <div class="engine-client-steps">
+              <span><i>✓</i>比较本地文件</span>
+              <span><i>↓</i>下载变化内容</span>
+              <span><i>◇</i>暂存并校验</span>
+              <span><i>↺</i>异常时恢复</span>
+              <span><i>→</i>继续启动游戏</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container update-detail-grid reveal">
+        <article><span>从任意旧版本直达最新</span><p>不管发布内容怎么增删修改，玩家端都会自动对齐最新目标状态，始终回到最新版本。</p></article>
+        <article><span>快捷回滚</span><p>发现问题时，管理端可一键回退到上一份稳定发布，快捷撤回有问题的版本。</p></article>
+        <article><span>更新器与整合包独立升级</span><p>玩家端程序可以独立自更新，渠道与整合包内容分开；模组或配置变化不必重新发布客户端程序。</p></article>
+        <article><span>安全更新</span><p>文件先校验并暂存，确认完整后再原子写入；中途断电或失败会自动恢复，避免留下半套更新。</p></article>
+      </div>
+    </section>
+
+    <section class="player-management-section" id="player-management">
+      <div class="container player-management-heading reveal">
+        <span class="codex-kicker">Player-side control</span>
+        <h2>让玩家轻松管理本地文件，保留对客户端的控制权。</h2>
+        <p>玩家端提供“本次更新、更新记录、运行记录、本地文件、自选模组”五个详情入口。本地管理继续遵守服主设定的同步边界，同时把普通文件、目录和模组的选择留在玩家电脑上。</p>
+      </div>
+
+      <div class="container management-story">
+        <article class="management-story-row">
+          <div class="management-story-copy reveal">
+            <span>管理范围</span>
+            <h3>按文件或目录，决定哪些普通内容继续由更新器管理。</h3>
+            <p>玩家可以搜索文件或文件夹，自己选择哪些内容交给服务器更新。自己添加的模组可以保留；只有标记为“强制”的服务器内容必须同步，不能在本地关闭。</p>
+            <ul><li>目录支持部分子项不受管理</li><li>普通文件可在本机单独豁免</li><li>一键恢复全部更新器管理</li></ul>
+          </div>
+          <div class="pm-window pm-file-window reveal" aria-label="玩家端本地文件管理界面模拟">
+            <div class="pm-window-head"><strong>更新与本地管理</strong><span>□</span><span>×</span></div>
+            <div class="pm-tabs"><span>本次更新</span><span>更新记录</span><span>运行记录</span><span class="active">本地文件</span><span>自选模组</span></div>
+            <div class="pm-content">
+              <div class="pm-modebar"><span class="active">管理范围</span><span>模组启停</span></div>
+              <div class="pm-toolbar"><div>搜索目录、文件名或路径</div><button type="button">恢复全部管理</button></div>
+              <div class="pm-warning">关闭管理后，普通更新不会再安装、覆盖或删除该文件。服务器强制同步目标不能在本机关闭。</div>
+              <div class="pm-tree">
+                <div class="pm-row directory"><span class="pm-arrow">⌄</span><div><strong>mods/</strong><small>部分子项不受管理 · 18 个远程文件 · mods</small></div><span class="pm-check partial">—</span><b>管理</b></div>
+                <div class="pm-row child"><span class="pm-arrow"></span><div><strong>dreamingfish-core.jar</strong><small>服务器强制同步 · ENFORCED · 校验并同步 · mods/dreamingfish-core.jar</small></div><span class="pm-check on locked">✓</span><b>强制</b></div>
+                <div class="pm-row child"><span class="pm-arrow"></span><div><strong>performance-helper.jar</strong><small>由更新器管理 · ENFORCED · 校验并同步 · mods/performance-helper.jar</small></div><span class="pm-check on">✓</span><b>管理</b></div>
+                <div class="pm-row child"><span class="pm-arrow"></span><div><strong>legacy-renderer.jar</strong><small>本机不受管理 · ENFORCED · mods/legacy-renderer.jar</small></div><span class="pm-check"></span><b>管理</b></div>
+                <div class="pm-row directory"><span class="pm-arrow">›</span><div><strong>config/</strong><small>由更新器管理 · 26 个远程文件 · config</small></div><span class="pm-check on">✓</span><b>管理</b></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="management-story-row reverse">
+          <div class="management-story-copy reveal">
+            <span>模组启停与自选模组</span>
+            <h3>整合包模组和玩家自己添加的模组，使用清楚一致的开关管理。</h3>
+            <p>玩家可以在模组列表中搜索并直接开关。服务器要求的模组会标记为“强制”，玩家自己添加的模组会单独保留和管理，互不影响。</p>
+            <ul><li>必要模组停用前给出风险确认</li><li>识别 Forge/NeoForge 的 modId 和 Fabric 模组 ID，模组升级或改名后仍能识别并保留你的选择</li><li>一键恢复整合包默认状态</li></ul>
+          </div>
+          <div class="pm-window pm-mod-window reveal" aria-label="玩家端模组启停界面模拟">
+            <div class="pm-window-head"><strong>更新与本地管理</strong><span>□</span><span>×</span></div>
+            <div class="pm-tabs"><span>本次更新</span><span>更新记录</span><span>运行记录</span><span class="active">本地文件</span><span>自选模组</span></div>
+            <div class="pm-content">
+              <div class="pm-modebar"><span>管理范围</span><span class="active">模组启停</span></div>
+              <div class="pm-toolbar"><div>搜索模组名称或文件名</div><button type="button">恢复整合包默认</button></div>
+              <div class="pm-warning amber">停用必要模组可能导致游戏崩溃或无法连接服务器。更改会在本次更新完成前重新校验。</div>
+              <div class="pm-mod-list">
+                <div class="pm-mod-row"><div><strong>DreamingFish Core</strong><small>服务器强制同步 · mods/dreamingfish-core.jar</small></div><span class="pm-switch on locked"><i></i></span><b>强制启用</b></div>
+                <div class="pm-mod-row"><div><strong>性能优化组件</strong><small>整合包管理 · mods/performance-helper.jar</small></div><span class="pm-switch on"><i></i></span><b>启用</b></div>
+                <div class="pm-mod-row"><div><strong>旧版渲染优化</strong><small>整合包管理 · 已停用 · mods/legacy-renderer.jar</small></div><span class="pm-switch"><i></i></span><b>启用</b></div>
+                <div class="pm-mod-row player-added"><div><strong>Xaero's Minimap</strong><small>玩家添加 · mods/xaeros-minimap.jar</small></div><span class="pm-switch on"><i></i></span><b>启用</b></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="admin-web-section" id="admin-web">
+      <div class="container admin-web-heading reveal">
+        <span class="codex-kicker">Management Web</span>
+        <h2>让服主用优雅的 Web 界面，快捷管理整合包更新。</h2>
+        <p>文件、版本、同步规则和玩家实例，都能在一套清晰的 Web 界面中快捷处理。服主只需查看差异、确认变更、点击发布，就能把整合包稳稳交到玩家手里。</p>
+      </div>
+
+      <div class="container admin-web-story">
+        <div class="admin-console-large reveal" aria-label="DreamingFish 管理端 Web 界面模拟">
+          <aside class="acl-sidebar">
+            <div class="acl-brand"><i>DF</i><div><strong>梦鱼更新管理</strong><span>DreamingFish</span></div></div>
+            <nav><span>⌂ 概览</span><span>◫ 项目设置</span><span class="active">↑ 管理文件</span><span>▣ 玩家端程序</span><span>◇ 玩家实例</span><span>⚙ 服务设置</span></nav>
+            <div class="acl-connected"><i></i><span>已连接 · DreamingFish Admin 0.1.16</span></div>
+          </aside>
+          <section class="acl-workspace">
+            <header class="acl-topbar"><div><span>MANAGEMENT CONSOLE</span><strong>管理文件</strong></div><div><button>☀ 白天模式</button><label>当前项目 <b>梦屿整合包</b><i class="acl-chevron" aria-hidden="true"></i></label><button class="acl-refresh" type="button" aria-label="刷新"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 5.5A5.5 5.5 0 1 0 13.1 10"/><path d="M13 2.5v3.2H9.8"/></svg></button></div></header>
+            <main class="acl-content">
+              <div class="acl-service"><div><i></i><span><strong>HTTP 文件服务正在运行</strong><small>http://0.0.0.0:8080</small></span></div><div><button>■ 停止</button><button class="primary">▶ 启动下载服务</button></div></div>
+              <div class="acl-metrics"><article><span>托管文件</span><strong>146</strong></article><article><span>总大小</span><strong>2.84 GB</strong></article><article><span>强制同步</span><strong>3</strong></article><article><span>当前发布</span><strong>1.3</strong></article></div>
+              <section class="acl-panel">
+                <div class="acl-panel-head"><div><strong>整合包文件</strong><span>146 个文件 · 选择目标文件夹后添加</span></div><div><button>↻ 刷新</button><button class="primary">＋ 添加文件</button></div></div>
+                <p><b>这里展示管理服务器“要管理的文件目录”中的真实内容。</b> 文件夹勾选会递归选择其下全部文件，修改后扫描并发布才会影响玩家。</p>
+                <div class="acl-toolbar"><label>☑ 全选当前列表</label><span>未选择文件</span><button>清空选择</button><button disabled>移除所选</button></div>
+                <div class="acl-tree">
+                  <div class="acl-tree-head"><span>选择</span><span>状态</span><span>文件或文件夹</span><span>大小</span><span>修改时间</span></div>
+                  <div class="acl-tree-row folder"><span>□</span><span class="badge-folder">目录</span><span><i class="acl-tree-arrow is-open" aria-hidden="true"></i><div><strong>mods</strong><small>98 个文件</small></div></span><span>2.32 GB</span><span>刚刚</span></div>
+                  <div class="acl-tree-row child"><span>□</span><span class="badge-file">文件</span><span><i class="acl-tree-arrow-spacer" aria-hidden="true"></i><div><strong>dreamingfish-core.jar</strong><small>服务器强制同步</small></div></span><span>31.8 MB</span><span>2 分钟前</span></div>
+                  <div class="acl-tree-row child"><span>□</span><span class="badge-file">文件</span><span><i class="acl-tree-arrow-spacer" aria-hidden="true"></i><div><strong>performance-helper.jar</strong><small>普通托管</small></div></span><span>4.6 MB</span><span>5 分钟前</span></div>
+                  <div class="acl-tree-row folder"><span>□</span><span class="badge-folder">目录</span><span><i class="acl-tree-arrow" aria-hidden="true"></i><div><strong>config</strong><small>42 个文件</small></div></span><span>18.4 MB</span><span>今天</span></div>
+                </div>
+              </section>
+              <section class="acl-warning-panel"><div><span>谨慎启用</span><strong>管理强制同步目录</strong><p>目录内文件不能被玩家豁免，玩家额外文件会先归档再移出实例。</p></div><button>保存目录设置</button></section>
+            </main>
+          </section>
+        </div>
+
+        <div class="admin-web-features reveal">
+          <article><span>目录树文件管理</span><p>多级文件夹展开、递归选择、搜索、批量移除，并保留展开和滚动位置。</p></article>
+          <article><span>内置服务器文件浏览器</span><p>Windows 与 Linux 使用同一套 Web 路径选择，不依赖藏在浏览器后的系统窗口。</p></article>
+          <article><span>分片上传与原子落盘</span><p>取消、断线或关闭页面会清理临时分片，完整上传后才替换标准目录中的目标文件。</p></article>
+          <article><span>发布前预览差异</span><p>自动列出新增、修改和删除的文件，服主确认后即可一键生成新版本，发布过程清晰可控。</p></article>
+          <article><span>项目与玩家实例</span><p>在同一个页面发布玩家端程序、生成首次部署包或直接准备完整玩家实例。</p></article>
+          <article><span>白天与夜间模式</span><p>管理页面记住浏览器选择，远程桌面和不同显示环境下都保持清楚可读。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sync-showcase" id="sync">
+      <div class="container">
+        <div class="sync-heading reveal"><span class="codex-kicker light-kicker">Sync policy</span><h2>温和的默认同步，明确的强制边界。</h2><p>管理端提供默认同步和强制同步两种策略，服主可以按目录或文件灵活选择：默认同步尊重玩家本地内容，强制同步确保指定内容与发布版本一致。</p></div>
+        <div class="sync-cards">
+          <article class="sync-card reveal"><span class="sync-index">DEFAULT</span><h3>默认同步</h3><p>适合大多数整合包内容：服务器发布什么，玩家就更新什么；玩家自己添加的文件和模组不会被删除，还能在本地决定哪些内容交给服务器管理。</p><ul><li>服主发布的内容自动同步</li><li>玩家自定义文件和模组不会被删</li><li>玩家可随时调整管理范围</li></ul></article>
+          <article class="sync-card sync-card-accent reveal"><span class="sync-index">FORCED</span><h3>强制同步</h3><p>开启后，指定范围会强制与服务器保持一致；即使玩家自己添加了模组，范围内的冲突内容也会先安全备份，再移出游戏实例。</p><ul><li>服主可按目录或单个文件指定</li><li>指定内容始终跟随服务器版本</li><li>玩家自加内容先备份，再安全移除</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="security-section" id="security">
+      <div class="container security-heading reveal">
+        <span class="codex-kicker light-kicker">Integrity and atomicity</span>
+        <h2>先确认发布来自谁，再确认每一个字节是否正确，最后才写入实例。</h2>
+        <p>DreamingFish Updater 不把“下载成功”当作“更新可信”。发布身份、对象内容、安装结果和本地路径分别校验；任何一步不满足条件，更新都不会被标记为完成。</p>
+      </div>
+
+      <div class="container security-architecture reveal">
+        <div class="security-column">
+          <div class="security-column-head"><span>01 / TRUSTED RELEASE</span><strong>发布真实性</strong></div>
+          <div class="security-chain">
+            <article><i>KEY</i><div><span>项目绑定</span><strong>玩家实例预先信任项目公钥</strong></div></article>
+            <b>→</b>
+            <article><i>SIG</i><div><span>Ed25519</span><strong>完整发布清单必须通过数字签名</strong></div></article>
+            <b>→</b>
+            <article><i>SEQ</i><div><span>防重放</span><strong>序号、发布 ID 与清单哈希共同检查</strong></div></article>
+          </div>
+          <p>管理端私钥只保存在服主自己的管理数据中。玩家端只持有公钥，因此公共下载服务或网络链路无法自行伪造一个可信发布。</p>
+        </div>
+
+        <div class="security-column">
+          <div class="security-column-head"><span>02 / VERIFIED TRANSFER</span><strong>传输完整性</strong></div>
+          <div class="security-object-card">
+            <div class="security-object-meta"><span>OBJECT</span><code>sha256/8f4c…d91a</code></div>
+            <div class="security-object-progress"><i></i></div>
+            <div class="security-object-stats"><span>声明大小与响应范围检查</span><strong>SHA-256 VERIFIED</strong></div>
+          </div>
+          <ul><li>每个文件对象以 SHA-256 内容哈希标识，同时校验声明大小。</li><li>断点续传必须返回匹配的 Content-Range，不匹配就重新下载。</li><li>下载先写入分片文件，校验通过后才提升为可安装对象。</li><li>默认并行下载多个独立对象，但每个对象都单独完成完整性验证。</li></ul>
+        </div>
+      </div>
+
+      <div class="container atomicity-panel reveal">
+        <div class="atomicity-copy">
+          <span class="codex-kicker light-kicker">Atomic installation</span>
+          <h3>安装不是边下边覆盖，而是一份可以恢复的事务。</h3>
+          <p>真正改动实例前，系统先备份本轮涉及的文件与可信元数据，并写入事务日志。替换完成后重新校验目标状态；只有校验、元数据保存和归档都完成，事务才会进入已提交状态。</p>
+        </div>
+        <div class="atomicity-flow">
+          <article><i>1</i><span>BACKED_UP</span><strong>备份旧文件与发布元数据</strong></article>
+          <article><i>2</i><span>COMMITTING</span><strong>临时文件落盘并替换目标</strong></article>
+          <article><i>3</i><span>VERIFYING</span><strong>重新验证已安装文件</strong></article>
+          <article class="active"><i>4</i><span>COMMITTED</span><strong>保存可信状态并清理事务</strong></article>
+        </div>
+        <div class="atomicity-recovery"><strong>意外断电、进程退出或安装失败</strong><span>下次启动先读取事务日志；未完成提交时恢复备份，恢复失败则明确阻止继续启动，而不是假装更新成功。</span></div>
+      </div>
+
+      <div class="container security-detail-grid reveal">
+        <article><span>原子文件替换</span><p>内容先写入同目录临时文件、强制刷新到磁盘，再使用原子移动替换；文件系统不支持时退回安全替换路径。</p></article>
+        <article><span>路径安全</span><p>拒绝绝对路径、<code>..</code>、Windows 保留名、大小写冲突和符号链接穿越，发布文件不能逃离实例目录。</p></article>
+        <article><span>并发与运行锁</span><p>同一实例只允许一个更新任务；Minecraft 正在使用实例时，不执行提交或未完成事务恢复。</p></article>
+        <article><span>离线边界</span><p>网络不可用时只复用最近一次已验证安装。签名、哈希、路径或事务错误不会被伪装成普通断网。</p></article>
+      </div>
+
+      <div class="container transport-note reveal">
+        <strong>关于 HTTP 与 HTTPS</strong>
+        <p>公共文件源可以部署在 HTTP 或 HTTPS 上。内容真实性与完整性由 Ed25519 签名和 SHA-256 校验独立保证：被篡改、截断或替换的清单与文件不会进入安装流程。正式公网环境仍建议使用 HTTPS，以额外保护访问地址、请求元数据和网络隐私。</p>
+        <a class="text-link" href="./docs/offline.html">阅读安全、离线与事务恢复细节 <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="brand-experience" id="brand">
+      <div class="container brand-experience-grid">
+        <div class="brand-experience-copy reveal">
+          <span class="codex-kicker">A launcher experience for your server</span>
+          <h2>更新能力之外，也能成为服务器自己的启动界面。</h2>
+          <p>项目名称、副标题、封面、强调色、服务器介绍与启动状态可以统一呈现。它与玩家已有的 Minecraft 启动器配合，不接管账号、游戏安装或实例管理。</p>
+          <a class="text-link" href="./docs/player.html">了解玩家端与启动器接入 <span>↗</span></a>
+        </div>
+        <div class="brand-studio reveal" aria-label="服务器专属启动界面能力示意">
+          <div class="brand-studio-head"><span>PROJECT BRANDING</span><strong>梦屿 · DreamingFish</strong></div>
+          <div class="brand-studio-preview">
+            <div class="brand-preview-nav"><b>梦鱼服</b><span>主页</span><span>新闻</span><span>服务器介绍</span><span>关于</span></div>
+            <div class="brand-preview-copy"><small>欢迎来到</small><strong>梦屿</strong><p>灾变之后，仍然有人在这里守望</p></div>
+            <div class="brand-preview-status"><span>已是最新版本</span><b>100%</b><i></i></div>
+          </div>
+          <div class="brand-studio-specs">
+            <div><span>项目名称与副标题</span><strong>让玩家一眼认出你的服务器</strong></div>
+            <div><span>封面与强调色</span><strong>每个项目都能拥有独立视觉</strong></div>
+            <div><span>服务器介绍栏目</span><strong>展示玩法、世界观与加入方式</strong></div>
+            <div><span>启动状态与更新信息</span><strong>品牌展示不影响更新主流程</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-experience" id="news">
+      <div class="container">
+        <div class="news-experience-heading reveal">
+          <span class="codex-kicker light-kicker">News and storytelling</span>
+          <h2>在玩家启动前，展示公告、活动、玩法与世界观。</h2>
+          <p>首页可以展示最新文章摘要，新闻页继续浏览完整列表。维护公告、活动预告、版本说明、服务器介绍和世界观长文都可以使用 Markdown 独立维护。</p>
+        </div>
+        <div class="news-product-grid reveal">
+          <article class="news-featured-card">
+            <div class="news-art news-art-main"><i></i><i></i><i></i></div>
+            <div class="news-card-meta">最新新闻 · 2026.07.30</div>
+            <h3>初识梦屿：灯还亮着</h3>
+            <p>把服务器的世界、角色与故事放进玩家真正会看到的位置，而不是埋在群公告里。</p>
+            <span>首页展示摘要，点击阅读完整文章</span>
+          </article>
+          <div class="news-product-list">
+            <article><span>维护公告</span><strong>清晰说明停服时间、影响范围和恢复进度</strong><small>适合运营通知</small></article>
+            <article><span>活动与版本</span><strong>发布新玩法、赛季、活动预告和更新说明</strong><small>适合持续运营</small></article>
+            <article><span>世界观与介绍</span><strong>用 Markdown 编写长文，把服务器设定完整呈现</strong><small>适合沉浸式服务器</small></article>
+            <article><span>内容独立维护</span><strong>标题、日期、摘要和正文分离，新增文章不需要修改界面代码</strong><small>适合长期更新</small></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="codex-cta">
+      <div class="container"><div class="codex-cta-inner reveal"><h2>从一份标准整合包开始。</h2><p>完整教程同时覆盖 Web 与交互终端路径，从管理端安装一直写到玩家首次启动验证。</p><div><a class="button primary large" href="./docs/quickstart.html">打开完整部署教程</a><a class="button secondary large" href="./docs/index.html">浏览全部文档</a></div></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid"><div class="footer-brand"><a class="brand" href="./index.html"><img src="./assets/logo.svg" alt=""><span class="brand-copy"><strong class="brand-wordmark"><span class="brand-dreaming">Dreaming</span><span class="brand-fish">Fish</span> <span class="brand-updater">Updater</span></strong><span>梦鱼更新器</span></span></a><p>面向 Minecraft 整合包服务器的自托管更新系统。</p></div><div class="footer-col"><h4>产品</h4><a href="#update">更新能力</a><a href="#security">安全与原子性</a><a href="#sync">同步策略</a><a href="#player-management">玩家本地管理</a><a href="#admin-web">管理端 Web</a><a href="#brand">自定义个性化</a></div><div class="footer-col"><h4>资源</h4><a href="./docs/index.html">使用文档</a><a href="./docs/quickstart.html">部署教程</a><a href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer">GitHub 仓库</a></div></div>
+    <div class="container footer-bottom"><span>© 2026 DreamingFish Updater</span><span>为每一次安心启动而设计</span></div>
+  </footer>
+</div>
+<script src="./assets/site.js" charset="utf-8"></script>
+</body>
+</html>
