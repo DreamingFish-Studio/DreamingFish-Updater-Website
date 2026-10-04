@@ -10,7 +10,7 @@
   <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
   <link rel="icon" href="../assets/logo.svg">
   <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="stylesheet" href="../assets/v4.css?v=20260802-28">
+  <link rel="stylesheet" href="../assets/v4.css?v=020-20261004-cards">
 </head>
 <body class="docs-body">
   <header class="site-header docs-header">
@@ -86,13 +86,13 @@
         <h2 id="workflow">从服主发布，到玩家进入游戏<a class="anchor-link" href="#workflow">#</a></h2>
         <div class="mini-flow">
           <div><strong>Web 管理</strong><span>添加、删除或更新模组、配置和资源，决定服务器要管理什么。</span></div>
-          <div><strong>选择策略</strong><span>默认同步尊重玩家本地选择；强制同步守住关键内容边界。</span></div>
+          <div><strong>选择策略</strong><span>普通同步尊重玩家本地选择；强制同步守住关键内容边界。</span></div>
           <div><strong>自动更新</strong><span>只下载真正变化的内容，完成签名、哈希和安装检查。</span></div>
           <div><strong>安全启动</strong><span>更新失败自动恢复；成功后继续进入 Minecraft。</span></div>
         </div>
 
         <h2 id="player-control">爱咋删，爱咋加，启动就完了。<a class="anchor-link" href="#player-control">#</a></h2>
-        <p>服主怎么删、怎么加，玩家端都能追到最新目标状态。默认同步下，玩家自己添加的模组和文件不会被误删；玩家还可以手动决定哪些本地内容继续交给更新器管理。</p>
+        <p>服主怎么删、怎么加，玩家端都能追到最新目标状态。普通同步下，玩家自己添加的模组和文件不会被误删；玩家还可以手动决定哪些本地内容继续交给更新器管理。</p>
         <ul class="feature-list">
           <li>服务器内容与玩家自选内容分开识别，互不打架。</li>
           <li>玩家可以按文件或目录管理本地内容，保留对客户端的控制权。</li>
@@ -100,32 +100,32 @@
           <li>玩家端更新器可以独立自更新，与整合包更新渠道分开。</li>
         </ul>
 
-        <h2 id="sync">服主有两种同步策略<a class="anchor-link" href="#sync">#</a></h2>
-        <p>管理端不把所有玩家电脑粗暴地全盘覆盖，而是让服主按内容的重要程度选择同步边界。</p>
-        <div class="mode-compare">
-          <div class="compare-card default">
-            <span class="badge">DEFAULT · 默认同步</span>
-            <h3>尊重玩家本地选择</h3>
-            <p>适合大多数内容。服务器发布的内容会保持最新；玩家额外添加的模组和文件保留不动，玩家可在本机豁免非强制内容或停用非强制模组。</p>
-            <ul class="feature-list">
-              <li>不主动删除玩家额外内容</li>
-              <li>玩家可以自己管理文件和模组</li>
-              <li>只对发布清单中的内容负责</li>
-            </ul>
-          </div>
-          <div class="compare-card force">
-            <span class="badge">FORCED · 强制同步</span>
-            <h3>关键内容保持一致</h3>
-            <p>适合核心模组、关键配置和必须一致的文件。开启后，玩家端会强制保持与服务器一致；发生冲突时，玩家自己添加的模组会先安全备份，再移除或替换。</p>
-            <ul class="feature-list">
-              <li>可按目录或单个文件开启</li>
-              <li>关键内容始终跟随服务器版本</li>
-              <li>冲突内容可恢复，策略边界清楚</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2 id="security">安全更新，不留下半套状态<a class="anchor-link" href="#security">#</a></h2>
+        <h2 id="sync">服主有三种维护方式<a class="anchor-link" href="#sync">#</a></h2><p>平时保持普通同步，关键内容设为强制同步，只想给玩家一份初始配置就选首次提供。文件夹可以统一设置，单个文件也能单独调整。</p><div class="doc-mode-grid" aria-label="三种文件维护方式">
+<section class="doc-mode-card mode-sync">
+  <div class="doc-mode-top"><span class="doc-mode-icon">↻</span><span class="doc-mode-tag">日常默认</span></div>
+  <h3>普通同步</h3><p class="doc-mode-intro">跟着服主更新，保留玩家选择。</p>
+  <div class="doc-mode-behavior"><span>缺了补齐</span><i>·</i><span>有更新就跟进</span></div>
+  <p>更新时先备份玩家的修改，再换成发布版本。玩家额外添加的内容默认保留。</p>
+  <div class="doc-mode-player"><b>玩家可以</b><span>停用模组，或选择自行管理。</span></div>
+  <footer>大多数模组和整合包文件，用这个就好。</footer>
+</section>
+<section class="doc-mode-card mode-required">
+  <div class="doc-mode-top"><span class="doc-mode-icon">◇</span><span class="doc-mode-tag">关键内容</span></div>
+  <h3>强制同步</h3><p class="doc-mode-intro">指定内容必须和服主保持一致。</p>
+  <div class="doc-mode-behavior"><span>强制更新</span><i>·</i><span>不能豁免</span></div>
+  <p>强制单个文件，只锁定这个文件；强制整个文件夹，还会把里面的额外文件备份移出。</p>
+  <div class="doc-mode-player"><b>玩家需要</b><span>保留强制内容，不能在本机关闭。</span></div>
+  <footer>适合核心模组和必须一致的配置。</footer>
+</section>
+<section class="doc-mode-card mode-initial">
+  <div class="doc-mode-top"><span class="doc-mode-icon">↓</span><span class="doc-mode-tag">给一份就好</span></div>
+  <h3>首次提供</h3><p class="doc-mode-intro">先给一份，之后让玩家自己管。</p>
+  <div class="doc-mode-behavior"><span>已有就保留</span><i>·</i><span>缺了提供一次</span></div>
+  <p>以后不覆盖，玩家删了也不会反复补回。服主改模板，老玩家的设置仍然保留。</p>
+  <div class="doc-mode-player"><b>玩家可以</b><span>自己修改，需要时主动恢复默认。</span></div>
+  <footer>适合默认按键、画质等初始配置。</footer>
+</section>
+</div><p>移出文件时再决定是删除玩家副本，还是停止维护、留给玩家。已经留给玩家的旧文件后来出了问题，也能从历史发布里选中具体坏版本处理。</p><h2 id="security">安全更新，不留下半套状态<a class="anchor-link" href="#security">#</a></h2>
         <p>更新不是“下载完就覆盖”。梦鱼更新器先确认发布可信，再逐项校验，最后以事务方式安装；任何一步失败，都不会把未验证的状态交给玩家启动。</p>
         <div class="steps">
           <div class="step-card"><h3>可信发布</h3><p>管理端用 Ed25519 签名发布清单，玩家先确认项目身份与目标版本。</p></div>
@@ -161,7 +161,7 @@
       <h4>本页内容</h4>
       <a href="#workflow" data-toc="workflow" style="padding-left:10px">工作链路</a>
       <a href="#player-control" data-toc="player-control" style="padding-left:10px">玩家自主控制</a>
-      <a href="#sync" data-toc="sync" style="padding-left:10px">两种同步策略</a>
+      <a href="#sync" data-toc="sync" style="padding-left:10px">三种维护方式</a>
       <a href="#security" data-toc="security" style="padding-left:10px">安全更新</a>
       <a href="#support" data-toc="support" style="padding-left:10px">启动器与加载器</a>
       
@@ -179,6 +179,6 @@
     </div>
   </div>
   <script src="../assets/site.js" charset="utf-8"></script>
-  <script src="../assets/docs.js?v=2" charset="utf-8"></script>
+  <script src="../assets/docs.js?v=020" charset="utf-8"></script>
 </body>
 </html>

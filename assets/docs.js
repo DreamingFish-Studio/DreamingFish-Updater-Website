@@ -2,8 +2,8 @@
   const pages = [
     { title: "概览", description: "理解管理端、玩家端与完整工作链路。", href: "./index.html", keywords: "概览 服主 玩家 工作流程 自托管 不替代启动器" },
     { title: "下载与首次配置", description: "下载解压管理端，完成第一次运行引导与首次设置。", href: "./quickstart.html", keywords: "下载 解压 安装 管理端 首次运行 引导 data 8080 18080 SSH" },
-    { title: "创建第一个项目", description: "创建整合包项目、生成首次部署包并完成启动器接入。", href: "./create-project.html", keywords: "创建项目 项目 ID 公共地址 Web 配置 命令行 终端 首次部署包 PCL HMCL Prism Java Agent javaagent JVM arguments.jvm 版本 JSON 版本隔离 game_directory gameDir" },
-    { title: "日常维护", description: "日常更新、历史回滚、服务管理、备份恢复与升级管理端。", href: "./maintenance.html", keywords: "维护 更新 回滚 备份 恢复 升级 服务 健康检查 常驻 多项目" },
+    { title: "创建第一个项目", description: "创建整合包项目、生成首次部署包并完成启动器接入。", href: "./create-project.html", keywords: "创建项目 项目 ID 公共地址 Web 配置 ZIP 部署 个性化 检测地址 暂存 导入 维护方式 命令行 终端 首次部署包 PCL HMCL Prism Java Agent javaagent JVM arguments.jvm 版本 JSON 版本隔离 game_directory gameDir" },
+    { title: "日常维护", description: "日常更新、历史回滚、服务管理、备份恢复与升级管理端。", href: "./maintenance.html", keywords: "维护 更新 回滚 备份 恢复 升级 服务 健康检查 常驻 多项目 上传 暂存 导入 重试 首次提供 强制同步 普通同步 历史 问题文件 豁免 持续移除 停止维护 留给玩家 外部托管" },
     { title: "常见问题", description: "端口、完整包、玩家程序、启动器接入、VPS 与自选模组问题。", href: "./faq.html", keywords: "FAQ 8080 18080 完整包 VPS SSH 自选模组 标准目录 Web 常驻 PCL HMCL javaagent game_directory arguments.jvm 版本隔离" },
     { title: "版本与更新日志", description: "当前组件版本与近期主要改进。", href: "./changelog.html", keywords: "更新日志 版本 玩家端 管理端 Agent" }
   ];

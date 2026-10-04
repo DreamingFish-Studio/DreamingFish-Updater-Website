@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DreamingFish Updater 宣传片</title>
+<link rel="stylesheet" href="film.css">
+</head>
+<body>
+<div id="viewport">
+<div id="stage">
+  <canvas id="bg" width="960" height="540"></canvas>
+
+  <div id="world">
+
+    <!-- ============ S0 · 群聊里的崩溃现场 ============ -->
+    <section class="scene" id="s0">
+      <div class="chat" id="chat">
+        <header class="chat-head">
+          <span class="chat-dot"></span><b>梦鱼服 · 玩家交流群</b><span class="chat-count">238 人在线</span>
+        </header>
+        <div class="chat-list" id="chat-list"></div>
+        <div class="chat-typing" id="chat-typing"><i></i><i></i><i></i><span>服主 正在输入…</span></div>
+      </div>
+      <div class="errs" id="errs"></div>
+    </section>
+
+    <!-- ============ S0b · 一句话立论 ============ -->
+    <section class="scene" id="s0b">
+      <h1 class="hook" id="hook">
+        <span class="hook-l1">玩家是来玩服务器的，</span>
+        <span class="hook-l2">不是来玩<em class="grad-ch">资源管理器</em>的。</span>
+      </h1>
+    </section>
+
+    <!-- ============ S1 · Logo ============ -->
+    <section class="scene" id="s1">
+      <div class="rays" id="rays"></div>
+      <div class="lockup" id="lockup">
+        <svg class="logo-big" id="logo-big" viewBox="0 0 48 48" fill="none">
+          <defs>
+            <linearGradient id="lg" x1="7" y1="8" x2="41" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2EE8DF"/><stop offset="1" stop-color="#B06CFF"/>
+            </linearGradient>
+            <filter id="lglow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect class="lg-frame" x="1" y="1" width="46" height="46" rx="14" fill="#081013" stroke="url(#lg)" stroke-opacity=".7" pathLength="1"/>
+          <path class="lg-fill" d="M9 25.2C14.7 16.7 24.7 13.1 35.7 17.1L41 12.8V26.7L35.7 22.6C27.3 27 18.7 28.1 9 25.2Z" fill="url(#lg)" fill-opacity=".22"/>
+          <path class="lg-body" d="M9 25.2C14.7 16.7 24.7 13.1 35.7 17.1L41 12.8V26.7L35.7 22.6C27.3 27 18.7 28.1 9 25.2Z" stroke="url(#lg)" stroke-width="2" stroke-linejoin="round" filter="url(#lglow)" pathLength="1"/>
+          <path class="lg-belly" d="M10.2 25.4C15.8 34.7 27.8 37.5 37.2 31.2" stroke="url(#lg)" stroke-width="2" stroke-linecap="round" opacity=".85" pathLength="1"/>
+          <path class="lg-gill" d="M17 22.1C20 24 23 24.4 26.2 23.3" stroke="#FFF8DC" stroke-opacity=".85" stroke-width="1.5" stroke-linecap="round" pathLength="1"/>
+          <circle class="lg-eye" cx="31.3" cy="19.3" r="1.7" fill="#FFF8DC"/>
+        </svg>
+        <div class="wordmark" id="wordmark"><span class="wm-d">Dreaming</span><span class="wm-f">Fish</span><span class="wm-u">Updater</span></div>
+        <div class="cn-name" id="cn-name">梦鱼更新器</div>
+      </div>
+      <div class="pills" id="pills"><span>安全可靠</span><i></i><span>自主可控</span><i></i><span>易于部署</span></div>
+      <p class="logo-sub" id="logo-sub">为 Minecraft 模组服打造的整合包更新系统</p>
+    </section>
+
+    <!-- ============ S2 · 玩家体验（文案 + 启动器） ============ -->
+    <section class="scene" id="s2">
+      <div class="copy-col" id="s2-copy">
+        <div class="kicker"><b>01</b><span>玩家体验</span></div>
+        <h2 class="h-xl"><span class="ln" id="s2-l1">玩家只需要</span><span class="ln" id="s2-l2">照常点击<em class="grad-ch">启动</em></span></h2>
+        <ul class="feats" id="s2-feats">
+          <li><i class="fdot"></i><div><b>只下载有变化的文件</b><span>多线程并发 · 断点续传</span></div></li>
+          <li><i class="fdot"></i><div><b>校验通过才会安装</b><span>Ed25519 签名 · SHA-256 校验</span></div></li>
+          <li><i class="fdot"></i><div><b>完成后，游戏照常启动</b><span>PCL · HMCL 无缝接入</span></div></li>
+        </ul>
+      </div>
+      <div class="launcher" id="launcher">
+        <div class="launcher-clip">
+          <div class="launcher-top"><span>你熟悉的 Minecraft 启动器</span><b>PCL · HMCL</b></div>
+          <div class="launcher-body">
+            <div class="inst">
+              <i class="grass"></i>
+              <div><b>梦屿整合包</b><span>1.21.1 · NeoForge · 186 个模组</span></div>
+            </div>
+            <div class="acct"><i class="acct-face" data-seed="9"></i><div><b>__HanHanYu__</b><span>正版登录</span></div></div>
+            <div class="launch-btn" id="launch-btn"><b>启动游戏</b><span>梦屿整合包</span></div>
+          </div>
+        </div>
+        <div class="cursor" id="cur-launch"><i class="ripple"></i><svg viewBox="0 0 32 32"><path d="M6 3l19 15.2-8.6 1.1 5 9.6-3.9 1.9-4.9-9.7L6 27z"/></svg></div>
+      </div>
+    </section>
+
+    <!-- ============ 玩家端窗口层（S2 + S3 共用） ============ -->
+    <section class="scene" id="s-pw">
+      <div class="pw-stack" id="pw-stack"></div>
+      <div class="pw-labels" id="pw-labels"></div>
+    </section>
+
+    <!-- ============ S3 · 专属界面 ============ -->
+    <section class="scene" id="s3">
+      <div class="s3-top" id="s3-top">
+        <div class="kicker center"><b>02</b><span>个性化</span></div>
+        <h2 class="h-lg"><span id="s3-h">打造你的服务器<em class="grad-ch">专属启动界面</em></span></h2>
+        <p class="sub" id="s3-sub">名称 · 封面 · 强调色 · 新闻 · 自定义页面 · 背景音乐</p>
+      </div>
+    </section>
+
+    <!-- ============ S4 · 任意版本直达最新 ============ -->
+    <section class="scene" id="s4">
+      <div class="s4-top" id="s4-top">
+        <div class="kicker center" id="s4-kicker"><b>03</b><span>任意版本直达最新</span></div>
+        <div class="s4-hl">
+          <h2 class="h-lg s4-h" id="s4-h1">整合包，每个版本都在变。</h2>
+          <h2 class="h-lg s4-h" id="s4-h2">跳过了好几个版本？</h2>
+          <h2 class="h-lg s4-h" id="s4-h3">一步，直达<em class="grad-ch">最新</em>。</h2>
+        </div>
+      </div>
+      <svg class="vtrack" id="vtrack" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="arcg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#f4c26b"/><stop offset=".45" stop-color="#b06cff"/><stop offset="1" stop-color="#2ee8df"/>
+          </linearGradient>
+          <linearGradient id="litg" x1="260" y1="0" x2="1660" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#5ee59a"/><stop offset=".5" stop-color="#b06cff"/><stop offset="1" stop-color="#2ee8df"/>
+          </linearGradient>
+          <filter id="aglow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g id="vt-root"></g>
+      </svg>
+      <div class="vcards" id="vcards"></div>
+      <div class="vmiss" id="vmiss"><i>!</i>错过了 5 个版本</div>
+      <div class="vchip" id="vchip"><i class="vchip-face"></i><div><b>小鱼干</b><span id="vchip-note">上次停在 1.2</span></div></div>
+      <div class="vrider" id="vrider"><i class="vchip-face"></i></div>
+      <div class="plan" id="plan">
+        <div class="plan-head">
+          <div><small>本次更新</small><b>从 1.2 直达 1.7</b></div>
+          <span class="plan-chip">一次完成 · 不用逐个补版本</span>
+        </div>
+        <div class="plan-rows" id="plan-rows">
+          <div class="plan-row"><em class="op install">安装 / 更新</em><code>mods/create-1.21.1-6.0.4.jar 等 7 个</code><span>新增机械动力与附属</span></div>
+          <div class="plan-row"><em class="op install">安装 / 更新</em><code>mods/jei-19.21.2.jar</code><span>直接装稳定版，问题版本从没下载过</span></div>
+          <div class="plan-row"><em class="op install">安装 / 更新</em><code>config/dreamhaven/quests.json</code><span>强制同步，和服主保持一致</span></div>
+          <div class="plan-row"><em class="op archive">移入备份</em><code>mods/OptiFine_HD_U_J1.jar</code><span>服主已移除这个文件，副本已备份</span></div>
+          <div class="plan-row"><em class="op archive">移入备份</em><code>mods/xaeros-minimap-24.1.0.jar</code><span>与整合包中的同一模组重复，已移出</span></div>
+          <div class="plan-row"><em class="op option">可选内容</em><code>光影与美化</code><span>你选择了关闭，保持不安装</span></div>
+        </div>
+        <div class="plan-foot" id="plan-foot">已比对 <b id="pf-a">0</b> 个文件<i></i>只需下载 <b id="pf-b">0</b> 个<i></i><b id="pf-c">0.0 MB</b></div>
+      </div>
+    </section>
+
+    <!-- ============ S5 · 服主管理端 ============ -->
+    <section class="scene" id="s5">
+      <div class="copy-col" id="s5-copy">
+        <div class="kicker"><b>04</b><span>服主管理端</span></div>
+        <h2 class="h-xl"><span class="ln" id="s5-l1">服主发版本，</span><span class="ln" id="s5-l2">三步<em class="grad-ch">就够</em>。</span></h2>
+        <ol class="steps" id="s5-steps">
+          <li><i>1</i><div><b>放入文件</b><span>网页上传，或直接放进整合包目录</span></div></li>
+          <li><i>2</i><div><b>检查变化</b><span>新增、修改、移除，一目了然</span></div></li>
+          <li><i>3</i><div><b>确认发布</b><span>自动签名，玩家下次启动即更新</span></div></li>
+        </ol>
+        <div class="chips" id="s5-chips"><span>Web 界面</span><span>可交互终端</span><span>Windows / Linux 自托管</span></div>
+      </div>
+      <div class="fly-files" id="fly-files">
+        <span class="ffile"><i>JAR</i>create-6.0.4.jar</span>
+        <span class="ffile"><i>JAR</i>dreamhaven-quests-2.0.jar</span>
+        <span class="ffile"><i>ZIP</i>DreamHaven-UI.zip</span>
+      </div>
+      <div class="admin" id="admin">
+        <div class="admin-clip">
+          <div class="adm-chrome"><i></i><i></i><i></i><span>DreamingFish Admin · 127.0.0.1</span></div>
+          <aside class="adm-side">
+            <div class="adm-brand"><div class="adm-mark">DF</div><div><b>梦鱼更新管理</b><span><em>Dreaming</em><strong>Fish</strong></span></div></div>
+            <nav class="adm-nav">
+              <span><i>⌂</i>概览</span>
+              <span><i>▤</i>管理内容</span>
+              <span class="on"><i>↑</i>检查并发布<small class="adm-badge" id="adm-badge">待发布</small></span>
+              <span><i>◫</i>项目设置</span>
+              <span><i>✦</i>玩家端个性化</span>
+              <span><i>▣</i>玩家端程序</span>
+              <span><i>⇄</i>外部托管</span>
+              <span><i>◇</i>玩家实例</span>
+              <span><i>⚙</i>服务设置</span>
+            </nav>
+            <div class="adm-acct">
+              <div class="adm-acct-id"><span>当前登录</span><b>管理员</b></div>
+              <div class="adm-acct-act"><span>账户安全</span><i><svg viewBox="0 0 24 24"><path d="M10 5H6.5A1.5 1.5 0 0 0 5 6.5v11A1.5 1.5 0 0 0 6.5 19H10M14 8l4 4-4 4M18 12H9"/></svg></i></div>
+            </div>
+            <div class="adm-foot"><p><i></i>本地管理服务已连接</p><small>DreamingFish Admin</small></div>
+          </aside>
+          <div class="adm-work">
+            <header class="adm-top">
+              <div><small>MANAGEMENT CONSOLE</small><h3>检查并发布</h3></div>
+              <div class="adm-tools"><i class="adm-ib">☀</i><span>当前项目</span><b class="adm-sel">梦屿整合包 · dreamhaven<u>⌄</u></b><i class="adm-ib">↻</i></div>
+            </header>
+            <div class="adm-view">
+              <div class="adm-scroll" id="adm-scroll">
+                <section class="adm-panel" id="adm-check">
+                  <div class="adm-ph">
+                    <div><h4>发布前检查</h4><span id="adm-check-time">尚未检查</span></div>
+                    <div class="adm-btn primary" id="adm-scan"><i class="spin" id="adm-spin"></i><span>↻ 检查整合包内容</span></div>
+                  </div>
+                  <div class="adm-metrics" id="adm-metrics">
+                    <div><span>新增</span><b data-v="2">--</b></div>
+                    <div><span>更新</span><b data-v="3">--</b></div>
+                    <div><span>移除</span><b data-v="1">--</b></div>
+                    <div><span>规则变化</span><b data-v="0">--</b></div>
+                    <div><span>玩家预计下载</span><b data-v="48.6" data-unit=" MiB">--</b></div>
+                  </div>
+                  <div class="adm-bulk" id="adm-bulk"><span>移除的 1 个文件：</span><div><i class="adm-btn sec">全部从玩家端删除</i><i class="adm-btn sec">全部停止维护，玩家保留</i></div></div>
+                  <div class="adm-table">
+                    <div class="adm-tr head"><span>变化</span><span>文件</span><span>维护方式</span><span>下载量</span><span>移除后怎么处理</span></div>
+                    <div class="adm-rows" id="adm-rows">
+                      <div class="adm-tr"><span><em class="bd del">移除</em></span><span><b>OptiFine</b><code>mods/OptiFine_HD_U_J1.jar</code></span><span>--</span><span>--</span><span><i class="adm-select" id="adm-rm">移除玩家副本（持续生效，先备份）<u>⌄</u></i></span></div>
+                      <div class="adm-tr"><span><em class="bd add">新增</em></span><span><b>Create 机械动力</b><code>mods/create-1.21.1-6.0.4.jar</code></span><span><em class="pp sync">普通同步</em></span><span>22.1 MiB</span><span>--</span></div>
+                      <div class="adm-tr"><span><em class="bd add">新增</em></span><span><b>守望者任务</b><code>mods/dreamhaven-quests-2.0.jar</code></span><span><em class="pp req">强制同步</em></span><span>4.3 MiB</span><span>--</span></div>
+                      <div class="adm-tr"><span><em class="bd mod">更新</em></span><span><b>Just Enough Items</b><code>mods/jei-19.21.2.jar</code></span><span><em class="pp sync">普通同步</em></span><span>1.4 MiB</span><span>--</span></div>
+                      <div class="adm-tr"><span><em class="bd mod">更新</em></span><span><b>任务配置</b><code>config/dreamhaven/quests.json</code></span><span><em class="pp req">强制同步</em></span><span>36 KiB</span><span>--</span></div>
+                      <div class="adm-tr"><span><em class="bd mod">更新</em></span><span><b>梦屿界面资源包</b><code>resourcepacks/DreamHaven-UI.zip</code></span><span><em class="pp init">首次提供</em></span><span>20.8 MiB</span><span>--</span></div>
+                    </div>
+                    <div class="adm-empty" id="adm-empty">点击“检查整合包内容”，查看这次发布会给玩家带来哪些变化</div>
+                  </div>
+                </section>
+                <section class="adm-panel">
+                  <div class="adm-ph">
+                    <div><h4>发布新版本</h4><span>发布后内容不可修改；玩家下次启动时更新</span></div>
+                    <div class="adm-btn primary" id="adm-pub"><span id="adm-pub-label">发布整合包</span></div>
+                  </div>
+                  <div class="adm-form">
+                    <label><span>本次显示版本（必填）</span><b>1.7</b></label>
+                    <label><span>最低玩家端程序版本（必填）</span><b>0.2.0</b></label>
+                    <label class="full"><span>更新记录</span><b class="ta">新增守望者任务线，优化远景渲染与更新提示。</b></label>
+                  </div>
+                </section>
+              </div>
+              <div class="adm-toasts"><div class="adm-toast" id="adm-toast">已上传 3 个文件到 mods/ 与 resourcepacks/</div><div class="adm-toast" id="adm-toast2">版本 1.7 已发布</div></div>
+            </div>
+          </div>
+          <div class="adm-modal" id="adm-modal">
+            <div class="adm-dialog" id="adm-dialog">
+              <i class="adm-accent"></i>
+              <small>确认操作</small>
+              <h5>发布新版本</h5>
+              <p>显示版本：1.7</p>
+              <p>新增 2 · 更新 3 · 移除 1 · 规则变化 0</p>
+              <p>移除玩家副本（持续生效，先备份）：1 个</p>
+              <p>发布后该版本内容不可修改。</p>
+              <div class="adm-dact"><i class="adm-btn sec">取消</i><i class="adm-btn primary" id="adm-confirm">确认发布</i></div>
+            </div>
+          </div>
+          <div class="adm-stamp" id="adm-stamp">
+            <div class="stamp-card">
+              <i class="stamp-check">✓</i>
+              <b>版本 1.7 已发布</b>
+              <span>Ed25519 已签名 · 玩家下次启动时自动更新</span>
+            </div>
+          </div>
+        </div>
+        <div class="cursor" id="cur-admin"><i class="ripple"></i><svg viewBox="0 0 32 32"><path d="M6 3l19 15.2-8.6 1.1 5 9.6-3.9 1.9-4.9-9.7L6 27z"/></svg></div>
+      </div>
+    </section>
+
+    <!-- ============ S6 · 维护方式 + 玩家控制 ============ -->
+    <section class="scene" id="s6">
+      <div class="s6-top" id="s6-top">
+        <div class="kicker center"><b>05</b><span>按文件选择维护方式</span></div>
+        <h2 class="h-lg"><span class="ln" id="s6-l1">该一致的，严格一致；</span><span class="ln" id="s6-l2">其余的，<em class="grad-ch">玩家说了算</em>。</span></h2>
+      </div>
+      <div class="pcards" id="pcards">
+        <article class="pcard" style="--c:#ff7a85">
+          <div class="pc-icon"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15.5" r="1.4"/></svg></div>
+          <h3>强制同步</h3>
+          <p class="pc-fit">核心模组、联机配置</p>
+          <p class="pc-do">始终与服主一致</p>
+        </article>
+        <article class="pcard" style="--c:#2ee8df">
+          <div class="pc-icon"><svg viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M17.8 3.5v3.6h-3.6M6.2 20.5v-3.6h3.6"/></svg></div>
+          <h3>普通同步<em>默认</em></h3>
+          <p class="pc-fit">大多数模组与资源</p>
+          <p class="pc-do">跟随更新，玩家可停用</p>
+        </article>
+        <article class="pcard" style="--c:#b06cff">
+          <div class="pc-icon"><svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M3 9h18M12 9v11M12 9c-1.6-3.4-5.6-4-5.6-1.6S10 9 12 9zm0 0c1.6-3.4 5.6-4 5.6-1.6S14 9 12 9z"/></svg></div>
+          <h3>首次提供</h3>
+          <p class="pc-fit">初始配置、模板文件</p>
+          <p class="pc-do">只给一次，之后归玩家</p>
+        </article>
+      </div>
+      <div class="copy-col s6-copy" id="s6-copy">
+        <h2 class="h-xl"><span class="ln" id="s6b-l1">玩家，</span><span class="ln" id="s6b-l2">也有<em class="grad-ch">选择权</em>。</span></h2>
+        <ul class="feats compact" id="s6-feats">
+          <li><i class="fdot"></i><div><b>可选内容，按组开关</b></div></li>
+          <li><i class="fdot"></i><div><b>模组可停用，文件可自管</b></div></li>
+          <li><i class="fdot"></i><div><b>被替换的文件先备份，随时放回</b></div></li>
+        </ul>
+        <p class="footnote" id="s6-foot"><svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg>这些选择只保存在玩家自己的电脑上</p>
+      </div>
+      <div class="local" id="local">
+        <div class="local-clip">
+          <div class="loc-inner">
+          <img class="loc-bg" src="assets/cover-dreamhaven.png" alt="">
+          <div class="loc-title">
+            <div class="pw-brand"><b>梦鱼服</b><span>DreamingFish</span></div>
+            <nav class="pw-nav"><span class="on">主页</span><span>新闻</span><span>关于更新器</span></nav>
+            <div class="pw-ctl"><i class="g-min"></i><i class="g-max"></i><i class="g-x"><i></i><i></i></i></div>
+          </div>
+          <div class="drw">
+            <div class="drw-head"><b>更新与本地管理</b><span class="drw-btns"><i class="g-rest"><i></i><i></i></i><i class="g-x"><i></i><i></i></i></span></div>
+            <div class="drw-tabs"><span>本次更新</span><span>更新记录</span><span>运行记录</span><span class="on" id="tab-files">本地文件</span><span id="tab-bk">备份与恢复</span><span>自选模组</span></div>
+            <div class="drw-body">
+              <div class="drw-page" id="pg-files">
+                <div class="lm-bar"><div class="on"><b>可选内容</b><span>按电脑配置开关光影、美化等</span></div><div><b>文件管理范围</b><span>决定哪些文件随整合包更新</span></div><div><b>模组启停</b><span>启用或停用整合包内模组</span></div></div>
+                <p class="drw-warn">服主把下面的内容设为可选，你可以按电脑配置决定是否安装。关闭后，相关模组会移出游戏并保留在本机，随时可以重新开启。</p>
+                <article class="opt" id="opt-0"><div class="opt-h"><div><b>光影与美化</b><span id="opt-0-st">已开启  ·  跟随服主默认</span></div><i class="sw" id="sw-0"><i></i></i></div><div class="opt-m"><span>iris-1.8.1.jar</span><span>ComplementaryReimagined.zip</span><span>sodium-extra-0.6.jar</span></div><u class="opt-reset" id="opt-0-reset">恢复服主默认（开启）</u></article>
+                <article class="opt off"><div class="opt-h"><div><b>远景渲染</b><span>已关闭  ·  跟随服主默认</span></div><i class="sw"><i></i></i></div><div class="opt-m"><span>DistantHorizons-2.3.0.jar</span></div></article>
+                <article class="opt"><div class="opt-h"><div><b>小地图</b><span>已开启  ·  跟随服主默认</span></div><i class="sw on"><i></i></i></div><div class="opt-m"><span>xaeros-minimap-24.2.jar</span><span>xaeros-worldmap-1.39.jar</span></div></article>
+              </div>
+              <div class="drw-page" id="pg-bk">
+                <div class="bk-tools"><p>更新器不会直接删除你的文件：被替换、清理、撤回或恢复默认的本地文件都会先移到这里，需要时可以放回游戏。</p><i class="bt">打开备份文件夹</i></div>
+                <section class="bk-card">
+                  <div class="bk-h"><div><b>更新到版本 1.7 时</b><span>2026.10.03 20:14 · 2 个文件 · 1.8 MB</span></div><i class="bt">打开</i><i class="bt danger">删除</i></div>
+                  <div class="bk-f" id="bk-0"><div><b>config/xaero/minimap.txt</b><span>服主已删除这个文件，你修改过的副本已备份</span></div><i class="bt" id="bk-0-btn">放回游戏</i></div>
+                  <div class="bk-f"><div><b>mods/OptiFine_HD_U_J1.jar</b><span>服主已移除这个文件，副本已备份</span></div><i class="bt">放回游戏</i></div>
+                </section>
+                <section class="bk-card dim">
+                  <div class="bk-h"><div><b>更新到版本 1.6 时</b><span>2026.09.21 19:02 · 1 个文件 · 812 KB</span></div><i class="bt">打开</i><i class="bt danger">删除</i></div>
+                  <div class="bk-f"><div><b>mods/xaeros-minimap-24.1.0.jar</b><span>与整合包中的同一模组重复（modId 相同），已移出以免游戏崩溃</span></div><i class="bt">放回游戏</i></div>
+                </section>
+              </div>
+            </div>
+          </div>
+          </div>
+          <i class="pw-rim"></i>
+        </div>
+        <div class="cursor" id="cur-local"><i class="ripple"></i><svg viewBox="0 0 32 32"><path d="M6 3l19 15.2-8.6 1.1 5 9.6-3.9 1.9-4.9-9.7L6 27z"/></svg></div>
+      </div>
+    </section>
+
+    <!-- ============ S7 · 安全与原子性 ============ -->
+    <section class="scene" id="s7">
+      <div class="s7-head" id="s7-head">
+        <div class="kicker center" id="s7-kicker"><b>06</b><span>安全与原子性</span></div>
+        <h2 class="h-xxl"><span class="ln" id="s7-l1">更新，</span><span class="ln" id="s7-l2">绝不能把客户端<em class="grad-ch">改坏</em>。</span></h2>
+      </div>
+      <div class="pipe" id="pipe"></div>
+      <div class="hash" id="hash"><span class="hash-k">SHA-256</span><code id="hash-v"></code><b class="hash-ok" id="hash-ok">✓ 一致</b></div>
+      <div class="fail" id="fail">
+        <div class="fail-glitch" id="fail-glitch"><b data-t="更新中断">更新中断</b></div>
+        <p id="fail-sub">断电 · 崩溃 · 强制关闭</p>
+      </div>
+      <div class="recover" id="recover">
+        <div class="rc-chip" id="rc-chip"><span>下次启动</span></div>
+        <p class="rc-line" id="rc-line">检测到未完成的更新事务，正在按日志回滚…</p>
+        <b class="rc-big" id="rc-big"><i>✓</i>已自动恢复到更新前的状态</b>
+      </div>
+      <div class="verdict" id="verdict">
+        <h2 class="h-xxl"><span class="ln" id="vd-l1">要么完整更新，</span><span class="ln" id="vd-l2">要么<em class="grad-ch">完全不变</em>。</span></h2>
+        <p class="sub" id="vd-sub">签名不符、文件损坏或被篡改，一律拒绝安装。</p>
+      </div>
+    </section>
+
+    <!-- ============ S8 · 更多能力 ============ -->
+    <section class="scene" id="s8">
+      <div class="s8-top" id="s8-top">
+        <div class="kicker center"><b>07</b><span>更多能力</span></div>
+        <h2 class="h-lg" id="s8-h">还有这些，<em class="grad-ch">同样省心</em>。</h2>
+      </div>
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <!-- ============ S9 · 收束 ============ -->
+    <section class="scene" id="s9">
+      <div class="end-bg" id="end-bg"><img src="assets/cover-dreamhaven.png" alt=""></div>
+      <div class="end-shade" id="end-shade"></div>
+      <div class="end-copy">
+        <div class="end-brand" id="end-brand">
+          <svg viewBox="0 0 48 48" fill="none"><use href="#logo-sym"/></svg>
+          <div class="wordmark sm"><span class="wm-d">Dreaming</span><span class="wm-f">Fish</span><span class="wm-u">Updater</span></div>
+        </div>
+        <h2 class="h-xl end-h"><span class="ln" id="end-l1">让玩家照常点击启动，</span><span class="ln" id="end-l2">剩下的，交给<em class="grad-ch">梦鱼</em>。</span></h2>
+        <div class="end-info" id="end-info">
+          <p><span>GitHub</span><b>hanhanyu666/DreamingFish-Updater</b></p>
+          <p><span>官网文档</span><b>dreamingfish-studio.github.io/DreamingFish-Updater-Website</b></p>
+          <p><span>下载</span><b>玩家端 Windows · 管理端 Windows / Linux · 免装 Java</b></p>
+        </div>
+        <p class="end-bgm" id="end-bgm">BGM：周杰伦《爱琴海》（梦鱼服启动音乐）</p>
+      </div>
+    </section>
+
+    <!-- 全局：顶部 HUD -->
+    <div class="hud" id="hud">
+      <div class="hud-brand"><svg viewBox="0 0 48 48" fill="none"><use href="#logo-sym"/></svg><span><em>Dreaming</em><i>Fish</i> Updater</span></div>
+      <div class="hud-chap"><b id="hud-n">01</b><span>/ 07</span><div class="hud-segs" id="hud-segs"><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i><i><u></u></i></div></div>
+    </div>
+  </div>
+
+  <div id="vignette"></div>
+  <div id="flash"></div>
+</div>
+</div>
+
+<!-- 共用 Logo 符号 -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="lgs" x1="7" y1="8" x2="41" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2EE8DF"/><stop offset="1" stop-color="#B06CFF"/>
+    </linearGradient>
+    <symbol id="logo-sym" viewBox="0 0 48 48">
+      <rect x="1" y="1" width="46" height="46" rx="14" fill="#081013" stroke="url(#lgs)" stroke-opacity=".6"/>
+      <path d="M9 25.2C14.7 16.7 24.7 13.1 35.7 17.1L41 12.8V26.7L35.7 22.6C27.3 27 18.7 28.1 9 25.2Z" fill="url(#lgs)" fill-opacity=".2" stroke="url(#lgs)" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M10.2 25.4C15.8 34.7 27.8 37.5 37.2 31.2" stroke="url(#lgs)" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <circle cx="31.3" cy="19.3" r="1.7" fill="#FFF8DC"/>
+      <path d="M17 22.1C20 24 23 24.4 26.2 23.3" stroke="#FFF8DC" stroke-opacity=".8" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- 片头封面 / 播放器控件 -->
+<div id="poster">
+  <div class="poster-inner">
+    <svg class="poster-logo" viewBox="0 0 48 48" fill="none"><use href="#logo-sym"/></svg>
+    <h1><em>Dreaming</em><i>Fish</i> <span>Updater</span></h1>
+    <p>官方宣传片 · 约 2 分钟 · 建议全屏并打开声音</p>
+    <button id="play-btn" type="button" disabled><span class="tri"></span><span id="play-label">正在准备…</span></button>
+    <small id="poster-hint">空格 播放/暂停 · ← → 切换章节 · F 全屏 · M 静音 · R 重播</small>
+  </div>
+</div>
+<div id="controls">
+  <button id="c-play" type="button" aria-label="播放/暂停">❚❚</button>
+  <span id="c-time">0:00 / 2:02</span>
+  <div id="c-bar"><div id="c-marks"></div><div id="c-fill"></div><input id="c-seek" type="range" min="0" max="1000" value="0" aria-label="进度"></div>
+  <span id="c-chap">序章</span>
+  <button id="c-mute" type="button" aria-label="静音">♪</button>
+  <button id="c-full" type="button" aria-label="全屏">⛶</button>
+</div>
+
+<script src="score.js"></script>
+<script src="film.js"></script>
+</body>
+</html>
