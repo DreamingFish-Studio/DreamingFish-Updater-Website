@@ -1540,77 +1540,49 @@ html[data-theme="dark"] .docs-body .warn-yellow {
   color: #e8b867;
 }
 
-/* Step 3 directory illustration and width-aware summary cards. */
-.docs-file-tree {
-  margin: 22px 0 28px;
-  padding: 18px 20px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  background: var(--surface);
-}
-.docs-file-tree-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 12px;
-  color: var(--muted-2);
-  font-size: 11px;
-}
-.docs-file-tree-head strong {
-  color: var(--text);
-  font-size: 14px;
-}
-.docs-file-tree-head > span::before {
-  content: "这是一个示例 · ";
-}
-.docs-file-tree-row {
-  display: grid;
-  grid-template-columns: 18px 18px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 8px;
-  min-height: 38px;
-  padding: 0 8px;
-  border-top: 1px solid var(--line);
-  color: var(--text-soft);
-  font-size: 12px;
-}
-.docs-file-tree-row.nested {
-  padding-left: 34px;
-  color: var(--muted);
-}
-.docs-file-tree-row strong {
-  color: var(--text);
-  font-weight: 700;
-}
-.docs-file-tree .tree-branch {
-  color: var(--muted-2);
-  font: 700 13px/1 "Cascadia Code", Consolas, monospace;
-  text-align: center;
-}
-.docs-file-tree .tree-icon.folder {
-  color: #a16c06;
-  font-size: 10px;
-}
-.docs-file-tree .tree-icon.file {
-  color: var(--muted-2);
-  font-size: 13px;
-  text-align: center;
-}
-.docs-file-tree .tree-note,
-.docs-file-tree em {
-  color: var(--muted-2);
-  font-size: 10px;
-  font-style: normal;
-  white-space: nowrap;
-}
-.docs-file-tree em {
-  color: #a16c06;
-}
-html[data-theme="dark"] .docs-file-tree .tree-icon.folder,
-html[data-theme="dark"] .docs-file-tree em {
-  color: #e8b867;
+/* Directory diagrams: nested lists, guide lines and semantic badges. */
+.docs-body .docs-file-tree{margin:24px 0 32px;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface);container-type:inline-size}
+.docs-body .docs-file-tree-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 20px;border-bottom:1px solid var(--line);background:var(--surface-2);color:var(--muted);font-size:12px;line-height:1.5}
+.docs-body .docs-file-tree-head strong{color:var(--text);font-size:15px;font-weight:700;line-height:1.5}
+.docs-body .docs-file-tree-head>span::before{content:none}
+.docs-body .docs-file-tree-body{padding:14px 17px 17px}
+.docs-body .docs-file-tree .docs-tree-nodes{list-style:none;margin:0;padding:0}
+.docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes{margin:2px 0 3px 15px;padding:0 0 0 17px}
+.docs-body .docs-file-tree .docs-tree-node{position:relative;list-style:none;margin:0;padding:0}
+.docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes>.docs-tree-node::before{content:"";position:absolute;left:-17px;top:20px;width:17px;border-top:1px solid var(--line-strong)}
+.docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes>.docs-tree-node::after{content:"";position:absolute;left:-17px;top:0;bottom:0;border-left:1px solid var(--line-strong)}
+.docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes>.docs-tree-node:last-child::after{bottom:auto;height:20px}
+.docs-body .docs-file-tree-row{display:grid;grid-template-columns:19px minmax(0,1fr) auto;align-items:center;gap:10px;min-height:40px;margin:1px 0;padding:7px 7px;border:0;border-radius:7px;color:var(--text-soft);font-size:13px;line-height:1.6}
+.docs-body .docs-file-tree-row.root{margin-bottom:3px;padding:9px 9px;background:var(--surface-2)}
+.docs-body .docs-file-tree .tree-icon{display:block;width:19px;height:19px;line-height:1;color:var(--muted-2)}
+.docs-body .docs-file-tree .tree-icon svg{display:block;width:19px;height:19px}
+.docs-body .docs-file-tree .tree-icon.folder{color:#b48735}
+.docs-body .docs-file-tree .tree-icon.file{color:var(--muted-2)}
+.docs-body .docs-file-tree .tree-name{min-width:0;overflow-wrap:anywhere;word-break:normal;color:var(--text-soft);font-family:"Cascadia Code",Consolas,monospace;font-size:13px;font-weight:500;line-height:1.65}
+.docs-body .docs-file-tree-row:has(.folder) .tree-name{font-weight:650;color:var(--text)}
+.docs-body .docs-file-tree .tree-slash{color:var(--muted-2);font-weight:400}
+.docs-body .docs-file-tree .tree-note{font-family:inherit;font-size:11px;line-height:1.6;font-weight:500;white-space:normal;color:var(--muted)}
+.docs-body .docs-file-tree .tree-tag{justify-self:end;max-width:190px;padding:2px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface-2)}
+.docs-body .docs-file-tree .tag-required{color:#8552bd;border-color:rgba(133,82,189,.16);background:rgba(133,82,189,.07)}
+.docs-body .docs-file-tree .tag-sync{color:#16887f;border-color:rgba(22,136,127,.16);background:rgba(22,136,127,.07)}
+.docs-body .docs-file-tree .tag-initial{color:#a57421;border-color:rgba(165,116,33,.16);background:rgba(165,116,33,.07)}
+.docs-body .docs-file-tree .required-component .tree-name,.docs-body .docs-file-tree .tag-component{color:#cf5864}
+.docs-body .docs-file-tree .tag-component{border-color:rgba(207,88,100,.16);background:rgba(207,88,100,.06)}
+html[data-theme="dark"] .docs-file-tree .tree-icon.folder{color:#d8b268}
+html[data-theme="dark"] .docs-file-tree .tag-required{color:#c2a0f0;background:rgba(194,160,240,.07)}
+html[data-theme="dark"] .docs-file-tree .tag-sync{color:#60cfc3;background:rgba(96,207,195,.07)}
+html[data-theme="dark"] .docs-file-tree .tag-initial{color:#e0bd7c;background:rgba(224,189,124,.07)}
+html[data-theme="dark"] .docs-file-tree .required-component .tree-name,html[data-theme="dark"] .docs-file-tree .tag-component{color:#ed8792}
+@container(max-width:500px){
+  .docs-body .docs-file-tree-head{align-items:flex-start;flex-direction:column;gap:4px;padding:14px 16px}
+  .docs-body .docs-file-tree-body{padding:12px}
+  .docs-body .docs-file-tree-row{grid-template-columns:19px minmax(0,1fr);gap:2px 8px;padding:7px 6px}
+  .docs-body .docs-file-tree .tree-icon{grid-column:1;grid-row:1;align-self:center}
+  .docs-body .docs-file-tree .tree-name{grid-column:2;grid-row:1}
+  .docs-body .docs-file-tree .tree-note{grid-column:2;grid-row:2;justify-self:start;margin-bottom:2px;font-size:10px}
+  .docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes{margin-left:14px;padding-left:14px}
+  .docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes>.docs-tree-node::before{left:-14px;width:14px}
+  .docs-body .docs-file-tree .docs-tree-nodes .docs-tree-nodes>.docs-tree-node::after{left:-14px}
 }
 
 .docs-body .docs-article .ui-mock .mock-content {
@@ -2108,3 +2080,5 @@ html[data-theme="dark"] .mode-required{--mode-accent:#ba8dff;--mode-tint:rgba(18
 html[data-theme="dark"] .mode-initial{--mode-accent:#efc779;--mode-tint:rgba(239,199,121,.075)}
 html[data-theme="dark"] .doc-version-grid strong{color:#2ee8df}
 @media(max-width:1400px){.docs-body .doc-mode-grid,.doc-version-grid{grid-template-columns:1fr}.docs-body .doc-mode-card{padding:24px}.docs-body .doc-mode-card .doc-mode-intro{min-height:0}.doc-mode-top{margin-bottom:12px}.doc-mode-player{margin-top:0}}
+
+.docs-body .docs-file-tree .tree-icon img{display:block;width:21px;height:21px;object-fit:contain}.docs-body .docs-file-tree .tree-icon{width:21px;height:21px}.docs-body .docs-file-tree-row{grid-template-columns:21px minmax(0,1fr) auto}

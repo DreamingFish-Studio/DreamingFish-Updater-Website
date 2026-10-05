@@ -1,0 +1,46 @@
+(() => {
+  const links = [...document.querySelectorAll('[data-screenshot]')];
+  if (!links.length) return;
+  const dialog = document.createElement('dialog');
+  dialog.className = 'tutorial-lightbox';
+  dialog.setAttribute('aria-labelledby', 'tutorial-lightbox-title');
+  const header = document.createElement('div');
+  header.className = 'tutorial-lightbox-head';
+  const title = document.createElement('strong');
+  title.id = 'tutorial-lightbox-title';
+  const zoom = document.createElement('button');
+  zoom.type = 'button';
+  zoom.className = 'tutorial-zoom';
+  zoom.textContent = '原始尺寸';
+  zoom.setAttribute('aria-pressed', 'false');
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.textContent = '×';
+  close.setAttribute('aria-label', '关闭大图');
+  const image = document.createElement('img');
+  header.append(title, zoom, close);
+  dialog.append(header, image);
+  document.body.append(dialog);
+  let opener;
+  links.forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    opener = link;
+    const figure = link.closest('figure');
+    image.src = link.href;
+    image.alt = link.querySelector('img')?.alt || figure?.querySelector('figcaption')?.textContent || '管理端界面';
+    title.textContent = image.alt;
+    delete dialog.dataset.original;
+    zoom.textContent = '原始尺寸';
+    zoom.setAttribute('aria-pressed', 'false');
+    dialog.showModal();
+  }));
+  zoom.addEventListener('click', () => {
+    const original = dialog.dataset.original !== 'true';
+    dialog.dataset.original = String(original);
+    zoom.textContent = original ? '适合窗口' : '原始尺寸';
+    zoom.setAttribute('aria-pressed', String(original));
+  });
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener('close', () => { image.removeAttribute('src'); opener?.focus(); });
+})();
