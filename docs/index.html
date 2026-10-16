@@ -10,7 +10,8 @@
   <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
   <link rel="icon" href="../assets/logo.svg">
   <link rel="stylesheet" href="../assets/styles.css">
-  <link rel="stylesheet" href="../assets/v4.css?v=020-20261005-real">
+  <link rel="stylesheet" href="../assets/v4.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/docs-v5.css?v=021-20261014">
 </head>
 <body class="docs-body">
   <header class="site-header docs-header">
@@ -50,7 +51,7 @@
       </div>
       <div class="docs-group">
         <div class="docs-group-title">服主指南</div>
-        <nav class="docs-nav"><a href="./maintenance.html">日常维护</a></nav>
+        <nav class="docs-nav"><a href="./maintenance.html">日常维护</a><a href="./admin.html">远程管理与 AI agent</a></nav>
       </div>
       <div class="docs-group">
         <div class="docs-group-title">参考</div>
@@ -62,8 +63,9 @@
       <article class="docs-article">
         <div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>概览</span></div>
         <h1>玩家轻松更新，服主优雅管理。</h1>
-        <p class="docs-lead">梦鱼更新器是为广大 Minecraft 模组服设计的管理工具。开模组服的腐竹们应该都知道：模组出了 Bug，或者服务器崩服需要删改内容时，处理起来有多痛苦。一方面，你要清楚地告诉玩家该如何处理有问题的模组；另一方面，如果服务器有自制模组需要频繁更新，每次都让玩家手动修改，实在让人头疼。你可能还想给自己的服务器设计一个酷炫的启动客户端，在里面展示新闻、公告以及更多内容……因此，我们制作了梦鱼更新器。它是一个更新器，也可以成为你的服务器专属客户端。</p>
-        <p class="docs-lead">梦鱼更新器是一个安全可靠、自主可控、易于部署的 Minecraft 客户端管理工具：服主可以用 Web 或可交互终端管理项目与发布，玩家端在启动前自动更新，玩家自己的模组和文件也始终保有清楚的控制权。</p>
+<!-- 正文开始 -->
+<p class="docs-lead">梦鱼更新器是为广大 Minecraft 模组服设计的管理工具。开模组服的腐竹们应该都知道：模组出了 Bug，或者服务器崩服需要删改内容时，处理起来有多痛苦。一方面，你要清楚地告诉玩家该如何处理有问题的模组；另一方面，如果服务器有自制模组需要频繁更新，每次都让玩家手动修改，实在让人头疼。你可能还想给自己的服务器设计一个酷炫的启动客户端，在里面展示新闻、公告以及更多内容……因此，我们制作了梦鱼更新器。它是一个更新器，也可以成为你的服务器专属客户端。</p>
+        <p class="docs-lead">梦鱼更新器是一个安全可靠、自主可控、易于部署的 Minecraft 客户端管理工具：服主在 Windows 上可以直接用桌面版，在 Linux 服务器上用终端版的网页或交互式命令行管理项目与发布，玩家端在启动前自动更新，玩家自己的模组和文件也始终保有清楚的控制权。</p>
 
         <div class="callout">
           <span class="callout-icon">?</span>
@@ -73,8 +75,8 @@
         <div class="role-grid">
           <div class="role-card">
             <span class="badge">服主</span>
-            <h3>用 Web 或终端管理内容与发布</h3>
-            <p>日常操作可以在优雅的 Web 管理页面完成，也可以使用可交互终端整理文件、选择同步策略、发布版本和管理玩家实例。</p>
+            <h3>用桌面版或终端版管理内容与发布</h3>
+            <p>管理端分为桌面版和终端版。管理端放在 Windows 电脑或 Windows Server 上，推荐直接运行桌面版（免安装），当然也能用终端版；Linux 服务器只有终端版，平时打开它的网页管理界面，和桌面版的界面一模一样；网页也不方便用的时候，还可以用交互式命令行。不管用哪种，读写的都是同一份项目数据，整理文件、选择维护方式、发布版本和制作玩家实例都能做。</p>
           </div>
           <div class="role-card">
             <span class="badge neutral">玩家</span>
@@ -83,50 +85,62 @@
           </div>
         </div>
 
-        <h2 id="workflow">从服主发布，到玩家进入游戏<a class="anchor-link" href="#workflow">#</a></h2>
+        <h2 id="workflow" data-toc-label="工作链路">从服主发布，到玩家进入游戏<a class="anchor-link" href="#workflow">#</a></h2>
         <div class="mini-flow">
-          <div><strong>Web 管理</strong><span>添加、删除或更新模组、配置和资源，决定服务器要管理什么。</span></div>
-          <div><strong>选择策略</strong><span>普通同步尊重玩家本地选择；强制同步守住关键内容边界。</span></div>
+          <div><strong>整理文件</strong><span>添加、删除或更新模组、配置和资源，决定服务器要管理什么。</span></div>
+          <div><strong>选择维护方式</strong><span>普通同步尊重玩家本地选择；强制同步守住关键内容；首次提供只给玩家一份初始配置。</span></div>
           <div><strong>自动更新</strong><span>只下载真正变化的内容，完成签名、哈希和安装检查。</span></div>
           <div><strong>安全启动</strong><span>更新失败自动恢复；成功后继续进入 Minecraft。</span></div>
         </div>
 
-        <h2 id="player-control">爱咋删，爱咋加，启动就完了。<a class="anchor-link" href="#player-control">#</a></h2>
+        <h2 id="player-control" data-toc-label="玩家自主控制">爱咋删，爱咋加，启动就完了。<a class="anchor-link" href="#player-control">#</a></h2>
         <p>服主怎么删、怎么加，玩家端都能追到最新目标状态。普通同步下，玩家自己添加的模组和文件不会被误删；玩家还可以手动决定哪些本地内容继续交给更新器管理。</p>
         <ul class="feature-list">
           <li>服务器内容与玩家自选内容分开识别，互不打架。</li>
           <li>玩家可以按文件或目录管理本地内容，保留对客户端的控制权。</li>
           <li>读取 Forge/NeoForge 的 <code>modId</code>，识别 Fabric 模组 ID；模组升级或改名后仍能尽量保留选择。</li>
+          <li>被替换或清理掉的本地文件都会先进入“备份与恢复”，玩家随时可以放回来。</li>
           <li>玩家端更新器可以独立自更新，与整合包更新渠道分开。</li>
         </ul>
 
-        <h2 id="sync">服主有三种维护方式<a class="anchor-link" href="#sync">#</a></h2><p>平时保持普通同步，关键内容设为强制同步，只想给玩家一份初始配置就选首次提供。文件夹可以统一设置，单个文件也能单独调整。</p><div class="doc-mode-grid" aria-label="三种文件维护方式">
-<section class="doc-mode-card mode-sync">
-  <div class="doc-mode-top"><span class="doc-mode-icon">↻</span><span class="doc-mode-tag">日常默认</span></div>
-  <h3>普通同步</h3><p class="doc-mode-intro">跟着服主更新，保留玩家选择。</p>
-  <div class="doc-mode-behavior"><span>缺了补齐</span><i>·</i><span>有更新就跟进</span></div>
-  <p>更新时先备份玩家的修改，再换成发布版本。玩家额外添加的内容默认保留。</p>
-  <div class="doc-mode-player"><b>玩家可以</b><span>停用模组，或选择自行管理。</span></div>
-  <footer>大多数模组和整合包文件，用这个就好。</footer>
-</section>
-<section class="doc-mode-card mode-required">
-  <div class="doc-mode-top"><span class="doc-mode-icon">◇</span><span class="doc-mode-tag">关键内容</span></div>
-  <h3>强制同步</h3><p class="doc-mode-intro">指定内容必须和服主保持一致。</p>
-  <div class="doc-mode-behavior"><span>强制更新</span><i>·</i><span>不能豁免</span></div>
-  <p>强制单个文件，只锁定这个文件；强制整个文件夹，还会把里面的额外文件备份移出。</p>
-  <div class="doc-mode-player"><b>玩家需要</b><span>保留强制内容，不能在本机关闭。</span></div>
-  <footer>适合核心模组和必须一致的配置。</footer>
-</section>
-<section class="doc-mode-card mode-initial">
-  <div class="doc-mode-top"><span class="doc-mode-icon">↓</span><span class="doc-mode-tag">给一份就好</span></div>
-  <h3>首次提供</h3><p class="doc-mode-intro">先给一份，之后让玩家自己管。</p>
-  <div class="doc-mode-behavior"><span>已有就保留</span><i>·</i><span>缺了提供一次</span></div>
-  <p>以后不覆盖，玩家删了也不会反复补回。服主改模板，老玩家的设置仍然保留。</p>
-  <div class="doc-mode-player"><b>玩家可以</b><span>自己修改，需要时主动恢复默认。</span></div>
-  <footer>适合默认按键、画质等初始配置。</footer>
-</section>
-</div><p>移出文件时再决定是删除玩家副本，还是停止维护、留给玩家。已经留给玩家的旧文件后来出了问题，也能从历史发布里选中具体坏版本处理。</p><h2 id="security">安全更新，不留下半套状态<a class="anchor-link" href="#security">#</a></h2>
-        <p>更新不是“下载完就覆盖”。梦鱼更新器先确认发布可信，再逐项校验，最后以事务方式安装；任何一步失败，都不会把未验证的状态交给玩家启动。</p>
+        <h2 id="sync" data-toc-label="三种维护方式">服主有三种维护方式<a class="anchor-link" href="#sync">#</a></h2>
+        <p>管理端不把所有玩家电脑粗暴地全盘覆盖，而是让服主按内容的重要程度，给每个文件或文件夹选一种维护方式。不确定的时候，保持默认的普通同步就好。</p>
+        <div class="mode-compare three">
+          <div class="compare-card default">
+            <span class="badge">DEFAULT · 普通同步</span>
+            <h3>尊重玩家本地选择</h3>
+            <p>适合大多数内容。服务器发布的内容会保持最新；玩家额外添加的模组和文件保留不动，玩家可以通过玩家端在本机停用模组，或者把普通文件改成自己管理。</p>
+            <ul class="feature-list">
+              <li>不主动删除玩家额外内容</li>
+              <li>玩家可以自己管理文件和模组</li>
+              <li>玩家改过的文件，换回前会先备份</li>
+            </ul>
+          </div>
+          <div class="compare-card force">
+            <span class="badge">FORCED · 强制同步</span>
+            <h3>关键内容保持一致</h3>
+            <p>适合核心模组、反作弊和必须一致的配置。开启后，玩家端会强制保持与服务器一致，玩家不能停用，也不能改成自己管理；整个文件夹设为强制同步时，玩家自己放进去的文件会先安全备份，再移出游戏。</p>
+            <ul class="feature-list">
+              <li>可按文件夹或单个文件开启</li>
+              <li>关键内容始终跟随服务器版本</li>
+              <li>移出的内容都能在备份里找回</li>
+            </ul>
+          </div>
+          <div class="compare-card initial">
+            <span class="badge">FIRST · 首次提供</span>
+            <h3>给份初始配置，之后不再管理</h3>
+            <p>适合模组会自行修改、画质这类初始配置。玩家没有这个文件时提供一次；之后服主再改模板，也不会覆盖玩家自己的设置，玩家删掉了也不会反复补回来。</p>
+            <ul class="feature-list">
+              <li>玩家已有就保留</li>
+              <li>缺少时只提供一次</li>
+              <li>玩家可以主动恢复默认</li>
+            </ul>
+          </div>
+        </div>
+        <p>从整合包里删掉某个文件时，管理端也提供了两种方式：是把玩家电脑上的副本也移除，还是停止维护、留给玩家自己用。这部分在「日常维护」里会细讲。</p>
+
+        <h2 id="security" data-toc-label="安全更新">安全更新，不留下半套状态<a class="anchor-link" href="#security">#</a></h2>
+        <p>更新会保证完整性与安全性。梦鱼更新器先确认发布可信，再逐项校验，最后以事务方式安装；任何一步失败，都不会把未验证的状态交给玩家启动。</p>
         <div class="steps">
           <div class="step-card"><h3>可信发布</h3><p>管理端用 Ed25519 签名发布清单，玩家先确认项目身份与目标版本。</p></div>
           <div class="step-card"><h3>逐项校验</h3><p>文件通过 SHA-256 与大小校验，损坏或不匹配的内容不会进入安装。</p></div>
@@ -134,7 +148,7 @@
           <div class="step-card"><h3>快捷回退</h3><p>发现问题可一键回退到稳定发布，历史发布保持不被改写。</p></div>
         </div>
 
-        <h2 id="support">不改你的启动器，也支持主流模组加载器<a class="anchor-link" href="#support">#</a></h2>
+        <h2 id="support" data-toc-label="启动器与加载器">支持主流启动器<a class="anchor-link" href="#support">#</a></h2>
         <div class="role-grid">
           <div class="role-card">
             <span class="badge">启动器</span>
@@ -149,11 +163,8 @@
         </div>
 
         <p>点击下一页，让我们开始部署吧！</p>
-
-        <nav class="doc-pager">
-          <span></span>
-          <a class="pager-link next" href="./quickstart.html"><span>下一页</span><strong>下载与首次配置 →</strong></a>
-        </nav>
+<!-- 正文结束 -->
+        <nav class="doc-pager"><span></span><a class="pager-link next" href="./quickstart.html"><span>下一页</span><strong>下载与首次配置 →</strong></a></nav>
       </article>
     </main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div>
 
@@ -164,7 +175,6 @@
       <a href="#sync" data-toc="sync" style="padding-left:10px">三种维护方式</a>
       <a href="#security" data-toc="security" style="padding-left:10px">安全更新</a>
       <a href="#support" data-toc="support" style="padding-left:10px">启动器与加载器</a>
-      
     </aside>
   </div>
 
@@ -179,6 +189,6 @@
     </div>
   </div>
   <script src="../assets/site.js" charset="utf-8"></script>
-  <script src="../assets/docs.js?v=020-20261005-real" charset="utf-8"></script>
+  <script src="../assets/docs.js?v=021-20261014" charset="utf-8"></script>
 </body>
 </html>

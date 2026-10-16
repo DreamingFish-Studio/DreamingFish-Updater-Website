@@ -623,6 +623,11 @@ svg:not([viewBox]) { width: 1.1em; height: 1.1em; flex: none; }
    ADMIN
    ========================================================= */
 .admin-aura { position: absolute; left: 50%; top: 32%; width: 90%; height: 60%; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(46, 232, 223, .12), transparent); filter: blur(30px); pointer-events: none; }
+/* 管理端三端 */
+.ends { margin-top: 48px; }
+.end-card p code { white-space: nowrap; }
+.end-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+.end-tags li { padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--text-2); font-size: 12.5px; background: rgba(255, 255, 255, .03); }
 .admin-show { position: relative; margin-top: 56px; display: grid; grid-template-columns: minmax(230px, 290px) 1fr; gap: 22px; align-items: center; }
 .browser { overflow: hidden; border-radius: 18px; background: #0b1117; border: 1px solid var(--line-2); box-shadow: 0 70px 150px -60px rgba(0, 0, 0, .95), 0 0 130px -50px rgba(46, 232, 223, .45); }
 .browser-bar { display: flex; align-items: center; gap: 14px; height: 46px; padding: 0 16px; background: #0e151c; border-bottom: 1px solid var(--line); }

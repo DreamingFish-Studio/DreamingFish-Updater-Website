@@ -441,16 +441,17 @@
   /* ---------- 管理端：自动演示发布流程 ---------- */
   const admin = $("[data-admin]");
   if (admin) {
-    const frames = $$("[data-admin-view] img", admin);
+    const frames = $$("[data-admin-view] > [data-frame]", admin);
     const steps = $$("[data-admin-step]", admin);
     const stepsWrap = $(".admin-steps", admin);
     const cursor = $("[data-admin-cursor]", admin);
     const ring = $("[data-admin-ring]", admin);
     const title = $("[data-admin-title]", admin);
-    const titles = ["管理内容", "检查并发布", "检查并发布", "检查并发布", "检查并发布"];
-    // 光标点击位置（相对截图的百分比）：侧栏“检查并发布” → 版本输入框 → 发布整合包 → 确认发布
-    const targets = [[5.8, 21.9], [36, 64.2], [93.7, 54.6], [61.9, 60.7], [78, 86]];
-    const durations = [2600, 2600, 2600, 2300, 3400];
+    const titles = ["文件", "改动与版本", "改动与版本", "改动与版本", "改动与版本"];
+    // 光标位置（相对演示画面的百分比）：活动栏“改动与版本” → 更新说明 → 发布按钮 → 发布中 → 发布版本
+    const targets = [[2.45, 14.9], [84.6, 33.5], [84.6, 88.2], [84.6, 88.2], [30, 22]];
+    const clicks = [true, true, true, false, false];
+    const durations = [2600, 2600, 2600, 2000, 3400];
     let cur = -1, timers = [], playing = false;
     const clear = () => { timers.forEach(clearTimeout); timers = []; };
     const later = (fn, ms) => timers.push(setTimeout(fn, ms));
@@ -479,7 +480,7 @@
       const [x, y] = targets[i];
       cursor.classList.add("show");
       later(() => { cursor.style.left = `${x}%`; cursor.style.top = `${y}%`; }, 60);
-      if (i < frames.length - 1) {
+      if (clicks[i]) {
         later(() => {
           cursor.classList.add("press");
           ring.style.left = `${x}%`; ring.style.top = `${y}%`;

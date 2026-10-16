@@ -1,11 +1,12 @@
 (() => {
   const pages = [
-    { title: "概览", description: "理解管理端、玩家端与完整工作链路。", href: "./index.html", keywords: "概览 服主 玩家 工作流程 自托管 不替代启动器" },
-    { title: "下载与首次配置", description: "下载解压管理端，完成第一次运行引导与首次设置。", href: "./quickstart.html", keywords: "下载 解压 安装 管理端 首次运行 引导 data 8080 18080 SSH" },
-    { title: "创建第一个项目", description: "创建整合包项目、生成首次部署包并完成启动器接入。", href: "./create-project.html", keywords: "创建项目 项目 ID 公共地址 Web 配置 ZIP 部署 个性化 检测地址 暂存 导入 维护方式 命令行 终端 首次部署包 PCL HMCL Prism Java Agent javaagent JVM arguments.jvm 版本 JSON 版本隔离 game_directory gameDir" },
-    { title: "日常维护", description: "日常更新、历史回滚、服务管理、备份恢复与升级管理端。", href: "./maintenance.html", keywords: "维护 更新 回滚 备份 恢复 升级 服务 健康检查 常驻 多项目 上传 暂存 导入 重试 首次提供 强制同步 普通同步 历史 问题文件 豁免 持续移除 停止维护 留给玩家 外部托管" },
-    { title: "常见问题", description: "端口、完整包、玩家程序、启动器接入、VPS 与自选模组问题。", href: "./faq.html", keywords: "FAQ 8080 18080 完整包 VPS SSH 自选模组 标准目录 Web 常驻 PCL HMCL javaagent game_directory arguments.jvm 版本隔离" },
-    { title: "版本与更新日志", description: "当前组件版本与近期主要改进。", href: "./changelog.html", keywords: "更新日志 版本 玩家端 管理端 Agent" }
+    { title: "概览", description: "理解管理端、玩家端、三种维护方式与完整工作链路。", href: "./index.html", keywords: "概览 服主 玩家 工作流程 自托管 不替代启动器 普通同步 强制同步 首次提供 桌面版 终端版 网页 交互式命令行" },
+    { title: "下载与首次配置", description: "桌面版解压直接运行；终端版跟着首次引导完成设置。", href: "./quickstart.html", keywords: "下载 解压 安装 管理端 首次运行 引导 data 8080 18080 SSH 桌面版 桌面端 终端版 命令行版 DreamingFishAdminDesktop 两个版本 免安装 便携版 安装版 Windows Server WebView2 Linux" },
+    { title: "创建第一个项目", description: "创建项目、导入文件、设置维护方式、检查发布、生成部署包并完成启动器接入。", href: "./create-project.html", keywords: "创建项目 项目 ID 玩家更新地址 Web 配置 管理账户 导入清单 上传并检查 确认导入 替换旧模组 维护方式 普通同步 强制同步 首次提供 改动与版本 检查并发布 发放 玩家端程序 发行 ZIP 部署 ZIP 下载服务 命令行 终端 project policy preset 首次部署包 PCL HMCL Java Agent javaagent JVM arguments.jvm 版本 JSON 版本隔离 game_directory gameDir verpath" },
+    { title: "日常维护", description: "加文件、删文件、处理问题版本、撤回操作、回滚、外部托管、备份与升级。", href: "./maintenance.html", keywords: "维护 更新 加文件 删文件 移出 移除玩家副本 留给玩家 停止维护 可选内容 历史问题文件 坏版本 修复玩家副本 玩家端设计 个性化 操作记录 撤销 恢复当前发布设置 回滚 发布版本 外部托管 WebDAV 对象存储 S3 OSS CDN 备份 恢复 升级 多项目" },
+    { title: "远程管理与 AI agent", description: "用桌面版的 SSH 连接管理服务器上的终端版；用参数式命令把维护交给脚本或 AI agent。", href: "./admin.html", keywords: "远程 远程管理 桌面版 桌面端 SSH 连接 ssh config 密钥 ssh-keygen 管理地址 远程管理端口 18080 连接工作区 断开 托盘 运行日志 AI agent 脚本 自动化 参数式命令 命令行 json yes project files scan publish policy operations undo restore-published deployment export-static backup" },
+    { title: "常见问题", description: "桌面版还是终端版、VPS 远程管理、玩家自选模组、维护方式、界面切换与玩家端程序等问题。", href: "./faq.html", keywords: "FAQ 桌面版 终端版 选哪个 新版界面 旧版界面 workbench legacy 8080 18080 VPS SSH 自选模组 豁免 停用 首次提供 跳过版本 标准目录 ZIP 新版界面 旧版界面 终端 Web 常驻 删除玩家端程序 版本号" },
+    { title: "版本与更新日志", description: "当前组件版本、0.2.1 新增的桌面版与新版工作区，以及 0.2.0 的变化。", href: "./changelog.html", keywords: "更新日志 版本 玩家端 管理端 Agent 桌面版 新版工作区 0.2.1 0.2.0" }
   ];
 
   const modal = document.querySelector("[data-search-modal]");

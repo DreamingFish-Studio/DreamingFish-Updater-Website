@@ -1,12 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="当前组件版本与近期主要改进。">
+  <meta name="color-scheme" content="light dark">
+  <title>版本与更新日志 · 梦鱼更新器文档</title>
+  <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/v4.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/docs-v5.css?v=021-20261014">
+</head>
+<body class="docs-body">
+  <header class="site-header docs-header">
+    <div class="container navbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+        <a class="brand" href="../index.html">
+          <img src="../assets/logo.svg" alt="">
+          <span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span>
+        </a>
+      </div>
+      <button class="docs-search-button" data-search-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <span>搜索文档</span><kbd>Ctrl K</kbd>
+      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l-1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="button ghost" href="../index.html">返回官网</a>
+        <a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
 
-<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="DreamingFish Updater 0.2.0 完整更新日志：对照 v0.1.40，了解文件维护、玩家管理、上传、操作恢复、命令行及升级变化。" name="description"/><meta content="light dark" name="color-scheme"/><title>版本与更新日志 · DreamingFish Updater 文档</title><script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script><link href="../assets/logo.svg" rel="icon"/><link href="../assets/styles.css" rel="stylesheet"/><link href="../assets/v4.css?v=020-20261005-real" rel="stylesheet"/></head><body class="docs-body">
-<header class="site-header docs-header"><div class="container navbar"><div style="display:flex;align-items:center;gap:10px"><button aria-label="打开文档目录" class="mobile-docs-button" data-docs-toggle=""><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path></svg></button><a class="brand" href="../index.html"><img alt="" src="../assets/logo.svg"/><span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span></a></div><button class="docs-search-button" data-search-open=""><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4" stroke-linecap="round"></path></svg><span>搜索文档</span><kbd>Ctrl K</kbd></button><div class="nav-actions"><button aria-label="切换显示模式" class="theme-toggle" data-theme-toggle="" title="切换显示模式" type="button"><svg class="theme-icon theme-icon-sun" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3.6"></circle><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"></path></svg><svg class="theme-icon theme-icon-moon" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><a class="button ghost" href="../index.html">返回官网</a><a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" rel="noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"></path></svg> GitHub</a></div></div></header>
-<div class="docs-layout"><aside class="docs-sidebar" data-docs-sidebar=""><div class="docs-group"><div class="docs-group-title">开始</div><nav class="docs-nav"><a class="" href="./index.html">概览</a><a class="" href="./quickstart.html">下载与首次配置</a><a class="" href="./create-project.html">创建第一个项目</a></nav></div><div class="docs-group"><div class="docs-group-title">服主指南</div><nav class="docs-nav"><a class="" href="./maintenance.html">日常维护</a></nav></div><div class="docs-group"><div class="docs-group-title">参考</div><nav class="docs-nav"><a class="" href="./faq.html">常见问题</a><a class="active" href="./changelog.html">版本与更新日志</a></nav></div></aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div><main class="docs-main"><article class="docs-article"><div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>版本与更新日志</span></div><h1>版本与更新日志</h1><p class="docs-lead">本次管理端与玩家端统一为 0.2.0。这页按上一个正式发行 v0.1.40 整理变化，升级前可以先看维护方式和兼容说明。</p><h2 id="versions">当前组件版本<a class="anchor-link" href="#versions">#</a></h2><div class="doc-version-grid">
-<section><span>玩家使用</span><h3>玩家端</h3><strong>0.2.0</strong><p>启动前检查、自动更新、本地管理与备份恢复。</p></section>
-<section><span>服主使用</span><h3>管理端</h3><strong>0.2.0</strong><p>文件工作区、维护方式、签名发布与下载服务。</p></section>
+  <div class="docs-layout">
+    <aside class="docs-sidebar" data-docs-sidebar>
+      <div class="docs-group">
+        <div class="docs-group-title">开始</div>
+        <nav class="docs-nav"><a href="./index.html">概览</a><a href="./quickstart.html">下载与首次配置</a><a href="./create-project.html">创建第一个项目</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">服主指南</div>
+        <nav class="docs-nav"><a href="./maintenance.html">日常维护</a><a href="./admin.html">远程管理与 AI agent</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">参考</div>
+        <nav class="docs-nav"><a href="./faq.html">常见问题</a><a class="active" href="./changelog.html">版本与更新日志</a></nav>
+      </div>
+    </aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div>
+
+    <main class="docs-main">
+      <article class="docs-article">
+        <div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>版本与更新日志</span></div>
+        <h1>版本与更新日志</h1>
+<!-- 正文开始 -->
+<p class="docs-lead">管理端与玩家端现在都是 0.2.1。这页先列出 0.2.1 新增的管理端桌面版、新版工作区和玩家端更新界面，再按 v0.1.40 整理 0.2.0 的全部变化，升级前可以先看维护方式和兼容说明。</p><h2 id="versions">当前组件版本<a class="anchor-link" href="#versions">#</a></h2><div class="doc-version-grid">
+<section><span>玩家使用</span><h3>玩家端</h3><strong>0.2.1</strong><p>启动前检查、自动更新、本地管理与备份恢复。</p></section>
+<section><span>服主使用</span><h3>管理端</h3><strong>0.2.1</strong><p>桌面版与终端版（网页管理界面、交互式命令行）；文件工作区、维护方式、签名发布与下载服务。</p></section>
 <section><span>启动器接入</span><h3>Bootstrap Agent</h3><strong>0.1.2</strong><p>游戏加载前拉起更新器，等待启动许可并处理程序升级。</p></section>
-</div><h2 id="v020">0.2.0 · 2026 年 10 月 6 日<a class="anchor-link" href="#v020">#</a></h2><p>本次是相对于上一个正式发布 <strong>v0.1.40</strong> 的完整更新。上一发行的玩家端为 <strong>0.1.40</strong>、管理端为 <strong>0.1.26</strong>；本次两者统一为 <strong>0.2.0</strong>，Bootstrap Agent 仍为 <strong>0.1.2</strong>。更新器程序版本与整合包内容版本继续分别管理。</p><p><a href="https://github.com/hanhanyu666/DreamingFish-Updater/releases/tag/v0.2.0">下载 0.2.0 发行包</a> · <a href="https://github.com/hanhanyu666/DreamingFish-Updater/blob/v0.2.0/CHANGELOG.md">查看更早版本的更新记录</a></p><h2 id="maintenance">文件维护：日常只选三种方式<a class="anchor-link" href="#maintenance">#</a></h2><div aria-label="三种文件维护方式" class="doc-mode-grid">
+</div><h2 id="v021" data-toc-label="0.2.1 · 2026 年 10 月 15 日">0.2.1 · 2026 年 10 月 15 日<a class="anchor-link" href="#v021">#</a></h2>
+<p>这次新增了管理端桌面版和新版网页工作区，并重新设计了玩家端的更新界面。玩家端、管理端和桌面版都是 0.2.1，Bootstrap Agent 仍是 0.1.2；新维护规则要求的最低玩家端还是 0.2.0。用桌面版连接服务器时，服务器上的管理端需要 0.2.1 或更新。</p>
+<p><a href="https://github.com/hanhanyu666/DreamingFish-Updater/releases/tag/v0.2.1">下载 0.2.1 发行包</a></p>
+<h3 id="next-desktop" data-toc-label="管理端桌面版">管理端桌面版（Windows x64）<a class="anchor-link" href="#next-desktop">#</a></h3>
+<ul class="doc-release-list">
+<li>新增 Windows 桌面程序，打开后选择<strong>本机管理</strong>或<strong>远程连接</strong>。本机管理自带 Java 21、管理核心和 Bootstrap Agent，可以直接打开已有的管理目录，继续使用原来的项目、账户和发布记录。</li>
+<li>远程连接支持 HTTPS 管理地址、已经转发到本机的地址，以及系统 OpenSSH 配置；连接记录可以保存、编辑和移除，不保存密码或私钥。</li>
+<li>关闭窗口会收进系统托盘，后台任务和本机下载服务继续运行；明确断开或退出时，会清理桌面版启动的本机服务和 SSH 通道。连接意外中断时回到连接页。</li>
+<li>使用和外框同色的自绘标题栏，可以拖动、最小化、最大化和返回连接页；Windows 11 上窗口带系统圆角。</li>
+</ul>
+<h3 id="next-workspace" data-toc-label="新版工作区">新版工作区（桌面版与网页共用）<a class="anchor-link" href="#next-workspace">#</a></h3>
+<ul class="doc-release-list">
+<li>界面重新整理为：图标活动栏、可收起的项目栏、圆角内容卡片、按需出现的右侧面板、底部浮动操作栏和状态栏。新版网页和桌面版是同一套前端，读写同一份项目、版本和操作记录。</li>
+<li>网页保留<strong>新版界面</strong>和<strong>旧版界面</strong>，可以随时切换，浏览器会记住选择。</li>
+<li>文件按类型显示彩色图标（文件夹、模组、配置、脚本、压缩包、图片、数据、音频）；新增快捷键 Ctrl 1–5、Ctrl F、Ctrl A、Ctrl I、Delete、Backspace 和方向键，文件支持右键菜单和拖入导入。</li>
+<li>导入文件进入<strong>导入清单</strong>：先上传检查，看清保存路径、大小、覆盖关系和模组识别，再确认导入，完成后可以直接去检查并发布。</li>
+<li>“改动与版本”集中了待发布改动、发布版本、操作记录和历史问题文件。发布预览把内部规则名称换成中文说明，写清具体文件和前后变化；“下载量”改为真实的“文件大小”。</li>
+<li>“发放”集中了部署包、玩家端程序和外部托管；“玩家端设计”以真实玩家端实时预览为主，编辑卡片在右侧。</li>
+<li>操作记录在内容区顶部、项目栏、文件工具栏和命令菜单都有入口，支持搜索、类型筛选、前后变化、撤销和恢复当前发布设置；无法撤销时会写明原因。</li>
+<li>界面字体改为内置的 HarmonyOS Sans SC；可选内容不能重名。</li>
+</ul>
+<h3 id="next-player">玩家端更新界面<a class="anchor-link" href="#next-player">#</a></h3>
+<ul class="doc-release-list">
+<li>首页更新卡片重新设计：状态环区分进行中、已完成、出错和离线启动；进度条下方显示“检查 → 下载 → 安装 → 启动”四个阶段，出错时标出停在哪一步。</li>
+<li>本次更新摘要用标签列出安装、删除、备份等数量；更新记录、运行记录和本地文件改为卡片底部的图标入口。</li>
+<li>出错时只保留错误说明和“打开目录 / 重试 / 仍然启动”，不再混入上一次更新的摘要。</li>
+<li>玩家信息卡增加头像；服主填写了 Minecraft 服务器地址时，旁边显示地址，点击就能复制。</li>
+<li>启动后的倒计时提示增加进度条和“保持打开”按钮。</li>
+</ul>
+<h3 id="next-legacy">旧版网页界面<a class="anchor-link" href="#next-legacy">#</a></h3>
+<ul class="doc-release-list">
+<li>概览新增“整理文件 → 检查改动 → 发布给玩家”步骤条，按当前状态标出下一步。</li>
+<li>进入“检查并发布”时，尚未检查或检查已过期会自动检查；版本号按上一个版本自动建议。检查后服务器上的文件又被改动、导致发布被拒时，会自动重新检查并用中文说明。</li>
+<li>外部托管的分发方式改为三张选项卡片，界面换用新的深浅两套主题。</li>
+</ul>
+<h2 id="v020" data-toc-label="0.2.0 · 2026 年 10 月 6 日">0.2.0 · 2026 年 10 月 6 日<a class="anchor-link" href="#v020">#</a></h2><p>本次是相对于上一个正式发布 <strong>v0.1.40</strong> 的完整更新。上一发行的玩家端为 <strong>0.1.40</strong>、管理端为 <strong>0.1.26</strong>；本次两者统一为 <strong>0.2.0</strong>，Bootstrap Agent 仍为 <strong>0.1.2</strong>。更新器程序版本与整合包内容版本继续分别管理。</p><p><a href="https://github.com/hanhanyu666/DreamingFish-Updater/releases/tag/v0.2.0">下载 0.2.0 发行包</a> · <a href="https://github.com/hanhanyu666/DreamingFish-Updater/blob/v0.2.0/CHANGELOG.md">查看更早版本的更新记录</a></p><h2 id="maintenance">文件维护：日常只选三种方式<a class="anchor-link" href="#maintenance">#</a></h2><div aria-label="三种文件维护方式" class="doc-mode-grid">
 <section class="doc-mode-card mode-sync">
 <div class="doc-mode-top"><span class="doc-mode-icon">↻</span><span class="doc-mode-tag">日常默认</span></div>
 <h3>普通同步</h3><p class="doc-mode-intro">跟着服主更新，保留玩家选择。</p>
@@ -32,5 +129,47 @@
 <footer>适合默认按键、画质等初始配置。</footer>
 </section>
 </div><ul class="doc-release-list"><li>文件夹规则会应用到以后加入的文件，单个文件可以说明并显示其规则来源。强制文件夹中的内容不能再降成普通同步、首次提供或可选内容。</li><li>首次提供按文件与模组身份记录初始化状态，同一模组改名或更换路径后不会被误当成第一次接收。</li></ul><h2 id="removal">文件退出维护与历史问题处理<a class="anchor-link" href="#removal">#</a></h2><ul class="doc-release-list"><li>文件移出标准目录后，明确选择 <strong>“移除玩家副本”</strong> 或 <strong>“停止维护，留给玩家”</strong>。前者持续处理匹配的副本，后者把内容交还玩家。</li><li>删除要求写入每次完整目标，支持跳版本更新、下载旧完整包后首次加入、玩家豁免、停用、改名以及后来手动装回等情况。匹配的副本先备份，再移出游戏。</li><li>例如 4.0 有 D、5.0 删除 D：拿着 4.0 完整包在 5.0 首次加入，也会处理 D；5.0 之后手动装回，下次检查仍会处理。</li><li>重新提供同一资源并发布，会结束普通删除要求；历史坏版本的处理要求需要明确结束，避免正常回滚或换版时把坏文件装回。</li><li><strong>“历史文件与问题处理 → 按发布版本管理”</strong> 可以查看当时提供的文件。以前已经停止维护、留给玩家的文件，后来发现严重问题，也能从历史发布选中坏版本并要求移出或替换。</li><li>问题版本根据内容指纹及模组 ID、版本识别。只处理指定坏版本，正常的新版本不会仅因使用了旧文件名就一并被移出。</li><li>普通删除记录由系统持续处理；主界面集中显示需要服主主动处理的问题，不再把全部删除历史堆成卡片。</li><li>必要的移除不会被玩家“保留本地变化”绕过。已取得的有效要求也能在离线时处理；尚未取得的新发布需要联网检查后才生效。</li></ul><h2 id="player">玩家端：可选内容、本地管理与恢复<a class="anchor-link" href="#player">#</a></h2><ul class="doc-release-list"><li>新增 <strong>可选内容</strong>：服主可以把光影、美化等内容组成一组，设置默认是否安装；玩家可整组开关，之后保留自己的选择。</li><li>本地文件与模组列表说明版本、管理方式、可选组和限制原因；强制内容不能关闭，其余内容可以停用或自行管理。</li><li>模组以 modid 识别，自行管理和停用不会因模组改名而丢失。服主接管已有模组时先备份原副本，重复模组会移入备份。</li><li>新增 <strong>备份与恢复</strong>：按更新记录被移走的文件及原因，可恢复文件、打开或整理备份；恢复前会提示它是否仍受当前移除要求限制。</li><li>新增主动恢复首次提供默认文件的入口；本次更新详情能列出备份、保留玩家内容、恢复默认和必要修复等结果。</li><li>修复模组停用期间被服主放弃管理后，重新启用会丢失副本的问题。</li><li>模组移动、偏好和备份索引共同记录事务，失败或中断后可以恢复。一次性修复与初始化状态会保存，避免每次启动都覆盖玩家后来做的修改。</li><li>修复更新结束后进度条仍持续滚动、详情抽屉后方内容透出、布局被横向挤偏和界面版本显示滞后的问题。</li></ul><h2 id="workspace">管理端：文件工作区与上传<a class="anchor-link" href="#workspace">#</a></h2><ul class="doc-release-list"><li>日常操作整理为 <strong>“管理内容”</strong> 和 <strong>“检查并发布”</strong>。文件和规则保存后显示待发布状态，服主检查确认后才发给玩家。</li><li>文件夹导航支持层级连线、展开收起、完整路径提示及空目录浏览；长名称保持一行，文件夹与文件采用统一重绘的蓝色文件夹和折角纸张图标。</li><li>文件区底部、<strong>“操作记录”左边新增“返回上一级”</strong>。每次退回一层，根目录时禁用，切换目录后重置文件表滚动。</li><li>文件列表支持跨目录搜索、筛选、详情与批量操作。隐藏范围内仍有选中项时会计数提示，目录统一设置前会说明影响范围。</li><li>上传改为 <strong>选择文件或文件夹 → 暂存并检查清单 → 确认导入</strong>。清单显示实际保存路径、大小、模组 ID、版本及冲突，选择文件后不会立即覆盖标准目录。</li><li>支持保留或去掉所选文件夹的外层名称，内部目录结构会保留，减少 <code>mods/mods/</code> 等错误位置。</li><li>同一 modid 换版本时可以识别旧文件，归档替换并沿用维护方式和可选组；发现设置不一致或同名内容冲突时，会要求先核对。</li><li>文件任务支持逐项重试、暂停、后台继续处理、断开后的重新检查和导入记录恢复；完成的文件不会重复写入。</li></ul><h2 id="operations">操作记录、撤销与恢复版本设置<a class="anchor-link" href="#operations">#</a></h2><ul class="doc-release-list"><li>新增项目操作记录，查询设置修改、导入、替换、移除、新建目录和整合包发布，可搜索、筛选并查看具体变化。</li><li>可恢复的操作提供 <strong>“撤销…”</strong>：先预览要恢复的文件与设置，再确认执行。已经撤销的记录继续保留，后续修改会受到保护。</li><li><strong>“恢复版本设置…”</strong> 以当前最新整合包发布为基准，恢复维护方式、可选内容、额外文件处理与问题要求，逐项显示当前值与恢复值。</li><li>新发布在管理数据中保存精确维护设置快照，旧签名记录保持不变；没有快照的旧发布按有效签名内容重建可恢复规则，无法等价恢复时提示原因。</li><li>恢复维护设置不会替换源文件。恢复源文件用对应操作的撤销，恢复已发给玩家的内容用回滚发布；撤回已经发布的变化后，仍需检查并创建新的发布。</li></ul><h2 id="distribution">玩家程序发布、个性化与分发<a class="anchor-link" href="#distribution">#</a></h2><ul class="doc-release-list"><li>Web 可以直接上传玩家端发行 ZIP，检查程序版本、平台和目录后再签名发布；服务器已有解压目录的入口继续保留。</li><li>玩家实例优先提供 <strong>下载部署 ZIP</strong>，远程管理服务器可以直接把部署包下载到服主电脑；也支持写入服务器目录或在可访问的实例中直接接入。</li><li>部署包选择实际对应的整合包发布版本，并携带签名基线；拿旧完整包首次启动时，能正确识别旧托管内容并直接更新到最新发布。</li><li>玩家端个性化按标题与品牌、外观、音乐、公告与页面分组编辑，提供真实界面预览；窄窗口可切换编辑与预览。</li><li>标题、配色、公告与页面继续在保存后供玩家下次启动获取；封面和音乐按文件资源流程检查并发布。</li><li>新增项目更新地址检测；外部托管按静态导出、WebDAV、对象存储分别展示相应表单。</li></ul><h2 id="cli">CLI、脚本与 AI agent<a class="anchor-link" href="#cli">#</a></h2><ul class="doc-release-list"><li>项目、文件、维护规则、可选内容、历史问题、扫描发布、玩家程序、部署包与操作记录都有参数式命令，不必进入交互菜单。</li><li>支持 <code>--json</code> 读取结果，明确的 <code>--yes</code> 可完成有确认步骤的非交互操作。签名、路径、预览过期和客户端兼容检查继续执行。</li><li>新增 <code>project operations</code>，支持查询、<code>--undo 操作ID</code> 和 <code>--restore-published</code>。撤销与恢复在 <code>--json --yes</code> 下输出一个 JSON 对象，包含 <code>preview</code> 与 <code>result</code>，可直接交给脚本或 agent 解析。</li><li>CLI 与 Web 使用同一份项目数据，适合通过 SSH 让 agent 在服务器整理文件、读取预览并按服主要求发布。</li></ul><h2 id="stability">稳定性、签名与恢复修复<a class="anchor-link" href="#stability">#</a></h2><ul class="doc-release-list"><li>拒绝更新路径中的 Windows 目录联接与符号链接，写入、恢复和清理前重新验证，防止越过预期目录。</li><li>发布预览冻结文件、规则和项目设置；确认时校验预览摘要和当前状态，修改后需要重新检查。</li><li>回滚发布继续保留累计的放弃管理路径及必要问题要求，避免旧内容被错误接回。</li><li>静态分发提供单文件 <code>.signed</code> 载荷，避免清单与签名在更新期间跨版本混用；导出与上传携带相应签名文件和缓存规则。</li><li>HTTP 响应体读取支持超时与主动取消，等待下载工作退出后再结束本次更新。</li><li>管理备份替换与回退都失败时，保留旧数据和已验证的恢复目录，并提供恢复位置。</li><li>文件覆盖与归档恢复会检查后续变化；修复 Windows 上传流尚未关闭时阻止安装失败回退的问题，文件与操作记录写入失败会共同回退。</li><li>项目锁支持同线程内嵌套调用，并继续拒绝不同线程或进程同时写入同一项目。</li></ul><h2 id="website">通用发行包、官网与文档<a class="anchor-link" href="#website">#</a></h2><ul class="doc-release-list"><li>玩家端默认界面使用通用标题、品牌与背景，清理专属服务器新闻、页面和测试玩家身份；发行包不带实际项目绑定、管理账户、私钥或项目数据库。</li><li>统一玩家发行入口，清理旧 JavaFX 界面、相关依赖及多余运行时文件；程序继续自带运行环境。</li><li>官网采用新版设计，教程按实际管理端界面更新；保留创建项目的操作演示、目录图和终端示例，维护方式用三张说明卡片呈现。</li><li>教程补充上传清单、历史问题处理、操作撤销、恢复设置、目录返回与脚本/AI agent 调用；宣传片使用原创配乐。</li></ul><h2 id="upgrade">升级与兼容<a class="anchor-link" href="#upgrade">#</a></h2><ol><li>管理端升级时保留 <code>data/</code>、<code>management-settings.json</code>、<code>management-web-auth.json</code> 及自己的标准整合包目录，再替换程序文件。</li><li>先发布 <strong>0.2.0 玩家端程序</strong>，再发布采用新维护规则的整合包；不支持新能力的旧玩家端会先要求升级。</li><li>旧发布的原始签名与旧清单语义保留，升级后先检查历史删除迁移、持续要求和玩家保留的选择。</li><li>程序版本、整合包内容版本分别发布。只改模组和配置时，不必重新发布玩家程序或重新分发完整包。</li><li>已经采用新维护格式的项目，不要再用旧管理端发布；较旧的玩家程序也不能处理新版恢复事务。</li></ol><h2 id="size">发行包大小<a class="anchor-link" href="#size">#</a></h2><p>与 v0.1.40 Release 附件比较，按 ZIP 文件实际字节数计算：</p>
-<div class="doc-table-wrap"><table class="doc-table"><thead><tr><th scope="col">发行包</th><th scope="col">上一发行</th><th scope="col">0.2.0</th><th scope="col">减少</th></tr></thead><tbody><tr><td>玩家端 Windows x64</td><td>55.44 MiB</td><td>27.86 MiB</td><td>49.8%</td></tr><tr><td>管理端 Windows x64</td><td>53.93 MiB</td><td>38.98 MiB</td><td>27.7%</td></tr><tr><td>管理端 Linux x64</td><td>65.26 MiB</td><td>46.57 MiB</td><td>28.6%</td></tr></tbody></table></div><h2 id="independent">程序版本和整合包内容，还是分开发布<a class="anchor-link" href="#independent">#</a></h2><p>本次管理端和玩家端都叫 0.2.0，方便识别这次大改；它们各自的发布流程没有合并。更新模组和配置只发整合包，更新玩家端本体才发程序，Bootstrap Agent 升级则重新分发接入文件。</p><nav class="doc-pager"><a class="pager-link" href="./faq.html"><span>上一页</span><strong>← 常见问题</strong></a></nav></article></main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div><aside class="docs-toc"><h4>本页内容</h4><a data-toc="versions" href="#versions" style="padding-left:10px">当前组件版本</a><a data-toc="v020" href="#v020" style="padding-left:10px">0.2.0 · 对照 v0.1.40</a><a data-toc="maintenance" href="#maintenance" style="padding-left:10px">三种维护方式</a><a data-toc="removal" href="#removal" style="padding-left:10px">移除与历史问题</a><a data-toc="player" href="#player" style="padding-left:10px">玩家端与恢复</a><a data-toc="workspace" href="#workspace" style="padding-left:10px">文件工作区与上传</a><a data-toc="operations" href="#operations" style="padding-left:10px">操作记录与设置恢复</a><a data-toc="distribution" href="#distribution" style="padding-left:10px">程序发布与个性化</a><a data-toc="cli" href="#cli" style="padding-left:10px">CLI 与 AI agent</a><a data-toc="stability" href="#stability" style="padding-left:10px">稳定性与签名</a><a data-toc="website" href="#website" style="padding-left:10px">发行包与文档</a><a data-toc="upgrade" href="#upgrade" style="padding-left:10px">升级与兼容</a><a data-toc="size" href="#size" style="padding-left:10px">发行包大小</a><a data-toc="independent" href="#independent" style="padding-left:10px">程序与内容分别发布</a></aside></div>
-<div class="search-modal" data-search-modal=""><div class="search-panel"><div class="search-input-row"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4" stroke-linecap="round"></path></svg><input autocomplete="off" class="search-input" data-search-input="" placeholder="搜索标题、功能或问题…"/></div><div class="search-results" data-search-results=""></div><div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div></div></div><script charset="utf-8" src="../assets/site.js"></script><script charset="utf-8" src="../assets/docs.js?v=020-20261005-real"></script></body></html>
+<div class="doc-table-wrap"><table class="doc-table"><thead><tr><th scope="col">发行包</th><th scope="col">上一发行</th><th scope="col">0.2.0</th><th scope="col">减少</th></tr></thead><tbody><tr><td>玩家端 Windows x64</td><td>55.44 MiB</td><td>27.86 MiB</td><td>49.8%</td></tr><tr><td>管理端 Windows x64</td><td>53.93 MiB</td><td>38.98 MiB</td><td>27.7%</td></tr><tr><td>管理端 Linux x64</td><td>65.26 MiB</td><td>46.57 MiB</td><td>28.6%</td></tr></tbody></table></div><h2 id="independent">程序版本和整合包内容，还是分开发布<a class="anchor-link" href="#independent">#</a></h2><p>本次管理端和玩家端都叫 0.2.0，方便识别这次大改；它们各自的发布流程没有合并。更新模组和配置只发整合包，更新玩家端本体才发程序，Bootstrap Agent 升级则重新分发接入文件。</p>
+<!-- 正文结束 -->
+        <nav class="doc-pager"><a class="pager-link" href="./faq.html"><span>上一页</span><strong>← 常见问题</strong></a><span></span></nav>
+      </article>
+    </main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div>
+
+    <aside class="docs-toc">
+      <h4>本页内容</h4>
+      <a href="#versions" data-toc="versions" style="padding-left:10px">当前组件版本</a>
+      <a href="#v021" data-toc="v021" style="padding-left:10px">0.2.1 · 2026 年 10 月 15 日</a>
+      <a href="#next-desktop" data-toc="next-desktop" style="padding-left:20px">管理端桌面版</a>
+      <a href="#next-workspace" data-toc="next-workspace" style="padding-left:20px">新版工作区</a>
+      <a href="#next-player" data-toc="next-player" style="padding-left:20px">玩家端更新界面</a>
+      <a href="#next-legacy" data-toc="next-legacy" style="padding-left:20px">旧版网页界面</a>
+      <a href="#v020" data-toc="v020" style="padding-left:10px">0.2.0 · 2026 年 10 月 6 日</a>
+      <a href="#maintenance" data-toc="maintenance" style="padding-left:10px">文件维护：日常只选三种方式</a>
+      <a href="#removal" data-toc="removal" style="padding-left:10px">文件退出维护与历史问题处理</a>
+      <a href="#player" data-toc="player" style="padding-left:10px">玩家端：可选内容、本地管理与恢复</a>
+      <a href="#workspace" data-toc="workspace" style="padding-left:10px">管理端：文件工作区与上传</a>
+      <a href="#operations" data-toc="operations" style="padding-left:10px">操作记录、撤销与恢复版本设置</a>
+      <a href="#distribution" data-toc="distribution" style="padding-left:10px">玩家程序发布、个性化与分发</a>
+      <a href="#cli" data-toc="cli" style="padding-left:10px">CLI、脚本与 AI agent</a>
+      <a href="#stability" data-toc="stability" style="padding-left:10px">稳定性、签名与恢复修复</a>
+      <a href="#website" data-toc="website" style="padding-left:10px">通用发行包、官网与文档</a>
+      <a href="#upgrade" data-toc="upgrade" style="padding-left:10px">升级与兼容</a>
+      <a href="#size" data-toc="size" style="padding-left:10px">发行包大小</a>
+      <a href="#independent" data-toc="independent" style="padding-left:10px">程序版本和整合包内容，还是分开发布</a>
+    </aside>
+  </div>
+
+  <div class="search-modal" data-search-modal>
+    <div class="search-panel">
+      <div class="search-input-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off">
+      </div>
+      <div class="search-results" data-search-results></div>
+      <div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div>
+    </div>
+  </div>
+  <script src="../assets/site.js" charset="utf-8"></script>
+  <script src="../assets/docs.js?v=021-20261014" charset="utf-8"></script>
+</body>
+</html>

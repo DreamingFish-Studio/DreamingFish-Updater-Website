@@ -1,18 +1,119 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="从下载解压管理端开始，完成首次配置的完整教程。"><meta name="color-scheme" content="light dark"><title>下载与首次配置 · DreamingFish Updater 文档</title><script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script><link rel="icon" href="../assets/logo.svg"><link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="../assets/v4.css?v=020-20261005-real"></head><body class="docs-body">
-<header class="site-header docs-header"><div class="container navbar"><div style="display:flex;align-items:center;gap:10px"><button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button><a class="brand" href="../index.html"><img src="../assets/logo.svg" alt=""><span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span></a></div><button class="docs-search-button" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><span>搜索文档</span><kbd>Ctrl K</kbd></button><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式"><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg></button><a class="button ghost" href="../index.html">返回官网</a><a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg> GitHub</a></div></div></header>
-<div class="docs-layout"><aside class="docs-sidebar" data-docs-sidebar><div class="docs-group"><div class="docs-group-title">开始</div><nav class="docs-nav"><a class="" href="./index.html">概览</a><a class="active" href="./quickstart.html">下载与首次配置</a><a class="" href="./create-project.html">创建第一个项目</a></nav></div><div class="docs-group"><div class="docs-group-title">服主指南</div><nav class="docs-nav"><a class="" href="./maintenance.html">日常维护</a></nav></div><div class="docs-group"><div class="docs-group-title">参考</div><nav class="docs-nav"><a class="" href="./faq.html">常见问题</a><a class="" href="./changelog.html">版本与更新日志</a></nav></div></aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div><main class="docs-main"><article class="docs-article"><div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>下载与首次配置</span></div><h1>下载与首次配置</h1><p class="docs-lead">让我们跟着这篇教程一步步来：下载解压管理端，完成第一次运行时的引导配置，让管理端先跑起来。</p>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="下载管理端，完成第一次运行时的引导配置，让管理端先跑起来。">
+  <meta name="color-scheme" content="light dark">
+  <title>下载与首次配置 · 梦鱼更新器文档</title>
+  <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/v4.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/docs-v5.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/workbench-mock.css?v=021-20261014">
+</head>
+<body class="docs-body">
+  <header class="site-header docs-header">
+    <div class="container navbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+        <a class="brand" href="../index.html">
+          <img src="../assets/logo.svg" alt="">
+          <span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span>
+        </a>
+      </div>
+      <button class="docs-search-button" data-search-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <span>搜索文档</span><kbd>Ctrl K</kbd>
+      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l-1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="button ghost" href="../index.html">返回官网</a>
+        <a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
 
-<h2 id="architecture">一、先认识两个组成部分<a class="anchor-link" href="#architecture">#</a></h2><p>开始部署之前，先记住整个系统由两个部分构成：<strong>管理端</strong>和 <strong>玩家端</strong>。管理端可以运行在运行 Minecraft 的服务器上，也可以运行在其他服务器上；玩家端运行在玩家电脑上，由<strong>玩家端本体</strong>和 <strong>Agent（启动引导器）</strong>组成。让我们先认识这两个部分。</p><div class="path-grid"><div class="path-card"><span class="badge">服主使用</span><h3>管理端</h3><p>安装在服务器上，负责管理内容、发布版本、制作玩家实例，并启动玩家下载服务。</p></div><div class="path-card"><span class="badge">玩家使用</span><h3>玩家端</h3><p>随整合包发给玩家的桌面程序，由<strong>玩家端本体</strong>和 <strong>Agent（启动引导器）</strong>组成。本体负责在游戏启动前检查和更新文件；Agent 挂在启动器里，负责拉起玩家端、等待启动许可，并参与玩家端自更新与失败回退。</p></div></div><p><strong>一次启动的协作过程：</strong></p><div class="mini-flow"><div><strong>服主发布</strong><span>在管理端维护标准目录、扫描并发布新版本。</span></div><div><strong>服主完成启动器接入</strong><span>按 PCL 或 HMCL 的实际规则配置 Agent，并确认版本隔离生效。</span></div><div><strong>玩家启动游戏</strong><span>启动器加载 Agent，Agent 再拉起玩家端。</span></div><div><strong>返回启动许可</strong><span>玩家端完成检查后放行，Minecraft 正常加载。</span></div></div>
+  <div class="docs-layout">
+    <aside class="docs-sidebar" data-docs-sidebar>
+      <div class="docs-group">
+        <div class="docs-group-title">开始</div>
+        <nav class="docs-nav"><a href="./index.html">概览</a><a class="active" href="./quickstart.html">下载与首次配置</a><a href="./create-project.html">创建第一个项目</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">服主指南</div>
+        <nav class="docs-nav"><a href="./maintenance.html">日常维护</a><a href="./admin.html">远程管理与 AI agent</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">参考</div>
+        <nav class="docs-nav"><a href="./faq.html">常见问题</a><a href="./changelog.html">版本与更新日志</a></nav>
+      </div>
+    </aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div>
+
+    <main class="docs-main">
+      <article class="docs-article">
+        <div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>下载与首次配置</span></div>
+        <h1>下载与首次配置</h1>
+<!-- 正文开始 -->
+<p class="docs-lead">接下来让我们一起配置吧：首先下载管理端。管理端有两个版本——<strong>桌面版</strong>解压后直接运行就行；<strong>终端版</strong>第一次运行时，会有一个首次引导。</p>
+
+<h2 id="architecture">一、先认识两个组成部分<a class="anchor-link" href="#architecture">#</a></h2>
+<p>开始部署之前，先记住整个系统由两个部分构成：<strong>管理端</strong>和<strong>玩家端</strong>。管理端可以运行在运行 Minecraft 的服务器上，也可以运行在其他服务器或者你自己的电脑上；玩家端运行在玩家电脑上，由<strong>玩家端本体</strong>和 <strong>Agent（启动引导器）</strong>组成。让我们先认识这两个部分。</p>
+<div class="path-grid"><div class="path-card"><span class="badge">服主使用</span><h3>管理端</h3><p>负责管理内容、发布版本、制作玩家实例，并启动玩家下载服务。管理端有<strong>桌面版</strong>和<strong>终端版</strong>两个版本：终端版启动后可以打开网页管理界面，和桌面版的界面一模一样，也可以直接用交互式命令行。不管用哪种，读写的都是同一份数据，后面会一一介绍。</p></div><div class="path-card"><span class="badge">玩家使用</span><h3>玩家端</h3><p>随整合包发给玩家的桌面程序，由<strong>玩家端本体</strong>和 <strong>Agent（启动引导器）</strong>组成。本体负责在游戏启动前检查和更新文件；Agent 挂在启动器里，负责拉起玩家端、等待启动许可，并参与玩家端自更新与失败回退。</p></div></div>
+<p><strong>一次启动的协作过程：</strong></p>
+<div class="mini-flow"><div><strong>服主发布</strong><span>在管理端维护标准目录、检查改动并发布新版本。</span></div><div><strong>服主完成启动器接入</strong><span>按 PCL 或 HMCL 的实际规则配置 Agent，并确认版本隔离生效。</span></div><div><strong>玩家启动游戏</strong><span>启动器加载 Agent，Agent 再拉起玩家端。</span></div><div><strong>返回启动许可</strong><span>玩家端完成检查后放行，Minecraft 正常加载。</span></div></div>
+
+<h3 id="three-ends">管理端的不同版本<a class="anchor-link" href="#three-ends">#</a></h3>
+<p>管理端分为两个版本，按管理端放在什么系统上来选：</p>
+<div class="doc-table-wrap"><table class="doc-table"><thead><tr><th style="white-space:nowrap">版本</th><th>放在哪</th><th>怎么管理</th></tr></thead><tbody>
+<tr><td style="white-space:nowrap"><strong>桌面版</strong></td><td>Windows 电脑或 Windows Server（推荐）；也可以装在自己的 Windows 电脑上，远程管理服务器上的终端版</td><td>免安装，解压后双击 <code>DreamingFishAdminDesktop.exe</code>（也有安装版），打开就是管理界面</td></tr>
+<tr><td style="white-space:nowrap"><strong>终端版</strong></td><td>Linux 服务器或 VPS；Windows 上想省点资源、不想开桌面程序，也可以用它</td><td>平时用<strong>网页管理界面</strong>：在终端里启动它，再用浏览器打开 <code>http://127.0.0.1:18080/</code>（远程服务器先建 SSH 隧道），界面和桌面版一模一样。网页也不方便用的时候，运行 <code>dfs-admin</code> 进入<strong>交互式命令行</strong>，按中文菜单操作</td></tr>
+</tbody></table></div>
+<p><strong>Windows 上推荐直接用桌面版</strong>；<strong>Linux 上用终端版</strong>，终端版也提供了网页操作界面；网页也不方便的话，我们也提供了交互式命令行操作。</p>
+
 <h2 id="prepare">二、准备发行包与三个位置<a class="anchor-link" href="#prepare">#</a></h2>
 <p>管理端和玩家端发行包都自带运行环境，不需要额外安装 Java。建议先准备以下三个固定位置：</p>
 <div class="code-block"><div class="code-head"><span>Windows 目录示例</span><button class="copy-button" type="button">复制</button></div><pre><code>D:\管理端       管理端程序与自动生成的数据
 D:\被管理的文件      服主希望更新器管理的内容
 D:\待发布的完整游戏版本      准备发给玩家的完整 Minecraft 实例</code></pre></div>
-<ul><li><code>D:\管理端</code> 应长期保留，升级管理端时继续使用其中的 <code>data</code> 和设置文件。</li><li><code>D:\被管理的文件</code> 不要求是完整游戏目录。只管理模组时可以只有 <code>mods</code>；只管理配置时也可以只有需要的 <code>config</code>。</li><li><code>D:\待发布的完整游戏版本</code> 是最终交给玩家的完整实例，它由启动器、游戏文件和 DreamingFish 组件共同组成。</li></ul>
-<h2 id="admin-start">三、下载解压管理端<a class="anchor-link" href="#admin-start">#</a></h2>
+<ul><li><code>D:\管理端</code> 应长期保留，升级管理端时继续使用其中的 <code>data</code> 和设置文件。用桌面版的话，管理数据默认放在当前用户的应用数据目录里（<code>%LOCALAPPDATA%\cn.dreamingfish.admin.desktop\management</code>），想放到 <code>D:\管理端</code> 这种好找的地方，在连接页改一下“管理数据目录”就行。</li><li><code>D:\被管理的文件</code> 不要求是完整游戏目录。只管理模组时可以只有 <code>mods</code>；只管理配置时也可以只有需要的 <code>config</code>。</li><li><code>D:\待发布的完整游戏版本</code> 是最终交给玩家的完整实例，它由启动器、游戏文件和 DreamingFish 组件共同组成。</li></ul>
+
+<h2 id="admin-start">三、下载并运行管理端<a class="anchor-link" href="#admin-start">#</a></h2>
+<p>到 <a href="https://github.com/hanhanyu666/DreamingFish-Updater/releases/latest" target="_blank" rel="noreferrer">GitHub Releases</a> 下载管理端。两个版本选一个就行：</p>
+<div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>版本</th><th>能装在哪</th><th>第一次运行</th></tr></thead><tbody>
+<tr><td><strong>桌面版</strong><br><code>dfs-admin-desktop-windows-x64</code></td><td>Windows 电脑、Windows Server（推荐）</td><td>直接运行，在窗口里选连接，没有终端引导</td></tr>
+<tr><td><strong>终端版</strong><br><code>dfs-admin-linux-x64</code> / <code>dfs-admin-windows-x64</code></td><td>Linux 服务器或 VPS；Windows 也能用</td><td>终端先走一遍首次引导，之后用网页管理界面或交互式命令行管理</td></tr>
+</tbody></table></div>
+
+<h3 id="desktop-start" data-toc-label="方式一：桌面版">方式一：桌面版，直接运行<a class="anchor-link" href="#desktop-start">#</a></h3>
+<p>桌面版<strong>免安装</strong>：下载便携版 <code>dfs-admin-desktop-windows-x64-0.2.1.zip</code>，解压到一个固定的目录（比如 <code>D:\梦鱼管理端桌面版</code>），双击里面的 <code>DreamingFishAdminDesktop.exe</code> 就能用。它自带 Java 和管理核心，不需要另外装任何东西，也不需要先在终端里跑首次引导。习惯装软件的，也可以下载安装版 <code>dfs-admin-desktop-windows-x64-0.2.1-setup.exe</code>，装好后从开始菜单打开，用起来完全一样。</p>
+<div class="steps">
+<div class="step-card"><h3>选“本机管理”</h3><p>打开后先看到连接页。选上方的“本机管理”，填个好认的连接名称。</p></div>
+<div class="step-card"><h3>确认管理数据目录</h3><p>第一次用可以保留默认目录；以前用过终端版，就点旁边的文件夹按钮，选中原来放 <code>management-settings.json</code> 的那个目录，项目和发布记录都会接着用。</p></div>
+<div class="step-card"><h3>打开工作区</h3><p>点“打开工作区”，第一次进入要先创建管理账户。接下来直接看下一页「<a href="./create-project.html#web-first-step">创建第一个项目</a>」就行。</p></div>
+</div>
+<figure class="wbm-figure"><div class="wbm-scroll"><div class="wbm" role="img" aria-label="桌面版连接页：选“本机管理”，点“打开工作区”"><div class="wbm-titlebar"><span class="wbm-fishmark "><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wbi-fish-mark"></use></svg></span><strong>梦鱼更新管理</strong><small>0.2.1</small><span class="wbm-winctl"><span><svg viewBox="0 0 16 16"><path d="M3 8h10"></path></svg></span><span><svg viewBox="0 0 16 16"><path d="M3.5 3.5h9v9h-9z"></path></svg></span><span><svg viewBox="0 0 16 16"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"></path></svg></span></span></div><div class="wbm-launcher"><aside><header><span>管理连接</span><svg class="i s" aria-hidden="true"><use href="#wbi-plus"></use></svg></header><div class="p">选择本机或远程工作区</div><div class="wbm-conn sel"><span class="ic"><svg class="i s" aria-hidden="true"><use href="#wbi-monitor"></use></svg></span><div><strong>本机管理</strong><small>本机管理</small></div><i class="on"></i></div><div class="wbm-conn"><span class="ic"><svg class="i s" aria-hidden="true"><use href="#wbi-terminal"></use></svg></span><div><strong>梦鱼生存服</strong><small>mc-server</small></div></div><div class="wbm-conn"><span class="ic"><svg class="i s" aria-hidden="true"><use href="#wbi-server"></use></svg></span><div><strong>创造测试服</strong><small>远程管理端</small></div></div><footer><span><svg class="i s" aria-hidden="true"><use href="#wbi-file-text"></use></svg>运行日志</span><span><svg class="i s" aria-hidden="true"><use href="#wbi-power"></use></svg>退出桌面端</span><small class="quiet">桌面版 0.2.1</small></footer></aside><section><header>工作区<small>编辑连接</small></header><div class="body"><span class="over"><svg class="i s" viewBox="0 0 32 32"><use href="#wbi-fish"></use></svg>DREAMINGFISH WORKSPACE</span><div class="h3">本机管理</div><div class="p lead">修改连接信息，或打开这个工作区。</div><span class="wbm-seg"><span class="on"><svg class="i s" aria-hidden="true"><use href="#wbi-monitor"></use></svg>本机管理</span><span class=""><svg class="i s" aria-hidden="true"><use href="#wbi-server"></use></svg>管理地址</span><span class=""><svg class="i s" aria-hidden="true"><use href="#wbi-terminal"></use></svg>SSH 连接</span></span><div class="p muted" style="margin-bottom:1.1em">在这台电脑上整理整合包、检查改动和发布版本。</div><label class="wbm-field"><span>连接名称</span><span class="wbm-input">本机管理</span></label><label class="wbm-field"><span>管理数据目录</span><span class="wbm-row"><span class="wbm-input">D:\梦鱼管理端</span><span class="wbm-ib filled"><svg class="i s" aria-hidden="true"><use href="#wbi-folder-open"></use></svg></span></span><small>已有管理端目录中的项目和发布记录可以继续使用。</small></label><span class="wbm-btn accent lg"><svg class="i s" aria-hidden="true"><use href="#wbi-arrow-right"></use></svg>打开工作区</span></div></section></div></div></div><figcaption>桌面版连接页：选“本机管理”，点“打开工作区”</figcaption></figure>
+<div class="callout"><span class="callout-icon">i</span><div><strong>玩家下载服务的端口</strong><p>桌面版的玩家下载服务默认监听 <code>0.0.0.0:8080</code>，和终端版首次引导里的默认值一样。要换端口，进工作区后到“设置”→“服务设置”里改。管理端放在 Windows Server 上的话，记得在系统防火墙和云服务商的安全组里放行这个端口，玩家才连得上。</p></div></div>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>在 Windows Server 上用桌面版</strong><ul><li>桌面版要用系统的 WebView2。Windows Server 上不一定装了它：用便携版之前先确认装了 Microsoft Edge WebView2 Runtime，或者直接用安装版，缺的话安装程序会自动联网安装。</li><li>桌面版关掉窗口会收进系统托盘，下载服务继续运行；远程桌面点“断开连接”没关系，程序会继续跑，但“注销”会把它一起关掉。</li><li>没有桌面的 Windows Server Core 用不了桌面版，请用下面的终端版。</li></ul></div></div>
+
+<h3 id="server-start" data-toc-label="方式二：终端版">方式二：终端版与首次引导<a class="anchor-link" href="#server-start">#</a></h3>
+<p>管理端放在 Linux 服务器或 VPS 上的，下载 <code>dfs-admin-linux-x64</code>；Windows 上想用终端版的，下载 <code>dfs-admin-windows-x64</code>：</p>
 <div class="steps"><div class="step-card"><h3>解压到固定目录</h3><p>Windows 将管理端压缩包解压到 <code>D:\管理端</code>；Linux 将管理端压缩包解压到长期使用的目录，例如 <code>/opt/dfs-admin</code>。两边都一样：不要每次升级都新建一套空目录。</p></div><div class="step-card"><h3>运行管理端</h3><p>Windows 双击 <code>DreamingFishAdmin.exe</code> 或从 PowerShell 启动；Linux 解压后在发行包根目录运行 <code>./dfs-admin</code>，建议用 <code>tmux</code> 挂起（如 <code>tmux new -s dfs ./dfs-admin</code>），断开 SSH 后管理端仍会继续运行。</p></div></div>
-<h2 id="first-run">四、第一次运行：跟着终端引导走<a class="anchor-link" href="#first-run">#</a></h2>
-<p>第一次启动管理端会进入“首次使用引导”。默认值已经适合大多数情况，<strong>不确定就直接按回车</strong>。下面就是你第一次运行时会看到的终端界面（Linux 路径以 <code>/opt/dfs-admin</code> 为例，Windows 对应 <code>D:\管理端</code>）：</p><p>下面会对三步进行讲解。</p>
+<p>第一次运行时，终端会先带你走一遍首次引导，继续往下看第四节。</p>
+
+<h2 id="first-run" data-toc-label="第一次运行（终端版）">四、第一次运行：跟着终端引导走<a class="anchor-link" href="#first-run">#</a></h2>
+<p>这一节只针对方式二的终端版；用桌面版的朋友不会看到这个引导，可以直接翻到下一页「<a href="./create-project.html#web-first-step">创建第一个项目</a>」。</p>
+<p>第一次启动终端版会进入“首次使用引导”。默认值已经适合大多数情况，<strong>不确定就直接按回车</strong>。下面就是你第一次运行时会看到的终端界面（Linux 路径以 <code>/opt/dfs-admin</code> 为例，Windows 对应 <code>D:\管理端</code>）：</p><p>下面会对三步进行讲解。</p>
 <div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">第 1 步 · 数据保存位置</span></div>
 <pre>DreamingFish 整合包更新管理端
 ================================
@@ -25,15 +126,27 @@ D:\待发布的完整游戏版本      准备发给玩家的完整 Minecraft 实
 [1/3] 管理端数据保存位置
 管理端会把项目设置、发布记录和签名密钥自动保存在下面这个文件夹：
   /opt/dfs-admin/data
-这个 data 文件夹位于管理端根目录中，非常重要，请勿删除！</pre></div>
-<div class="callout"><span class="callout-icon">i</span><div><strong>data 里面会放什么？为什么重要</strong><p>项目设置、发布记录、签名密钥和全部内容对象都存在 <code>data</code> 里，相当于管理端的“全部家当”。升级或迁移管理端时，把旧版本的 <code>data</code> 连同 <code>management-settings.json</code> 等设置文件一起搬到新版本根目录，项目和发布历史就会原样恢复；备份时也请优先备份 <code>data</code>，不要只复制一个空目录。</p></div></div>
+这个 data 文件夹位于管理端根目录中，非常重要，请勿删除！
+
+升级管理端的方法：
+  1. 把旧管理端根目录中的 data 文件夹、management-settings.json
+     和 management-web-auth.json（如果已经注册 Web 账户）
+     移动或复制到新版管理端根目录。
+  2. 启动新版管理端，程序会自动读取原有数据。</pre></div>
+<div class="callout"><span class="callout-icon">i</span><div><strong>data 里面会放什么？为什么重要</strong><p>项目设置、发布记录、签名密钥、操作记录和全部内容对象都存在 <code>data</code> 里，相当于管理端的“全部家当”。升级或迁移管理端时，把旧版本的 <code>data</code> 连同 <code>management-settings.json</code> 等设置文件一起搬到新版本根目录，项目和发布历史就会原样恢复；备份时也请优先备份 <code>data</code>，不要只复制一个空目录。</p></div></div>
 <div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">第 2 步 · 玩家下载服务</span></div>
 <pre>[2/3] 配置玩家下载服务
 玩家更新器会通过这项服务下载模组和配置文件。
-监听地址：
-  0.0.0.0   = 允许其他电脑连接，部署在服务器或 VPS 时使用（推荐）
-  127.0.0.1 = 只有当前电脑能连接，仅在内部测试时使用
+请设置服务监听地址和端口。
+
+监听地址决定哪些电脑可以连接：
+  0.0.0.0   = 允许其他电脑连接，部署在服务器或 VPS 时使用（推荐）。
+  127.0.0.1 = 只有当前电脑能连接，仅在内部测试时使用。
+这里填写的不是公网 IP。玩家访问的公网地址会在创建项目时填写。
 下载服务监听地址（一般直接按回车） [0.0.0.0]：
+
+监听端口通常使用默认值 8080。只有端口冲突或服务商有要求时才修改。
+如果使用端口映射，这里填写服务器内部端口。
 下载服务端口（一般直接按回车） [8080]：</pre></div>
 <div class="callout"><span class="callout-icon">i</span><div><strong>这里填的不是公网地址</strong><p>这一步配置的是服务器上的监听地址和端口：<code>0.0.0.0</code> 表示允许其他电脑连接，<code>8080</code> 是默认内网端口。玩家真正访问的公网地址（例如 <code>http://你的公网IP:端口</code>）要等创建项目时才填写；如果 <code>8080</code> 被其他程序占用，就换一个空闲端口。</p></div></div>
 <div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">第 3 步 · Web 管理页面</span></div>
@@ -43,7 +156,7 @@ D:\待发布的完整游戏版本      准备发给玩家的完整 Minecraft 实
   默认只监听 127.0.0.1；需要公网访问时，先通过本机或 SSH 隧道注册账户，
   再在服务设置或 Web 页面显式改为 0.0.0.0，并务必配置 HTTPS 反向代理。
 Web 管理端口（一般直接按回车） [18080]：</pre></div>
-<div class="callout"><span class="callout-icon">i</span><div><strong>Web 管理页面只给管理员用</strong><p>它默认只监听 <code>127.0.0.1</code>，只有管理端本机能打开。远程服务器上想用浏览器管理时，先通过 SSH 隧道访问，不要把 <code>18080</code> 直接暴露到公网。不用 Web 也没关系，终端可以完成创建项目、扫描发布和下载服务等主要操作；网页上传清单、实时预览等流程在后面的教程单独说明。</p></div></div>
+<div class="callout"><span class="callout-icon">i</span><div><strong>Web 管理页面只给管理员用</strong><p>它默认只监听 <code>127.0.0.1</code>，只有管理端本机能打开。远程服务器上想用浏览器管理时，先通过 SSH 隧道访问，不要把 <code>18080</code> 直接暴露到公网。如果你自己的电脑是 Windows，也可以用桌面版的“SSH 连接”管理服务器：服务器上先启动 Web 管理界面，桌面版会借用你电脑上的 SSH 配置自己建好转发，做法见「<a href="./admin.html#desktop-remote">远程管理与 AI agent</a>」。网页也不方便用的话也没关系，创建项目、检查发布和下载服务这些主要操作，交互式命令行都能完成。</p></div></div>
 <div class="terminal"><div class="terminal-bar"><span class="terminal-dot" style="background:#ff5f57"></span><span class="terminal-dot" style="background:#febc2e"></span><span class="terminal-dot" style="background:#28c840"></span><span class="terminal-title">第 4 步 · 设置完成，创建第一个项目</span></div>
 <pre>首次设置已完成
 ================
@@ -52,10 +165,39 @@ Web 管理端口（一般直接按回车） [18080]：</pre></div>
   Web 管理页面：http://127.0.0.1:18080/
   设置文件：/opt/dfs-admin/management-settings.json
 
-还没有整合包项目。推荐在 Web 管理界面中完成首次创建，
-每个必填项都带有用途和示例。
+还没有整合包项目。推荐在 Web 管理界面中完成首次创建，每个必填项都带有用途和示例。
   按 Y 进入 Web 管理界面创建，按 N 使用命令行创建。
 是否现在启动 Web 管理界面并创建第一个项目？ [Y/n]：Y</pre></div>
 <div class="callout"><span class="callout-icon">✓</span><div><strong>很好，你已经完成了首次设置！</strong><ol style="padding-left:0;list-style-position:inside"><li><strong style="display:inline">推荐按 Y 进入网页配置模式</strong>：管理端会自动启动 Web 管理界面，你在浏览器里填写项目信息，每个字段都带用途和示例。</li><li><strong style="display:inline">无图形界面的 Linux 需要 SSH 隧道</strong>：服务器上打不开浏览器，先在你自己的电脑上建立 SSH 隧道再访问管理页面，不要把 <code>18080</code> 直接暴露到公网。</li><li><strong style="display:inline">如果你无法使用 Web</strong>：也可以按 <code>N</code> 进入命令行模式，使用便捷的终端交互创建项目。</li><li><strong style="display:inline">下一页继续</strong>：创建项目和终端主菜单的内容在下一页“创建第一个项目”继续，点页面底部的“下一页”即可。</li></ol></div></div>
-<nav class="doc-pager"><a class="pager-link" href="./index.html"><span>上一页</span><strong>← 概览</strong></a><a class="pager-link next" href="./create-project.html"><span>下一页</span><strong>创建第一个项目 →</strong></a></nav></article></main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div><aside class="docs-toc"><h4>本页内容</h4><a href="#architecture" data-toc="architecture" style="padding-left:10px">先认识两个组成部分</a><a href="#prepare" data-toc="prepare" style="padding-left:10px">准备发行包与三个位置</a><a href="#admin-start" data-toc="admin-start" style="padding-left:10px">下载解压管理端</a><a href="#first-run" data-toc="first-run" style="padding-left:10px">第一次运行</a></aside></div>
-<div class="search-modal" data-search-modal><div class="search-panel"><div class="search-input-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off"></div><div class="search-results" data-search-results></div><div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div></div></div><script src="../assets/site.js" charset="utf-8"></script><script src="../assets/docs.js?v=020-20261005-real" charset="utf-8"></script></body></html>
+<!-- 正文结束 -->
+        <nav class="doc-pager"><a class="pager-link" href="./index.html"><span>上一页</span><strong>← 概览</strong></a><a class="pager-link next" href="./create-project.html"><span>下一页</span><strong>创建第一个项目 →</strong></a></nav>
+      </article>
+    </main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div>
+
+    <aside class="docs-toc">
+      <h4>本页内容</h4>
+      <a href="#architecture" data-toc="architecture" style="padding-left:10px">先认识两个组成部分</a>
+      <a href="#three-ends" data-toc="three-ends" style="padding-left:20px">管理端的不同版本</a>
+      <a href="#prepare" data-toc="prepare" style="padding-left:10px">准备发行包与三个位置</a>
+      <a href="#admin-start" data-toc="admin-start" style="padding-left:10px">下载并运行管理端</a>
+      <a href="#desktop-start" data-toc="desktop-start" style="padding-left:20px">方式一：桌面版</a>
+      <a href="#server-start" data-toc="server-start" style="padding-left:20px">方式二：终端版</a>
+      <a href="#first-run" data-toc="first-run" style="padding-left:10px">第一次运行（终端版）</a>
+    </aside>
+  </div>
+
+  <div class="search-modal" data-search-modal>
+    <div class="search-panel">
+      <div class="search-input-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off">
+      </div>
+      <div class="search-results" data-search-results></div>
+      <div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div>
+    </div>
+  </div>
+  <script src="../assets/site.js" charset="utf-8"></script>
+  <script src="../assets/docs.js?v=021-20261014" charset="utf-8"></script>
+  <script src="../assets/workbench-mock.js?v=021-20261014" charset="utf-8"></script>
+</body>
+</html>

@@ -1,1 +1,165 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=./create-project.html"><title>教程已更新</title></head><body><p>教程已更新，<a href="./create-project.html">打开最新版说明</a>。</p></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="在自己的 Windows 电脑上用桌面版管理服务器上的终端版，以及把日常维护交给脚本或 AI agent。">
+  <meta name="color-scheme" content="light dark">
+  <title>远程管理与 AI agent · 梦鱼更新器文档</title>
+  <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/v4.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/docs-v5.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/workbench-mock.css?v=021-20261014">
+</head>
+<body class="docs-body">
+  <header class="site-header docs-header">
+    <div class="container navbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+        <a class="brand" href="../index.html">
+          <img src="../assets/logo.svg" alt="">
+          <span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span>
+        </a>
+      </div>
+      <button class="docs-search-button" data-search-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <span>搜索文档</span><kbd>Ctrl K</kbd>
+      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l-1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="button ghost" href="../index.html">返回官网</a>
+        <a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="docs-layout">
+    <aside class="docs-sidebar" data-docs-sidebar>
+      <div class="docs-group">
+        <div class="docs-group-title">开始</div>
+        <nav class="docs-nav"><a href="./index.html">概览</a><a href="./quickstart.html">下载与首次配置</a><a href="./create-project.html">创建第一个项目</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">服主指南</div>
+        <nav class="docs-nav"><a href="./maintenance.html">日常维护</a><a class="active" href="./admin.html">远程管理与 AI agent</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">参考</div>
+        <nav class="docs-nav"><a href="./faq.html">常见问题</a><a href="./changelog.html">版本与更新日志</a></nav>
+      </div>
+    </aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div>
+
+    <main class="docs-main">
+      <article class="docs-article">
+        <div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>远程管理与 AI agent</span></div>
+        <h1>远程管理与 AI agent</h1>
+<!-- 正文开始 -->
+<p class="docs-lead">这一页讲两件进阶的事：一是在自己的 Windows 电脑上，用桌面版管理服务器上的终端版；二是把日常维护交给脚本或者 AI agent。都不是必需的，用得上的时候再来看就好。</p>
+
+<h2 id="desktop-remote" data-toc-label="用桌面版远程管理">一、在自己电脑上用桌面版管理服务器<a class="anchor-link" href="#desktop-remote">#</a></h2>
+<p>管理端放在 Linux 服务器上的话，平时要先在自己电脑上建 SSH 隧道，再打开浏览器才能管理。如果你自己的电脑是 Windows，也可以装一个桌面版，让它帮你连过去：SSH 转发它会自己建好，打开的就是熟悉的管理界面，读写的是服务器上的项目和文件。</p>
+
+<h3 id="remote-prepare">先准备好这几件事<a class="anchor-link" href="#remote-prepare">#</a></h3>
+<ol>
+<li><strong>服务器上的终端版是 0.2.1 或更新的版本</strong>，并且已经启动了 Web 管理界面（首次引导按 <code>Y</code>，或者交互式命令行主菜单 <code>[10]</code>）。建议用 <code>tmux</code> 挂着，断开 SSH 也不会停。</li>
+<li><strong>自己电脑上能直接 SSH 登录服务器</strong>。打开 PowerShell，运行 <code>ssh mc-server</code>（或者 <code>ssh 用户名@服务器地址</code>）试一下，能进去就行。第一次连接时的主机身份确认，也要先在这里完成。</li>
+<li><strong>最好配好密钥登录</strong>。桌面版借用的是你电脑上的 OpenSSH 配置和密钥，不会弹出终端让你输入 SSH 密码。</li>
+</ol>
+<p>想用 <code>mc-server</code> 这样的短名字，可以在自己电脑的 <code>C:\Users\你的用户名\.ssh\config</code> 里写一段配置（没有这个文件就新建一个）：</p>
+<div class="code-block"><div class="code-head"><span>SSH 配置 · C:\Users\你的用户名\.ssh\config</span><button class="copy-button" type="button">复制</button></div><pre><code>Host mc-server
+    HostName 你的服务器地址
+    User 用户名
+    IdentityFile ~/.ssh/id_ed25519</code></pre></div>
+<div class="callout"><span class="callout-icon">i</span><div><strong>还没配过 SSH 密钥？</strong><p>在 PowerShell 里运行 <code>ssh-keygen -t ed25519</code>，一路回车，会在 <code>C:\Users\你的用户名\.ssh\</code> 下生成 <code>id_ed25519</code> 和 <code>id_ed25519.pub</code>。把 <code>.pub</code> 文件里的那一行，追加到服务器上 <code>~/.ssh/authorized_keys</code> 的末尾，再试一次 <code>ssh mc-server</code>，不用输密码就能进去就对了。</p></div></div>
+
+<h3 id="remote-connect">在桌面版里连接<a class="anchor-link" href="#remote-connect">#</a></h3>
+<ol>
+<li>打开桌面版，在连接页上方选“SSH 连接”，填一个好认的连接名称。</li>
+<li>“SSH 配置名称或 user@host”填刚才的 <code>mc-server</code>，或者 <code>用户名@服务器地址</code>；“远程管理端口”填服务器上 Web 管理界面的端口，默认 <code>18080</code>。</li>
+<li>点“连接工作区”，再用服务器上的管理账户登录。之后看到的文件、项目和发布记录，都是服务器上的那一份。</li>
+</ol>
+<figure class="wbm-figure"><div class="wbm-scroll"><div class="wbm" role="img" aria-label="用 SSH 连接服务器上的管理端"><div class="wbm-titlebar"><span class="wbm-fishmark "><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wbi-fish-mark"></use></svg></span><strong>梦鱼更新管理</strong><small>0.2.1</small><span class="wbm-winctl"><span><svg viewBox="0 0 16 16"><path d="M3 8h10"></path></svg></span><span><svg viewBox="0 0 16 16"><path d="M3.5 3.5h9v9h-9z"></path></svg></span><span><svg viewBox="0 0 16 16"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"></path></svg></span></span></div><div class="wbm-launcher"><aside><header><span>管理连接</span><svg class="i s" aria-hidden="true"><use href="#wbi-plus"></use></svg></header><div class="p">选择本机或远程工作区</div><div class="wbm-conn"><span class="ic"><svg class="i s" aria-hidden="true"><use href="#wbi-monitor"></use></svg></span><div><strong>本机管理</strong><small>本机管理</small></div><i class="on"></i></div><div class="wbm-conn sel"><span class="ic"><svg class="i s" aria-hidden="true"><use href="#wbi-terminal"></use></svg></span><div><strong>梦鱼生存服</strong><small>mc-server</small></div></div><div class="wbm-conn"><span class="ic"><svg class="i s" aria-hidden="true"><use href="#wbi-server"></use></svg></span><div><strong>创造测试服</strong><small>远程管理端</small></div></div><footer><span><svg class="i s" aria-hidden="true"><use href="#wbi-file-text"></use></svg>运行日志</span><span><svg class="i s" aria-hidden="true"><use href="#wbi-power"></use></svg>退出桌面端</span><small class="quiet">桌面版 0.2.1</small></footer></aside><section><header>工作区<small>编辑连接</small></header><div class="body"><div class="wbm-running"><span style="width:.55em;height:.55em;border-radius:50%;background:var(--success);box-shadow:0 0 0 .23em var(--success-soft)"></span><div><strong>本机管理</strong><small>工作区正在运行</small></div><span class="wbm-btn accent sm">返回工作区 <svg class="i s" aria-hidden="true"><use href="#wbi-arrow-right"></use></svg></span><span class="wbm-ib"><svg class="i s" aria-hidden="true"><use href="#wbi-x"></use></svg></span></div><span class="over"><svg class="i s" viewBox="0 0 32 32"><use href="#wbi-fish"></use></svg>DREAMINGFISH WORKSPACE</span><div class="h3">梦鱼生存服</div><div class="p lead">修改连接信息，或打开这个工作区。</div><span class="wbm-seg"><span class=""><svg class="i s" aria-hidden="true"><use href="#wbi-monitor"></use></svg>本机管理</span><span class=""><svg class="i s" aria-hidden="true"><use href="#wbi-server"></use></svg>管理地址</span><span class="on"><svg class="i s" aria-hidden="true"><use href="#wbi-terminal"></use></svg>SSH 连接</span></span><div class="p muted" style="margin-bottom:1.1em">沿用系统 OpenSSH 配置，通过安全转发连接远程管理端。</div><label class="wbm-field"><span>连接名称</span><span class="wbm-input">梦鱼生存服</span></label><label class="wbm-field"><span>SSH 配置名称或 user@host</span><span class="wbm-input">mc-server</span></label><label class="wbm-field"><span>远程管理端口</span><span class="wbm-input">18080</span><small>使用系统 OpenSSH 的配置、密钥与已知主机记录。</small></label><span class="wbm-btn accent lg"><svg class="i s" aria-hidden="true"><use href="#wbi-arrow-right"></use></svg>连接工作区</span></div></section></div></div></div><figcaption>选“SSH 连接”，填 SSH 配置名称和远程管理端口，点“连接工作区”</figcaption></figure>
+<p>连接记录只保存名称、地址、目录和端口，不保存登录密码和私钥。下次打开桌面版，在左边选这个连接就能直接进去。</p>
+<p>如果你已经给服务器上的 Web 管理界面配好了 HTTPS 反向代理（比如 <code>https://admin.example.com/</code>），或者自己已经把端口转发到了本机，也可以选连接页上方的“管理地址”，直接填这个地址，桌面版就不再另外建 SSH 转发了。</p>
+
+<h3 id="remote-close">断开和退出<a class="anchor-link" href="#remote-close">#</a></h3>
+<p>在连接页点正在运行的工作区旁边的“×”，只是断开连接，服务器上的终端版和下载服务照常运行，不影响玩家更新。关掉窗口会收进系统托盘，选“退出桌面端”才会真正结束程序。如果网络断了，或者 SSH 连接意外中断，桌面版会回到连接页，那里可以重新打开，也能点“运行日志”看看是哪里出了问题。</p>
+
+<h2 id="agent" data-toc-label="交给脚本或 AI agent">二、把维护交给脚本或 AI agent<a class="anchor-link" href="#agent">#</a></h2>
+<p>终端版除了交互式命令行，还有一套<strong>参数式命令</strong>：不进菜单，把要做的事直接写在一条命令里。这样就能写进脚本，也能交给会在终端里执行命令的 AI agent：你告诉它要做什么，它通过 SSH 登录服务器，替你把命令跑完。</p>
+
+<h3 id="terminal-commands" data-toc-label="参数式命令">参数式命令怎么用<a class="anchor-link" href="#terminal-commands">#</a></h3>
+<p>读取文件列表、导入或移出文件、设置维护方式、检查并发布、生成部署包、查看和撤销操作记录，都有对应的命令。加上 <code>--json</code>，结果就会变成程序好读的 JSON；有确认步骤的操作，要明确加上 <code>--yes</code> 才会直接执行。比如先看看文件和改动，再发布：</p>
+<div class="code-block"><div class="code-head"><span>Linux · 参数式命令</span><button class="copy-button" type="button">复制</button></div><pre><code>./dfs-admin --json project files dreamhaven
+./dfs-admin --json project scan dreamhaven
+./dfs-admin --json project publish dreamhaven --version 1.0.1 --changelog "更新模组与配置" --yes</code></pre></div>
+<p>Windows 把 <code>./dfs-admin</code> 换成 <code>DreamingFishAdmin.exe</code> 即可。这些命令走的是和网页管理界面、桌面版同一套检查：签名、预览是否过期、玩家端兼容性一样都不会少。发布时如果有文件被移除，要用 <code>--removed-files DELETE</code>（移除玩家副本）或 <code>--removed-files RELEASE</code>（留给玩家）明确说清楚怎么处理。</p>
+<div class="doc-table-wrap"><table class="doc-table"><thead><tr><th>想做的事</th><th>命令</th></tr></thead><tbody>
+<tr><td>看文件、导入或移出文件</td><td><code>project files</code>（<code>--import</code>、<code>--remove</code>）</td></tr>
+<tr><td>设置维护方式、可选内容、问题版本</td><td><code>project policy</code>（<code>preset</code>、<code>group</code>、<code>withdraw</code>、<code>correct</code> 等）</td></tr>
+<tr><td>检查改动、发布、回滚</td><td><code>project scan</code>、<code>project publish</code>、<code>project rollback</code></td></tr>
+<tr><td>查看发布历史</td><td><code>project releases</code></td></tr>
+<tr><td>操作记录、撤销、恢复发布设置</td><td><code>project operations</code>（<code>--undo</code>、<code>--restore-published</code>）</td></tr>
+<tr><td>发布玩家端程序、生成部署包</td><td><code>player publish</code>、<code>project deployment</code></td></tr>
+<tr><td>导出外部托管目录</td><td><code>project export-static</code></td></tr>
+<tr><td>加密备份与恢复</td><td><code>backup create</code>、<code>backup restore</code></td></tr>
+</tbody></table></div>
+<p>不记得参数的时候，在命令后面什么都不加直接运行，会打印出这条命令的用法；<code>dfs-admin project</code> 会列出全部项目子命令。管理数据不在默认位置的话，加上 <code>--data /绝对路径/data</code> 指定。</p>
+
+<h3 id="agent-workflow" data-toc-label="让 agent 帮你维护">让 AI agent 帮你维护<a class="anchor-link" href="#agent-workflow">#</a></h3>
+<p>推荐让 agent 先看、再改，发布之前停下来让你确认：</p>
+<ol>
+<li><strong>先看</strong>：<code>project files</code> 看现在有哪些文件，<code>project scan</code> 看准备发布的改动。</li>
+<li><strong>再改</strong>：把新文件放进标准目录，或者用 <code>project files --import</code> 导入；需要的话用 <code>project policy</code> 调整维护方式。</li>
+<li><strong>发布前给你过目</strong>：让 agent 把 <code>project scan</code> 的预览列出来，新增了什么、更新了什么、移除了什么，你看过没问题，它再执行 <code>project publish ... --yes</code>。</li>
+<li><strong>改错了就撤回</strong>：<code>project operations</code> 能看到每一步操作，<code>--undo 操作ID</code> 撤销某一步，<code>--restore-published</code> 把维护设置恢复成当前发布的样子。</li>
+</ol>
+<p>交代任务的时候，可以直接这样说：</p>
+<div class="code-block"><div class="code-head"><span>交给 agent 的任务（示例）</span><button class="copy-button" type="button">复制</button></div><pre><code>通过 ssh mc-server 登录管理服务器，在 /opt/dfs-admin 里用 ./dfs-admin 的参数式命令（加 --json）维护项目 dreamhaven：
+把我上传到 ~/upload 的模组放进标准目录的 mods 里，同一个模组的旧版本删掉。
+然后扫描改动，先把预览列给我看；等我确认后再发布 1.0.2，被删掉的旧版本选择移除玩家副本，更新说明写“更新模组”。
+除此之外不要动别的文件。</code></pre></div>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>交给 agent 之前想一想</strong><p>agent 用的是你登录服务器的权限，你能做的事它都能做。签名私钥就在管理端的 <code>data</code> 里，别让它把 <code>data</code> 复制到别的地方；发布前让你确认的那一步，也最好别省。</p></div></div>
+<!-- 正文结束 -->
+        <nav class="doc-pager"><a class="pager-link" href="./maintenance.html"><span>上一页</span><strong>← 日常维护</strong></a><a class="pager-link next" href="./faq.html"><span>下一页</span><strong>常见问题 →</strong></a></nav>
+      </article>
+    </main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div>
+
+    <aside class="docs-toc">
+      <h4>本页内容</h4>
+      <a href="#desktop-remote" data-toc="desktop-remote" style="padding-left:10px">用桌面版远程管理</a>
+      <a href="#remote-prepare" data-toc="remote-prepare" style="padding-left:20px">先准备好这几件事</a>
+      <a href="#remote-connect" data-toc="remote-connect" style="padding-left:20px">在桌面版里连接</a>
+      <a href="#remote-close" data-toc="remote-close" style="padding-left:20px">断开和退出</a>
+      <a href="#agent" data-toc="agent" style="padding-left:10px">交给脚本或 AI agent</a>
+      <a href="#terminal-commands" data-toc="terminal-commands" style="padding-left:20px">参数式命令</a>
+      <a href="#agent-workflow" data-toc="agent-workflow" style="padding-left:20px">让 agent 帮你维护</a>
+    </aside>
+  </div>
+
+  <div class="search-modal" data-search-modal>
+    <div class="search-panel">
+      <div class="search-input-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off">
+      </div>
+      <div class="search-results" data-search-results></div>
+      <div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div>
+    </div>
+  </div>
+  <script src="../assets/site.js" charset="utf-8"></script>
+  <script src="../assets/docs.js?v=021-20261014" charset="utf-8"></script>
+  <script src="../assets/workbench-mock.js?v=021-20261014" charset="utf-8"></script>
+</body>
+</html>

@@ -1,4 +1,145 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="集中回答管理端口、完整包、玩家端程序、现有启动器、VPS 管理、玩家自选内容与 Web 常驻等常见疑问。"><meta name="color-scheme" content="light dark"><title>常见问题 · DreamingFish Updater 文档</title><script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script><link rel="icon" href="../assets/logo.svg"><link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="../assets/v4.css?v=020-20261005-real"></head><body class="docs-body">
-<header class="site-header docs-header"><div class="container navbar"><div style="display:flex;align-items:center;gap:10px"><button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></button><a class="brand" href="../index.html"><img src="../assets/logo.svg" alt=""><span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span></a></div><button class="docs-search-button" data-search-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><span>搜索文档</span><kbd>Ctrl K</kbd></button><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式"><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg></button><a class="button ghost" href="../index.html">返回官网</a><a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg> GitHub</a></div></div></header>
-<div class="docs-layout"><aside class="docs-sidebar" data-docs-sidebar><div class="docs-group"><div class="docs-group-title">开始</div><nav class="docs-nav"><a class="" href="./index.html">概览</a><a class="" href="./quickstart.html">下载与首次配置</a><a class="" href="./create-project.html">创建第一个项目</a></nav></div><div class="docs-group"><div class="docs-group-title">服主指南</div><nav class="docs-nav"><a class="" href="./maintenance.html">日常维护</a></nav></div><div class="docs-group"><div class="docs-group-title">参考</div><nav class="docs-nav"><a class="active" href="./faq.html">常见问题</a><a class="" href="./changelog.html">版本与更新日志</a></nav></div></aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div><main class="docs-main"><article class="docs-article"><div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>常见问题</span></div><h1>常见问题</h1><p class="docs-lead">配置时最容易碰到的几个问题都在这里。先看是不是端口、路径或包选错了，再去改设置，通常会省不少时间。</p><h2 id="vps">管理端在 VPS 上，怎么打开 Web 页面？<a class="anchor-link" href="#vps">#</a></h2><p>在服务器启动 Web 管理界面，再从自己的电脑建立 SSH 隧道：</p><div class="code-block"><div class="code-head"><span>SSH 隧道</span><button class="copy-button" type="button">复制</button></div><pre><code>ssh -N -L 18080:127.0.0.1:18080 用户名@您的服务器地址</code></pre></div><p>保持终端运行，在自己电脑打开 <code>http://127.0.0.1:18080/</code>。本机端口被占用时，可以把命令第一个 18080 改成空闲端口，浏览器也跟着改。</p><h2 id="extra-mods">玩家自己加的模组会被删吗？<a class="anchor-link" href="#extra-mods">#</a></h2><p>普通同步默认保留额外模组。整个 mods 被设为强制同步目录时，额外内容会先备份再移出。还有一种例外：匹配已经发布的持续删除或问题版本要求，即使是后来手动添加的，也会处理。强制单个文件不会顺带清理同目录所有模组。</p><h2 id="exemption">玩家已经豁免了，服主删除后还会处理吗？<a class="anchor-link" href="#exemption">#</a></h2><p>选择“移除玩家副本”并发布后，会。豁免只表示平时由玩家自己维护，不表示有问题的文件可以绕过明确的移除要求。想允许保留，服主应选择“停止维护，留给玩家”。</p><h2 id="first-provision">首次提供和普通同步，怎么区分？<a class="anchor-link" href="#first-provision">#</a></h2><p>普通同步会跟随服主更新，缺了会补齐；首次提供只给一份，已有就保留，之后不覆盖，也不会把玩家删掉的文件反复补回。想默认给一份画质、按键配置，之后让玩家自己改，就选首次提供。</p><h2 id="late-join">跳过几个版本，或者拿旧整合包加入，会漏删文件吗？<a class="anchor-link" href="#late-join">#</a></h2><p>不会靠“有没有经过某个中间版本”来判断。最新发布带着持续要求，只要包里的项目绑定和签名基线正确，旧完整包也会按最新目标处理。还没有联网取到的新要求，离线时当然不知道。</p><h2 id="source">标准目录必须是完整游戏吗？<a class="anchor-link" href="#source">#</a></h2><p>不需要。只放你准备管理的文件就行，比如 mods、config、resourcepacks。存档、日志、账号和管理端 data 都不要混进去。</p><h2 id="zip">能直接上传 ZIP 吗？<a class="anchor-link" href="#zip">#</a></h2><p>“玩家端程序”支持直接上传通用玩家端发行 ZIP，会检查程序版本和平台。“管理内容”的添加文件用于逐个文件或文件夹，不会把任意整合包 ZIP 自动解压成模组目录。两处上传用途不同，别把整合包 ZIP 当成更新器发行包。</p><h2 id="web-cli">网页和终端做的事情一样吗？<a class="anchor-link" href="#web-cli">#</a></h2><p>项目、规则、扫描、签名和发布使用同一套服务。网页有上传清单、暂存检查、逐项重试、导入记录、个性化实时预览和发行 ZIP 检查；交互菜单更适合服务器上已经整理好的文件，维护规则等高级功能有参数命令。加密备份和恢复目前在终端提供，不能把菜单理解成网页的逐项复制。</p><h2 id="web-service">浏览器要一直开着吗？<a class="anchor-link" href="#web-service">#</a></h2><p>不用，关浏览器不会停止管理服务器。不过正在用浏览器上传文件时，别把页面关掉；关上传弹窗可以让任务继续，关闭整个标签页就可能中断。玩家下载服务要保持运行；只需要下载服务时，也可以在终端选择 [9] 启动 HTTP 文件服务。</p><h2 id="player-delete">已发布的玩家端程序可以删除吗？<a class="anchor-link" href="#player-delete">#</a></h2><p>可以在程序历史里移除记录，但先确认还有有效的程序版本可供玩家更新。当前玩家端、最低兼容要求和旧部署包都可能依赖它，不要为了清理列表把唯一的可用版本删掉。</p><h2 id="versions">为什么现在都是 0.2.0，整合包却填 1.0.0？<a class="anchor-link" href="#versions">#</a></h2><p>0.2.0 是这次更新器程序的发行版本，管理端与玩家端统一使用。整合包显示版本由服主填写，只用来描述自己的内容发布；Bootstrap Agent 仍是 0.1.2。它们不需要跟着每次模组更新一起改。</p><nav class="doc-pager"><a class="pager-link" href="./maintenance.html"><span>上一页</span><strong>← 日常维护</strong></a><a class="pager-link next" href="./changelog.html"><span>下一页</span><strong>版本与更新日志 →</strong></a></nav></article></main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div><aside class="docs-toc"><h4>本页内容</h4><a href="#vps" data-toc="vps" style="padding-left:10px">管理端在 VPS 上，怎么打开 Web 页面？</a><a href="#extra-mods" data-toc="extra-mods" style="padding-left:10px">玩家自己加的模组会被删吗？</a><a href="#exemption" data-toc="exemption" style="padding-left:10px">玩家已经豁免了，服主删除后还会处理吗？</a><a href="#first-provision" data-toc="first-provision" style="padding-left:10px">首次提供和普通同步，怎么区分？</a><a href="#late-join" data-toc="late-join" style="padding-left:10px">跳过几个版本，或者拿旧整合包加入，会漏删文件吗？</a><a href="#source" data-toc="source" style="padding-left:10px">标准目录必须是完整游戏吗？</a><a href="#zip" data-toc="zip" style="padding-left:10px">能直接上传 ZIP 吗？</a><a href="#web-cli" data-toc="web-cli" style="padding-left:10px">网页和终端做的事情一样吗？</a><a href="#web-service" data-toc="web-service" style="padding-left:10px">浏览器要一直开着吗？</a><a href="#player-delete" data-toc="player-delete" style="padding-left:10px">已发布的玩家端程序可以删除吗？</a><a href="#versions" data-toc="versions" style="padding-left:10px">为什么现在都是 0.2.0，整合包却填 1.0.0？</a></aside></div>
-<div class="search-modal" data-search-modal><div class="search-panel"><div class="search-input-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg><input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off"></div><div class="search-results" data-search-results></div><div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div></div></div><script src="../assets/site.js" charset="utf-8"></script><script src="../assets/docs.js?v=020-20261005-real" charset="utf-8"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="端口、远程管理、玩家自选模组、维护方式和界面切换等常见疑问。">
+  <meta name="color-scheme" content="light dark">
+  <title>常见问题 · 梦鱼更新器文档</title>
+  <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('dfs-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}})();</script>
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/v4.css?v=021-20261014">
+  <link rel="stylesheet" href="../assets/docs-v5.css?v=021-20261014">
+</head>
+<body class="docs-body">
+  <header class="site-header docs-header">
+    <div class="container navbar">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="mobile-docs-button" data-docs-toggle aria-label="打开文档目录">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+        <a class="brand" href="../index.html">
+          <img src="../assets/logo.svg" alt="">
+          <span class="brand-copy"><strong>DreamingFish Updater</strong><span>使用文档</span></span>
+        </a>
+      </div>
+      <button class="docs-search-button" data-search-open>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <span>搜索文档</span><kbd>Ctrl K</kbd>
+      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换显示模式" title="切换显示模式">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2.1M12 19.4v2.1M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M2.5 12h2.1M19.4 12h2.1M4.6 19.4l-1.5-1.5M17.9 6.1l1.5-1.5" stroke-linecap="round"/></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="button ghost" href="../index.html">返回官网</a>
+        <a class="button secondary" href="https://github.com/hanhanyu666/DreamingFish-Updater" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2.2c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.38.96.1-.75.4-1.26.73-1.55-2.58-.29-5.29-1.29-5.29-5.75 0-1.27.45-2.31 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.16 1.19A11 11 0 0 1 12 6.02c.98 0 1.95.13 2.87.39 2.19-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.81 1.2 1.85 1.2 3.12 0 4.47-2.72 5.45-5.31 5.74.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="docs-layout">
+    <aside class="docs-sidebar" data-docs-sidebar>
+      <div class="docs-group">
+        <div class="docs-group-title">开始</div>
+        <nav class="docs-nav"><a href="./index.html">概览</a><a href="./quickstart.html">下载与首次配置</a><a href="./create-project.html">创建第一个项目</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">服主指南</div>
+        <nav class="docs-nav"><a href="./maintenance.html">日常维护</a><a href="./admin.html">远程管理与 AI agent</a></nav>
+      </div>
+      <div class="docs-group">
+        <div class="docs-group-title">参考</div>
+        <nav class="docs-nav"><a class="active" href="./faq.html">常见问题</a><a href="./changelog.html">版本与更新日志</a></nav>
+      </div>
+    </aside><div class="docs-rail-handle" data-rail="left" title="拖动调整侧栏宽度"></div>
+
+    <main class="docs-main">
+      <article class="docs-article">
+        <div class="docs-breadcrumb"><span>DreamingFish Updater</span><span>/</span><span>常见问题</span></div>
+        <h1>常见问题</h1>
+<!-- 正文开始 -->
+<p class="docs-lead">集中回答版本选择、VPS 管理、玩家自选内容、维护方式、界面切换与玩家端程序删除等常见疑问。</p>
+
+<h2 id="which-version" data-toc-label="桌面版还是终端版">我该用桌面版还是终端版？<a class="anchor-link" href="#which-version">#</a></h2>
+<p>看管理端放在什么系统上。Windows 电脑或 Windows Server，推荐直接用桌面版，解压就能运行；Linux 服务器或 VPS 用终端版，平时在浏览器里打开它的网页管理界面，和桌面版的界面一模一样；连网页也不方便用的时候（比如只能连 SSH、不想建隧道），就用终端版自带的交互式命令行。几种方式能做的事基本一样，区别见下面「<a href="#terminal-same">做的事情一样吗</a>」。</p>
+
+<h2 id="vps" data-toc-label="VPS 上打开 Web">管理端在 VPS 上，如何打开 Web 页面？<a class="anchor-link" href="#vps">#</a></h2>
+<p>先在 VPS 上的终端版启动 Web 管理界面（交互式命令行主菜单 <code>[10]</code>），再从自己的电脑建立 SSH 隧道：</p>
+<div class="code-block"><div class="code-head"><span>SSH 隧道</span><button class="copy-button" type="button">复制</button></div><pre><code>ssh -N -L 18080:127.0.0.1:18080 用户名@您的服务器地址</code></pre></div>
+<p>保持终端运行，并在自己电脑打开 <code>http://127.0.0.1:18080/</code>。本机的 18080 被占用了，就把命令里第一个 <code>18080</code> 换成别的空闲端口，浏览器地址也跟着换。自己的电脑是 Windows 的话，也可以直接用桌面版的“SSH 连接”，填好 SSH 配置名称和管理端口，桌面版会自己建好转发，做法见「<a href="./admin.html#desktop-remote">远程管理与 AI agent</a>」。</p>
+
+<h2 id="player-mods" data-toc-label="玩家自选模组">玩家自己添加的模组会被删除吗？<a class="anchor-link" href="#player-mods">#</a></h2>
+<p>普通同步下会保留。只有两种情况会被移走（都会先备份，玩家能在“备份与恢复”里看到）：一是服主把整个 <code>mods</code> 文件夹设成了强制同步，玩家额外放进去的模组会被移出；二是玩家自己放进去的正好是服主明确要求移除的那个模组，或者被标记为问题版本的那个文件。只强制单个文件的话，不会顺带清理同目录的其他模组。</p>
+
+<h2 id="exempt" data-toc-label="豁免后还会被移除吗">玩家已经豁免或停用了，服主删除后还会处理吗？<a class="anchor-link" href="#exempt">#</a></h2>
+<p>会。服主选“移除玩家副本”并发布后，就算玩家在本机豁免了、停用了，或者改了文件名，这个文件也会先备份再移出。豁免只是说“平时这个文件我自己管”，不代表有问题的文件可以绕过服主明确的移除要求。想让玩家留着，服主应该选“停止维护，留给玩家”。</p>
+
+<h2 id="initial" data-toc-label="首次提供和普通同步">首次提供和普通同步，怎么区分？<a class="anchor-link" href="#initial">#</a></h2>
+<p>普通同步会一直跟着服主更新，玩家缺了会补上；首次提供只给一份，玩家已经有了就不动，之后服主再改也不覆盖，玩家删了也不会反复补回来。想给玩家一份默认的画质、按键配置，之后让玩家自己改，就选首次提供。</p>
+
+<h2 id="skip" data-toc-label="跳过版本会不会漏删">玩家跳过了几个版本，或者拿旧整合包第一次进服，会不会漏删文件？<a class="anchor-link" href="#skip">#</a></h2>
+<p>不会。每次发布都会写清楚最新的客户端应该是什么样子，包括哪些文件必须移除，玩家端直接对齐到最新，不靠“有没有经过某个中间版本”来判断。只要包里的项目绑定和签名基线是对的，拿着很旧的完整包进服，也会按最新版本处理。当然，玩家离线时还不知道你新发的版本，要等下次联网启动检查。</p>
+
+<h2 id="standard-dir" data-toc-label="标准目录是否完整游戏">标准整合包目录必须是一份完整游戏吗？<a class="anchor-link" href="#standard-dir">#</a></h2>
+<p>不需要。它只需要包含服主希望由更新器管理的目录和文件，比如 <code>mods</code>、<code>config</code>、<code>resourcepacks</code>。游戏本体、存档、日志和启动器通常不应放入标准目录，管理端的 <code>data</code> 更不能放进去。</p>
+
+<h2 id="zip" data-toc-label="能直接上传 ZIP 吗">能直接上传 ZIP 吗？<a class="anchor-link" href="#zip">#</a></h2>
+<p>“发放”→“玩家端程序”可以直接上传玩家端发行 ZIP，管理端会检查程序版本和平台。但“文件”页的导入文件是一个个文件或文件夹导进来的，不会把整合包 ZIP 自动解压成模组目录。两个地方的用途不一样，别把整合包 ZIP 当成更新器发行包传上去。</p>
+
+<h2 id="ui" data-toc-label="新版和旧版界面">新版界面和旧版界面有什么区别？该用哪个？<a class="anchor-link" href="#ui">#</a></h2>
+<p>功能是一样的，读写的也是同一份项目，只是布局不同：新版和桌面版的界面一模一样，旧版是原来的左侧菜单布局。网页默认打开新版，顶部的“旧版界面”和旧版右上角的“新版界面”可以来回切，浏览器会记住你的选择。也可以直接访问地址：<code>/workbench/</code> 是新版，<code>/legacy/</code> 是旧版。</p>
+
+<h2 id="terminal-same" data-toc-label="做的事情是否一样">桌面版、网页和交互式命令行做的事情一样吗？<a class="anchor-link" href="#terminal-same">#</a></h2>
+<p>项目、维护规则、检查、签名和发布用的是同一套服务，结果完全一样。桌面版和网页管理界面多了导入清单、实时预览、发行 ZIP 检查这些可视化操作；交互式命令行更适合服务器上已经整理好的文件，维护方式这类高级设置用参数式命令完成。加密备份和恢复目前只在交互式命令行里提供。</p>
+
+<h2 id="web-always" data-toc-label="Web 是否常驻">Web 管理页面必须一直开着吗？<a class="anchor-link" href="#web-always">#</a></h2>
+<p>不必须。Web 页面适合管理操作，关掉浏览器也不会停掉管理服务。不过正在上传文件的时候别关整个标签页，收起导入清单没关系。准备长期只运行玩家下载服务时，可以停止 Web 并在交互主菜单中单独选择 <code>[9]</code> 启动 HTTP 文件服务。桌面版关掉窗口会收进托盘，下载服务继续运行。</p>
+
+<h2 id="delete-program" data-toc-label="删除玩家端程序">玩家端发布后可以删除吗？<a class="anchor-link" href="#delete-program">#</a></h2>
+<p>可以从历史里移除，不影响整合包发布。不过删之前确认一下，还有可用的玩家端程序版本给玩家更新：当前的玩家端、整合包要求的最低玩家端版本和以前发出去的部署包都可能用到它，别为了清理列表把唯一能用的版本删掉。</p>
+
+<h2 id="versions" data-toc-label="0.2.1 与 1.0.0">为什么更新器是 0.2.1，整合包却填 1.0.0？<a class="anchor-link" href="#versions">#</a></h2>
+<p>0.2.1 是更新器程序自己的版本，管理端和玩家端都用这个号；整合包的版本号是服主自己填的，只用来描述你自己的内容发布；Bootstrap Agent 是 0.1.2。这三个版本各管各的，平时更新模组不需要跟着改程序版本。</p>
+<!-- 正文结束 -->
+        <nav class="doc-pager"><a class="pager-link" href="./admin.html"><span>上一页</span><strong>← 远程管理与 AI agent</strong></a><a class="pager-link next" href="./changelog.html"><span>下一页</span><strong>版本与更新日志 →</strong></a></nav>
+      </article>
+    </main><div class="docs-rail-handle" data-rail="right" title="拖动调整目录宽度"></div>
+
+    <aside class="docs-toc">
+      <h4>本页内容</h4>
+      <a href="#which-version" data-toc="which-version" style="padding-left:10px">桌面版还是终端版</a>
+      <a href="#vps" data-toc="vps" style="padding-left:10px">VPS 上打开 Web</a>
+      <a href="#player-mods" data-toc="player-mods" style="padding-left:10px">玩家自选模组</a>
+      <a href="#exempt" data-toc="exempt" style="padding-left:10px">豁免后还会被移除吗</a>
+      <a href="#initial" data-toc="initial" style="padding-left:10px">首次提供和普通同步</a>
+      <a href="#skip" data-toc="skip" style="padding-left:10px">跳过版本会不会漏删</a>
+      <a href="#standard-dir" data-toc="standard-dir" style="padding-left:10px">标准目录是否完整游戏</a>
+      <a href="#zip" data-toc="zip" style="padding-left:10px">能直接上传 ZIP 吗</a>
+      <a href="#ui" data-toc="ui" style="padding-left:10px">新版和旧版界面</a>
+      <a href="#terminal-same" data-toc="terminal-same" style="padding-left:10px">做的事情是否一样</a>
+      <a href="#web-always" data-toc="web-always" style="padding-left:10px">Web 是否常驻</a>
+      <a href="#delete-program" data-toc="delete-program" style="padding-left:10px">删除玩家端程序</a>
+      <a href="#versions" data-toc="versions" style="padding-left:10px">0.2.1 与 1.0.0</a>
+    </aside>
+  </div>
+
+  <div class="search-modal" data-search-modal>
+    <div class="search-panel">
+      <div class="search-input-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+        <input class="search-input" data-search-input placeholder="搜索标题、功能或问题…" autocomplete="off">
+      </div>
+      <div class="search-results" data-search-results></div>
+      <div class="search-footer"><span>↑↓ 选择 · Enter 打开</span><span>Esc 关闭</span></div>
+    </div>
+  </div>
+  <script src="../assets/site.js" charset="utf-8"></script>
+  <script src="../assets/docs.js?v=021-20261014" charset="utf-8"></script>
+</body>
+</html>

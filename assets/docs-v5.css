@@ -1,0 +1,195 @@
+/* 0.2 文档补充样式：三种维护方式、管理端三端、旧版界面模拟的新增元素 */
+
+/* 三种维护方式：沿用 compare-card，排成三列 */
+.docs-body .mode-compare.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.docs-body .compare-card.force {
+  border-color: rgba(237, 116, 125, .45);
+  background: rgba(237, 116, 125, .05);
+}
+.docs-body .compare-card.force .badge {
+  border-color: rgba(237, 116, 125, .4);
+  color: #ed747d;
+  background: rgba(237, 116, 125, .09);
+}
+.docs-body .compare-card.initial {
+  border-color: rgba(110, 132, 240, .4);
+  background: rgba(110, 132, 240, .05);
+}
+.docs-body .compare-card.initial .badge {
+  border-color: rgba(110, 132, 240, .38);
+  color: #8796f2;
+  background: rgba(110, 132, 240, .09);
+}
+html[data-theme="light"] .docs-body .compare-card.force .badge { color: #c4423b; }
+html[data-theme="light"] .docs-body .compare-card.initial .badge { color: #4a5ebd; }
+@media (max-width: 900px) {
+  .docs-body .mode-compare.three { grid-template-columns: 1fr; }
+}
+
+/* 正文里的维护方式小标签 */
+.docs-body .rule-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 .55em;
+  border-radius: 999px;
+  font-size: .9em;
+  font-weight: 650;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+.docs-body .rule-chip.sync { color: #12786a; background: rgba(18, 120, 106, .1); }
+.docs-body .rule-chip.required { color: #93600b; background: rgba(226, 160, 40, .16); }
+.docs-body .rule-chip.initial { color: #4a5ebd; background: rgba(74, 94, 189, .1); }
+html[data-theme="dark"] .docs-body .rule-chip.sync { color: #5bcdb1; background: rgba(91, 205, 177, .13); }
+html[data-theme="dark"] .docs-body .rule-chip.required { color: #e3b45f; background: rgba(227, 180, 95, .13); }
+html[data-theme="dark"] .docs-body .rule-chip.initial { color: #9cacf2; background: rgba(156, 172, 242, .12); }
+
+/* 管理端三端 */
+.docs-body .ends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0 26px;
+}
+.docs-body .end-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.docs-body .end-card .end-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: #12786a;
+  background: rgba(18, 120, 106, .1);
+}
+html[data-theme="dark"] .docs-body .end-card .end-icon { color: #5bcdb1; background: rgba(91, 205, 177, .13); }
+.docs-body .end-card .end-icon svg { width: 20px; height: 20px; }
+.docs-body .end-card h3 { margin: 4px 0 0; font-size: 17px; }
+.docs-body .end-card p { margin: 0; font-size: 14px; line-height: 1.75; }
+.docs-body .end-card small { margin-top: auto; padding-top: 6px; color: var(--muted-2); font-size: 12.5px; line-height: 1.7; }
+@media (max-width: 900px) {
+  .docs-body .ends-grid { grid-template-columns: 1fr; }
+}
+
+/* 快捷键表里的按键 */
+.docs-body .doc-table kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--line-strong, var(--line));
+  border-radius: 6px;
+  background: var(--surface-2, var(--surface));
+  color: var(--text);
+  font: 600 12px/1.6 var(--mono, Consolas, monospace);
+  white-space: nowrap;
+}
+
+/* 旧版网页界面模拟：在原来的 mock-app 基础上补充分组、步骤条和状态标签 */
+.legacy-mock .mock-nav-group {
+  margin: 10px 8px 4px;
+  color: #6e8086;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+.legacy-mock .mock-nav-group:first-child { margin-top: 2px; }
+.legacy-mock .mock-pill {
+  margin-left: auto;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: #e8b867;
+  background: rgba(232, 184, 103, .14);
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.8;
+}
+.legacy-mock .legacy-state {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 8px;
+  border: 1px solid rgba(232, 184, 103, .35);
+  border-radius: 999px;
+  color: #e8b867;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.9;
+  vertical-align: middle;
+}
+.legacy-mock .legacy-switch {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 7px;
+  color: #eef5f3;
+  background: rgba(255, 255, 255, .05);
+  font-size: 10px;
+  font-weight: 700;
+}
+.legacy-mock .legacy-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px 12px 12px;
+}
+.legacy-mock .legacy-steps > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid #26343b;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .02);
+}
+.legacy-mock .legacy-steps > div.now { border-color: rgba(53, 216, 208, .45); background: rgba(53, 216, 208, .06); }
+.legacy-mock .legacy-steps b {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  color: #35d8d0;
+  background: rgba(53, 216, 208, .14);
+  font-size: 9px;
+}
+.legacy-mock .legacy-steps .now b { color: #071b1a; background: #35d8d0; }
+.legacy-mock .legacy-steps strong { display: block; color: #eef5f3; font-size: 10px; }
+.legacy-mock .legacy-steps small { display: block; color: #6e8086; font-size: 8px; line-height: 1.5; }
+.docs-body .mock-caption {
+  margin: -10px 0 26px;
+  color: var(--muted);
+  font-size: 12.5px;
+  text-align: center;
+}
+
+/* 旧版界面模拟需要显示左侧菜单（其他教程预览默认隐藏它） */
+.docs-body .docs-article .ui-mock.legacy-mock .mock-app {
+  grid-template-columns: 196px minmax(0, 1fr);
+  min-height: 0;
+}
+.docs-body .docs-article .ui-mock.legacy-mock .mock-sidebar {
+  display: flex;
+}
+.legacy-mock .mock-nav-item { display: flex; align-items: center; gap: 8px; min-height: 30px; white-space: nowrap; }
+.legacy-mock .mock-sb-en strong { display: inline; color: #b06cff; }
+.legacy-mock .mock-service-dot { background: #4ade80; box-shadow: 0 0 8px rgba(74, 222, 128, .6); }
+.legacy-mock .mock-pill { flex: none; white-space: nowrap; }
+@media (max-width: 720px) {
+  .docs-body .docs-article .ui-mock.legacy-mock .mock-app { grid-template-columns: minmax(0, 1fr); }
+  .docs-body .docs-article .ui-mock.legacy-mock .mock-sidebar { display: none; }
+}
+
+/* 提示框正文里的加粗保持行内 */
+.docs-body .callout p strong { display: inline; }
