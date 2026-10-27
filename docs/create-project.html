@@ -165,29 +165,31 @@
 <p>红色部分是部署包带来的，一个都不能少；<code>mods</code>、<code>config</code> 等托管内容会在玩家首次在线启动时被检查并补齐——已经配置好的内容不会被重复安装。</p>
 
 <h4 id="web-agent" data-toc-label="让启动器加载 Agent">让启动器加载 Bootstrap Agent<a class="anchor-link" href="#web-agent">#</a></h4>
-<div class="callout warning"><span class="callout-icon">!</span><div><strong>先确认版本隔离真正生效</strong><p>实际游戏目录必须是当前版本目录，例如 <code>.minecraft/versions/Dreamingfish-Building</code>。HMCL 的“当前版本独立设置”可能覆盖全局版本隔离；不要只看开关，测试启动后还要确认最终命令中的 <code>--gameDir</code> 指向当前版本目录。</p></div></div>
-<p><strong>使用 PCL 时，优先在该版本的 JVM 参数中填写下面这行：</strong></p>
-<div class="code-block"><div class="code-head"><span>PCL 推荐参数</span><button class="copy-button" type="button">复制</button></div><pre><code>-javaagent:"{verpath}.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
-<p><code>{verpath}</code> 是 PCL 提供的版本目录占位符，启动时会自动变成当前版本的真实路径。它不能用于 HMCL 或其他启动器，也不要改成服主电脑上的绝对路径。</p>
-<p><strong>版本 JSON 的 <code>arguments.jvm</code> 是 PCL、HMCL 两者通用的接入方式。</strong>如果希望同一个整合包同时兼容 PCL 和 HMCL，可以使用下面的方法；不要把 <code>${game_directory}</code> 直接填进 HMCL 的“Java 虚拟机参数”输入框。</p>
-<p>打开 <code>.minecraft/versions/版本名称/版本名称.json</code>，找到 <code>"arguments"</code> 里面的 <code>"jvm"</code> 数组，并在数组开头追加下面这一项：</p>
-<div class="code-block"><div class="code-head"><span>PCL、HMCL 通用 · arguments.jvm 新增项</span><button class="copy-button" type="button">复制</button></div><pre><code>"-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
-<p>例如，原文件是：</p>
-<div class="code-block"><div class="code-head"><span>修改前（示例）</span></div><pre><code>"arguments": {
+<p><strong>推荐把参数随整合包一起分发。</strong>把 Agent 参数写进实例的版本 JSON，玩家换启动器时不必再逐个填写这条参数。服主先完成下面的配置和启动测试，再把整合包交给玩家。</p>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>先备份，并确认实例目录</strong><p>备份 <code>.minecraft/versions/版本名称/版本名称.json</code>。当前版本目录里必须已经有部署包带来的 <code>.dreamingfish-bootstrap/bootstrap-agent.jar</code>、真实项目绑定和完整玩家端；参数本身不会代替这些文件。</p></div></div>
+<p>打开该版本 JSON，在已有的 <code>arguments.jvm</code> 数组中新增下面这一项：</p>
+<div class="code-block"><div class="code-head"><span>整合包自带参数 · arguments.jvm 新增项</span><button class="copy-button" type="button">复制</button></div><pre><code>"-javaagent:.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p>例如，原来的数组是：</p>
+<div class="code-block"><div class="code-head"><span>修改前（仅展示 arguments）</span></div><pre><code>"arguments": {
   "jvm": [
     "-Djava.library.path=${natives_directory}"
   ]
 }</code></pre></div>
-<p>添加后应变成：</p>
-<div class="code-block"><div class="code-head"><span>修改后（示例）</span><button class="copy-button" type="button">复制</button></div><pre><code>"arguments": {
+<p>新增后变成：</p>
+<div class="code-block"><div class="code-head"><span>修改后（保留自己的原参数）</span><button class="copy-button" type="button">复制</button></div><pre><code>"arguments": {
   "jvm": [
-    "-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar",
+    "-javaagent:.dreamingfish-bootstrap/bootstrap-agent.jar",
     "-Djava.library.path=${natives_directory}"
   ]
 }</code></pre></div>
-<p>示例中的原参数只是演示位置；你自己的 <code>jvm</code> 数组可能有更多内容，必须全部保留，只新增一行并注意英文逗号。保存后完全退出并重新打开启动器，让它重新读取版本 JSON；不要设置 Windows 全局 <code>JAVA_TOOL_OPTIONS</code>。</p>
-<p>PCL 用户优先使用前面的 <code>{verpath}</code> 参数即可；需要兼容 PCL 和 HMCL 时使用版本 JSON。同一个实例不要同时配置两种方式，否则 Agent 会被加载两次。</p>
-<div class="callout info"><span class="callout-icon">i</span><div><strong>分发前必须检查最终启动命令</strong><p>正确结果应包含已经展开的绝对 Agent 路径，而不是字面量 <code>${game_directory}</code> 或 <code>{verpath}</code>。如果启动器执行了“修复版本”、重新安装 Forge 或重建版本 JSON，请再次确认该条目没有被覆盖。</p></div></div>
+<p>上面只演示插入位置，<strong>不要用示例覆盖整个版本 JSON</strong>。你自己的原有参数和其他字段必须全部保留，只新增一项并注意英文逗号；如果已经有旧的 DreamingFish Agent 参数，替换旧项，保持只有一份。保存后完全退出并重新打开启动器。</p>
+<div class="callout info"><span class="callout-icon">i</span><div><strong>相对路径也有适用条件</strong><p>这条参数从 Java 启动时所在的文件夹查找 Agent，因此 Java 的工作目录须是包含 <code>.dreamingfish-bootstrap</code> 的当前实例目录。还要核对实际 <code>--gameDir</code> 指向该实例，让 Minecraft 加载正确的 <code>mods</code> 和 <code>config</code>。工作目录与游戏目录都应实际检查，不能只看版本隔离开关；正确参数可以保留相对路径，不必变成绝对路径。</p></div></div>
+<p><strong>三款启动器已实测。</strong>2026-10-26，在 Windows、Minecraft 1.21.1 / NeoForge 21.1.248 的同一实例中，美西螈 1.10.1、PCL 2.13.1.1、HMCL 3.15.2 均用这条版本 JSON 参数调用了玩家端 0.3.2，连接远程管理服务并取得启动许可；HMCL 还验证到了整合包主菜单。测试时没有另外添加启动器专用 Agent 参数。其他启动器、目录布局及导出格式仍须分别测试。</p>
+<p>不要再把 <code>-javaagent:${game_directory}/...</code> 当作跨启动器的通用写法：本次美西螈会把这个变量原样传给 Java，导致找不到 Agent。也不要把服主电脑的绝对路径发给玩家，或设置 Windows 全局 <code>JAVA_TOOL_OPTIONS</code>。</p>
+<p><strong>只使用 PCL 时的备选方式：</strong>如果不修改版本 JSON，可以在 PCL 的这个版本的 JVM 参数框中填写：</p>
+<div class="code-block"><div class="code-head"><span>仅 PCL · 启动器设置备选</span><button class="copy-button" type="button">复制</button></div><pre><code>-javaagent:"{verpath}.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p><code>{verpath}</code> 是 PCL 的占位符。这种方式与前面的版本 JSON 方式二选一，同一个实例不要重复加载 Agent；首次部署包里的 <code>minecraft-jvm-argument.txt</code> 目前也是这条 PCL 专用写法。</p>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>分发前，从启动器实际启动一次</strong><p>确认玩家端出现、连接正确项目、检查完成并允许 Minecraft 继续启动。测试下一款启动器前先退出上一轮游戏；若提示“请先关闭正在运行的游戏”，退出游戏后点“重试”。整合包导出后、执行“修复版本”或重新安装 Loader 后，都要复查这条 JSON 参数和部署文件是否仍然保留。</p></div></div>
 <p>分发时，你可以直接把整个版本目录发给玩家，也可以用启动器导出整合包再分享。导出整合包时要注意：整合包文件夹里要包含玩家端文件——就是刚拖进去的 <code>.dreamingfish-bootstrap</code>（隐藏文件夹，别漏）和 <code>DreamingFishUpdater</code>，缺了它们，玩家拿到手也不会有更新器。</p>
 
 <h3 id="web-step-6" data-toc-label="启动下载服务">第 6 步 · 启动下载服务<a class="anchor-link" href="#web-step-6">#</a></h3>
@@ -386,26 +388,32 @@ Prepared signed player program 0.2.1, bundled release 1.0.0 (r000001-20261014-16
 <p>拖完之后，你的版本目录应该是这样的——<strong>红色的都是部署包带来的文件，必须完整出现在玩家端里</strong>：</p>
 <div aria-labelledby="docs-tree-heading-7" class="docs-file-tree" role="group"><div class="docs-file-tree-head"><strong id="docs-tree-heading-7">当前版本目录</strong><span>版本隔离后的实际游戏目录</span></div><div class="docs-file-tree-body"><ul class="docs-tree-nodes"><li class="docs-tree-node tree-root"><div class="docs-file-tree-row root"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">Dreamingfish-Building<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-neutral">最终 --gameDir 应指向这里</span></div><ul class="docs-tree-nodes"><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">.dreamingfish-bootstrap<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-component">部署包内容</span></div><ul class="docs-tree-nodes"><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon file"><img alt="" aria-hidden="true" src="../assets/icons/file.svg"></span><span class="tree-name">bootstrap-agent.jar<span class="tree-slash"></span></span></div></li><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon file"><img alt="" aria-hidden="true" src="../assets/icons/file.svg"></span><span class="tree-name">project-binding.json<span class="tree-slash"></span></span></div></li><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">bundled-release<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-component">签名基线</span></div></li></ul></li><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">DreamingFishUpdater<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-component">部署包内容</span></div><ul class="docs-tree-nodes"><li class="docs-tree-node"><div class="docs-file-tree-row"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">app<span class="tree-slash">/</span></span></div><ul class="docs-tree-nodes"><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">0.2.1<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-component">更新器程序</span></div></li></ul></li><li class="docs-tree-node"><div class="docs-file-tree-row required-component"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">state<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-component">版本信息</span></div></li></ul></li><li class="docs-tree-node"><div class="docs-file-tree-row"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">mods<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-neutral">首次启动会检查并补齐</span></div></li><li class="docs-tree-node"><div class="docs-file-tree-row"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">config<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-neutral">首次启动会检查并补齐</span></div></li><li class="docs-tree-node"><div class="docs-file-tree-row"><span class="tree-icon folder"><img alt="" aria-hidden="true" src="../assets/icons/folder.svg"></span><span class="tree-name">saves<span class="tree-slash">/</span></span><span class="tree-note tree-tag tag-neutral">玩家世界存档</span></div></li><li class="docs-tree-node"><div class="docs-file-tree-row"><span class="tree-icon file"><img alt="" aria-hidden="true" src="../assets/icons/file.svg"></span><span class="tree-name">options.txt<span class="tree-slash"></span></span></div></li><li class="docs-tree-node"><div class="docs-file-tree-row"><span class="tree-icon file"><img alt="" aria-hidden="true" src="../assets/icons/file.svg"></span><span class="tree-name">Dreamingfish-Building.json<span class="tree-slash"></span></span><span class="tree-note tree-tag tag-neutral">HMCL 接入时修改 arguments.jvm</span></div></li></ul></li></ul></div></div>
 <p>红色部分是部署包带来的，一个都不能少；<code>mods</code>、<code>config</code> 等托管内容会在玩家首次在线启动时被检查并补齐——已经配置好的内容不会被重复安装。</p>
-<p>接下来，让启动器加载 Bootstrap Agent。<strong>使用 PCL 时，优先在该版本设置的「JVM 参数」（Java 虚拟机参数）中填写：</strong></p>
-<div class="code-block"><div class="code-head"><span>PCL 推荐参数</span><button class="copy-button" type="button">复制</button></div><pre><code>-javaagent:"{verpath}.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
-<p><code>{verpath}</code> 是 PCL 专属占位符，启动时会自动替换成当前版本目录。HMCL 和其他启动器不能使用它。</p>
-<p><strong>版本 JSON 的 <code>arguments.jvm</code> 是 PCL、HMCL 两者通用的接入方式。</strong>需要让同一个整合包兼容两种启动器时，打开 <code>.minecraft/versions/版本名称/版本名称.json</code>，找到 <code>"arguments"</code> 中已有的 <code>"jvm"</code> 数组，在数组开头追加：</p>
-<div class="code-block"><div class="code-head"><span>PCL、HMCL 通用 · arguments.jvm 新增项</span><button class="copy-button" type="button">复制</button></div><pre><code>"-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
-<p>例如原来是：</p>
-<div class="code-block"><div class="code-head"><span>修改前（示例）</span></div><pre><code>"arguments": {
+<p><strong>让启动器加载 Bootstrap Agent。</strong>接下来使用与 Web 配置模式相同的实例 JSON 接入方式。</p>
+<p><strong>推荐把参数随整合包一起分发。</strong>把 Agent 参数写进实例的版本 JSON，玩家换启动器时不必再逐个填写这条参数。服主先完成下面的配置和启动测试，再把整合包交给玩家。</p>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>先备份，并确认实例目录</strong><p>备份 <code>.minecraft/versions/版本名称/版本名称.json</code>。当前版本目录里必须已经有部署包带来的 <code>.dreamingfish-bootstrap/bootstrap-agent.jar</code>、真实项目绑定和完整玩家端；参数本身不会代替这些文件。</p></div></div>
+<p>打开该版本 JSON，在已有的 <code>arguments.jvm</code> 数组中新增下面这一项：</p>
+<div class="code-block"><div class="code-head"><span>整合包自带参数 · arguments.jvm 新增项</span><button class="copy-button" type="button">复制</button></div><pre><code>"-javaagent:.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p>例如，原来的数组是：</p>
+<div class="code-block"><div class="code-head"><span>修改前（仅展示 arguments）</span></div><pre><code>"arguments": {
   "jvm": [
     "-Djava.library.path=${natives_directory}"
   ]
 }</code></pre></div>
-<p>添加后是：</p>
-<div class="code-block"><div class="code-head"><span>修改后（示例）</span><button class="copy-button" type="button">复制</button></div><pre><code>"arguments": {
+<p>新增后变成：</p>
+<div class="code-block"><div class="code-head"><span>修改后（保留自己的原参数）</span><button class="copy-button" type="button">复制</button></div><pre><code>"arguments": {
   "jvm": [
-    "-javaagent:${game_directory}/.dreamingfish-bootstrap/bootstrap-agent.jar",
+    "-javaagent:.dreamingfish-bootstrap/bootstrap-agent.jar",
     "-Djava.library.path=${natives_directory}"
   ]
 }</code></pre></div>
-<p>你自己的原有 JVM 参数必须全部保留，只新增一行并注意英文逗号。保存后完全退出并重新打开启动器；不要把 <code>${game_directory}</code> 直接填进 HMCL 的 JVM 参数框。PCL 用户优先使用前面的 <code>{verpath}</code>；同一个实例不要再同时配置两种方式。</p>
-<div class="callout warning"><span class="callout-icon">!</span><div><strong>分发前检查一次实际启动命令</strong><p>确认 <code>--gameDir</code> 指向当前版本隔离目录，并且 <code>-javaagent</code> 后面已经是实际路径，而不是未替换的 <code>{verpath}</code> 或 <code>${game_directory}</code>。</p></div></div>
+<p>上面只演示插入位置，<strong>不要用示例覆盖整个版本 JSON</strong>。你自己的原有参数和其他字段必须全部保留，只新增一项并注意英文逗号；如果已经有旧的 DreamingFish Agent 参数，替换旧项，保持只有一份。保存后完全退出并重新打开启动器。</p>
+<div class="callout info"><span class="callout-icon">i</span><div><strong>相对路径也有适用条件</strong><p>这条参数从 Java 启动时所在的文件夹查找 Agent，因此 Java 的工作目录须是包含 <code>.dreamingfish-bootstrap</code> 的当前实例目录。还要核对实际 <code>--gameDir</code> 指向该实例，让 Minecraft 加载正确的 <code>mods</code> 和 <code>config</code>。工作目录与游戏目录都应实际检查，不能只看版本隔离开关；正确参数可以保留相对路径，不必变成绝对路径。</p></div></div>
+<p><strong>三款启动器已实测。</strong>2026-10-26，在 Windows、Minecraft 1.21.1 / NeoForge 21.1.248 的同一实例中，美西螈 1.10.1、PCL 2.13.1.1、HMCL 3.15.2 均用这条版本 JSON 参数调用了玩家端 0.3.2，连接远程管理服务并取得启动许可；HMCL 还验证到了整合包主菜单。测试时没有另外添加启动器专用 Agent 参数。其他启动器、目录布局及导出格式仍须分别测试。</p>
+<p>不要再把 <code>-javaagent:${game_directory}/...</code> 当作跨启动器的通用写法：本次美西螈会把这个变量原样传给 Java，导致找不到 Agent。也不要把服主电脑的绝对路径发给玩家，或设置 Windows 全局 <code>JAVA_TOOL_OPTIONS</code>。</p>
+<p><strong>只使用 PCL 时的备选方式：</strong>如果不修改版本 JSON，可以在 PCL 的这个版本的 JVM 参数框中填写：</p>
+<div class="code-block"><div class="code-head"><span>仅 PCL · 启动器设置备选</span><button class="copy-button" type="button">复制</button></div><pre><code>-javaagent:"{verpath}.dreamingfish-bootstrap/bootstrap-agent.jar"</code></pre></div>
+<p><code>{verpath}</code> 是 PCL 的占位符。这种方式与前面的版本 JSON 方式二选一，同一个实例不要重复加载 Agent；首次部署包里的 <code>minecraft-jvm-argument.txt</code> 目前也是这条 PCL 专用写法。</p>
+<div class="callout warning"><span class="callout-icon">!</span><div><strong>分发前，从启动器实际启动一次</strong><p>确认玩家端出现、连接正确项目、检查完成并允许 Minecraft 继续启动。测试下一款启动器前先退出上一轮游戏；若提示“请先关闭正在运行的游戏”，退出游戏后点“重试”。整合包导出后、执行“修复版本”或重新安装 Loader 后，都要复查这条 JSON 参数和部署文件是否仍然保留。</p></div></div>
 <p>分发时，你可以直接把整个版本目录发给玩家，也可以用启动器导出整合包再分享。导出整合包时要注意：整合包文件夹里要包含玩家端文件——就是刚拖进去的 <code>.dreamingfish-bootstrap</code>（隐藏文件夹，别漏）和 <code>DreamingFishUpdater</code>，缺了它们，玩家拿到手也不会有更新器。</p>
 
 <h3 id="cli-serve" data-toc-label="启动下载服务">第 6 步 · 启动下载服务<a class="anchor-link" href="#cli-serve">#</a></h3>
